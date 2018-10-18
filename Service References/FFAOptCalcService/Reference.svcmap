@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="54b147af-2774-4b6b-aae2-207eabf1b4b1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ArtBOptWCFService/FFAOptMain.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FFAOptMain.xsd" MetadataType="Schema" ID="b1ed78c8-db87-45c0-a61c-863b76d0fa94" SourceId="1" SourceUrl="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd2" />
+    <MetadataFile FileName="FFAOptMain1.xsd" MetadataType="Schema" ID="4fb6891c-c4a4-428d-81e6-88d3307e30c7" SourceId="1" SourceUrl="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd3" />
+    <MetadataFile FileName="FFAOptMain.wsdl" MetadataType="Wsdl" ID="011b1091-1ca8-482a-9b5b-7556f941a66f" SourceId="1" SourceUrl="http://localhost/ArtBOptWCFService/FFAOptMain.svc?wsdl" />
+    <MetadataFile FileName="FFAOptMain2.xsd" MetadataType="Schema" ID="5106b47d-bb8f-43bd-b4ad-e12df145a935" SourceId="1" SourceUrl="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd0" />
+    <MetadataFile FileName="FFAOptMain3.xsd" MetadataType="Schema" ID="51102243-18cf-4c45-a4b1-626c7c591902" SourceId="1" SourceUrl="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd1" />
+    <MetadataFile FileName="FFAOptMain.disco" MetadataType="Disco" ID="10523b84-21bd-4cda-8683-ff8b54385ef5" SourceId="1" SourceUrl="http://localhost/ArtBOptWCFService/FFAOptMain.svc?disco" />
+    <MetadataFile FileName="FFAOptMain4.xsd" MetadataType="Schema" ID="d796bc75-e99f-465c-8baa-32175a34ea32" SourceId="1" SourceUrl="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd4" />
+    <MetadataFile FileName="FFAOptMain5.xsd" MetadataType="Schema" ID="08794061-81fd-40e8-9d36-cfedc1903125" SourceId="1" SourceUrl="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

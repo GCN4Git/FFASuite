@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+  <xs:complexType name="ArrayOfARTBOPTCALC_FINGERPRINTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ARTBOPTCALC_FINGERPRINTS" nillable="true" type="tns:ARTBOPTCALC_FINGERPRINTS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfARTBOPTCALC_FINGERPRINTS" nillable="true" type="tns:ArrayOfARTBOPTCALC_FINGERPRINTS" />
+  <xs:complexType name="ARTBOPTCALC_FINGERPRINTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PRODUCT_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINGER_PRINT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DEMO_EXPIRATION_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HIDE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LICENSE_KEY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OFID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATER" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PRICER" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ARTBOPTCALC_FINGERPRINTS" nillable="true" type="tns:ARTBOPTCALC_FINGERPRINTS" />
+  <xs:complexType name="ARTBOPTCALC_LICENSES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LICENSE_KEY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRODUCT_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEMO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MAX_LICENSES" type="xs:int" />
+      <xs:element minOccurs="0" name="USED_LICENSES" type="xs:int" />
+      <xs:element minOccurs="0" name="LICENSE_PURCH_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LICENSE_EXP_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="REG_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIRSTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LASTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COUNTRY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PURCHASE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BROKER" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ARTBOPTCALC_FINGERPRINTS" nillable="true" type="tns:ArrayOfARTBOPTCALC_FINGERPRINTS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ARTBOPTCALC_LICENSES" nillable="true" type="tns:ARTBOPTCALC_LICENSES" />
+  <xs:complexType name="ARTBOPTCALC_PRODUCTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PRODUCT_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CCY_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="BASE_PRICE" type="xs:double" />
+      <xs:element minOccurs="0" name="DISCOUNTS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DISC_TIER1" type="xs:int" />
+      <xs:element minOccurs="0" name="DISC_PRC1" type="xs:double" />
+      <xs:element minOccurs="0" name="DISC_TIER2" type="xs:int" />
+      <xs:element minOccurs="0" name="DISC_PRC2" type="xs:double" />
+      <xs:element minOccurs="0" name="DISC_TIER3" type="xs:int" />
+      <xs:element minOccurs="0" name="DISC_PRC3" type="xs:double" />
+      <xs:element minOccurs="0" name="DISC_TIER4" type="xs:int" />
+      <xs:element minOccurs="0" name="DISC_PRC4" type="xs:double" />
+      <xs:element minOccurs="0" name="ARTBOPTCALC_FINGERPRINTS" nillable="true" type="tns:ArrayOfARTBOPTCALC_FINGERPRINTS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ARTBOPTCALC_LICENSES" nillable="true" type="tns:ArrayOfARTBOPTCALC_LICENSES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ARTBOPTCALC_PRODUCTS" nillable="true" type="tns:ARTBOPTCALC_PRODUCTS" />
+  <xs:complexType name="ArrayOfARTBOPTCALC_LICENSES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ARTBOPTCALC_LICENSES" nillable="true" type="tns:ARTBOPTCALC_LICENSES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfARTBOPTCALC_LICENSES" nillable="true" type="tns:ArrayOfARTBOPTCALC_LICENSES" />
+  <xs:complexType name="ArrayOfTRADE_CLASSES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TRADE_CLASSES" nillable="true" type="tns:TRADE_CLASSES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTRADE_CLASSES" nillable="true" type="tns:ArrayOfTRADE_CLASSES" />
+  <xs:complexType name="TRADE_CLASSES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="TRADE_CLASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRADE_CLASS_DES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BROKER_DESK_TRADE_CLASSES" nillable="true" type="tns:ArrayOfBROKER_DESK_TRADE_CLASSES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DESK_TRADE_CLASSES" nillable="true" type="tns:ArrayOfDESK_TRADE_CLASSES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DESK_TRADER_VOICE" nillable="true" type="tns:ArrayOfDESK_TRADER_VOICE">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DESK_TRADERS" nillable="true" type="tns:ArrayOfDESK_TRADERS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DESK_TRADERS_IM_SUBSCRIPTIONS" nillable="true" type="tns:ArrayOfDESK_TRADERS_IM_SUBSCRIPTIONS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADE_CLASS_EXCHANGES" nillable="true" type="tns:ArrayOfTRADE_CLASS_EXCHANGES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADE_CLASS_RATIO_SPREADS" nillable="true" type="tns:ArrayOfTRADE_CLASS_RATIO_SPREADS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VESSEL_CLASS" nillable="true" type="tns:ArrayOfVESSEL_CLASS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TRADE_CLASSES" nillable="true" type="tns:TRADE_CLASSES" />
+  <xs:complexType name="ArrayOfBROKER_DESK_TRADE_CLASSES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BROKER_DESK_TRADE_CLASSES" nillable="true" type="tns:BROKER_DESK_TRADE_CLASSES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBROKER_DESK_TRADE_CLASSES" nillable="true" type="tns:ArrayOfBROKER_DESK_TRADE_CLASSES" />
+  <xs:complexType name="BROKER_DESK_TRADE_CLASSES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_DESK_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BROKER_DESK_TRADE_CLASSES" nillable="true" type="tns:BROKER_DESK_TRADE_CLASSES" />
+  <xs:complexType name="ArrayOfDESK_TRADE_CLASSES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DESK_TRADE_CLASSES" nillable="true" type="tns:DESK_TRADE_CLASSES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDESK_TRADE_CLASSES" nillable="true" type="tns:ArrayOfDESK_TRADE_CLASSES" />
+  <xs:complexType name="DESK_TRADE_CLASSES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_DESK_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BROKER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DESK_EXCHANGES" nillable="true" type="tns:ArrayOfDESK_EXCHANGES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DESK_TRADE_CLASSES" nillable="true" type="tns:DESK_TRADE_CLASSES" />
+  <xs:complexType name="ArrayOfDESK_EXCHANGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DESK_EXCHANGES" nillable="true" type="tns:DESK_EXCHANGES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDESK_EXCHANGES" nillable="true" type="tns:ArrayOfDESK_EXCHANGES" />
+  <xs:complexType name="DESK_EXCHANGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_DESK_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="EXCHANGE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ORDER_INCLUDE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RANKING" type="xs:int" />
+      <xs:element minOccurs="0" name="DESK_EXCHANGES_CLEARERS" nillable="true" type="tns:ArrayOfDESK_EXCHANGES_CLEARERS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DESK_EXCHANGES" nillable="true" type="tns:DESK_EXCHANGES" />
+  <xs:complexType name="ArrayOfDESK_EXCHANGES_CLEARERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DESK_EXCHANGES_CLEARERS" nillable="true" type="tns:DESK_EXCHANGES_CLEARERS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDESK_EXCHANGES_CLEARERS" nillable="true" type="tns:ArrayOfDESK_EXCHANGES_CLEARERS" />
+  <xs:complexType name="DESK_EXCHANGES_CLEARERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_DESK_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="EXCHANGE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ACCOUNT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="CLEARER_ACCOUNT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLEARER_EXTRA1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLEARER_EXTRA2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLEARER_EXTRA3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MAIN" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FORCE_TO_OTC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ISDA_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DESK_EXCHANGES_CLEARERS" nillable="true" type="tns:DESK_EXCHANGES_CLEARERS" />
+  <xs:complexType name="ArrayOfDESK_TRADER_VOICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DESK_TRADER_VOICE" nillable="true" type="tns:DESK_TRADER_VOICE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDESK_TRADER_VOICE" nillable="true" type="tns:ArrayOfDESK_TRADER_VOICE" />
+  <xs:complexType name="DESK_TRADER_VOICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESK_TRADER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="VESSEL_CLASS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VOICE_SUBSCRIBE" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DESK_TRADER_VOICE" nillable="true" type="tns:DESK_TRADER_VOICE" />
+  <xs:complexType name="ArrayOfDESK_TRADERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DESK_TRADERS" nillable="true" type="tns:DESK_TRADERS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDESK_TRADERS" nillable="true" type="tns:ArrayOfDESK_TRADERS" />
+  <xs:complexType name="DESK_TRADERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESK_TRADER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ACCOUNT_DESK_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ACCOUNT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="CONTACT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="AUTHORISED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AUTHORISATION_RECEIVED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RECEIVED_WHEN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EXPIRES_WHEN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TRADE_AUTHORITY" type="xs:short" />
+      <xs:element minOccurs="0" name="USERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXPIRED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OF_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OF_PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_DESK_ADMIN" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SUSPENDED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TOOLBAR_SHOW" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DEFAULT_MARKET" type="ser:char" />
+      <xs:element minOccurs="0" name="DEFAULT_SHOW_NAMES" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GRID_MARKET_DEPTH" type="xs:int" />
+      <xs:element minOccurs="0" name="BID_COLOR" type="xs:int" />
+      <xs:element minOccurs="0" name="OFFER_COLOR" type="xs:int" />
+      <xs:element minOccurs="0" name="FONT_TYPE" type="xs:short" />
+      <xs:element minOccurs="0" name="CHANGE_PSW" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AGREES_TO_STATEMENT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="INDICATIVES_VISIBLE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ONE_CLICK_HIT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DESK_TRADER_VOICE" nillable="true" type="tns:ArrayOfDESK_TRADER_VOICE">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DESK_TRADERS_IM_SUBSCRIPTIONS" nillable="true" type="tns:ArrayOfDESK_TRADERS_IM_SUBSCRIPTIONS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LAYOUTS" nillable="true" type="tns:ArrayOfLAYOUTS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA1" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA2" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADES_FFA" nillable="true" type="tns:ArrayOfTRADES_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADES_FFA1" nillable="true" type="tns:ArrayOfTRADES_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DESK_TRADERS" nillable="true" type="tns:DESK_TRADERS" />
+  <xs:complexType name="ArrayOfDESK_TRADERS_IM_SUBSCRIPTIONS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DESK_TRADERS_IM_SUBSCRIPTIONS" nillable="true" type="tns:DESK_TRADERS_IM_SUBSCRIPTIONS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDESK_TRADERS_IM_SUBSCRIPTIONS" nillable="true" type="tns:ArrayOfDESK_TRADERS_IM_SUBSCRIPTIONS" />
+  <xs:complexType name="DESK_TRADERS_IM_SUBSCRIPTIONS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESK_TRADER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="VESSEL_CLASS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IM_SUBSCRIBE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VOICE_SUBSCRIBE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VOICE_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DESK_TRADERS_IM_SUBSCRIPTIONS" nillable="true" type="tns:DESK_TRADERS_IM_SUBSCRIPTIONS" />
+  <xs:complexType name="ArrayOfLAYOUTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LAYOUTS" nillable="true" type="tns:LAYOUTS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLAYOUTS" nillable="true" type="tns:ArrayOfLAYOUTS" />
+  <xs:complexType name="LAYOUTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESK_TRADER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FILENAME" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="CONTENTS" nillable="true" type="q1:Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LAYOUTS" nillable="true" type="tns:LAYOUTS" />
+  <xs:complexType name="ArrayOfORDERS_FFA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ORDERS_FFA" nillable="true" type="tns:ORDERS_FFA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfORDERS_FFA" nillable="true" type="tns:ArrayOfORDERS_FFA" />
+  <xs:complexType name="ORDERS_FFA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ORDER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ORDER_TYPE" type="xs:short" />
+      <xs:element minOccurs="0" name="ORDER_DATETIME" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DESK_TRADER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FOR_DESK_TRADER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ORDERED_BY_WHO" type="ser:char" />
+      <xs:element minOccurs="0" name="PREVIOUS_ORDER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LIVE_STATUS" type="ser:char" />
+      <xs:element minOccurs="0" name="ORDER_QUALIFIER" type="ser:char" />
+      <xs:element minOccurs="0" name="ORDER_BS" type="ser:char" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MM1" type="xs:short" />
+      <xs:element minOccurs="0" name="YY1" type="xs:short" />
+      <xs:element minOccurs="0" name="MM2" type="xs:short" />
+      <xs:element minOccurs="0" name="YY2" type="xs:short" />
+      <xs:element minOccurs="0" name="SHORTDES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRICE_INDICATED" type="xs:double" />
+      <xs:element minOccurs="0" name="PRICE_TYPE" type="ser:char" />
+      <xs:element minOccurs="0" name="PRICE_TRY_BETTER" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ORDER_QUANTITY" type="xs:int" />
+      <xs:element minOccurs="0" name="DAY_QUALIFIER" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="FLEXIBLE_QUANTITY" type="xs:short" />
+      <xs:element minOccurs="0" name="QUANTITY_STEP" type="xs:int" />
+      <xs:element minOccurs="0" name="ORDER_GOOD_TILL" type="xs:short" />
+      <xs:element minOccurs="0" name="ORDER_TIME_LIMIT" type="xs:int" />
+      <xs:element minOccurs="0" name="SHOW_MY_NAME" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PNC_ORDER" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SINGLE_EXCHANGE_EXECUTION" type="xs:short" />
+      <xs:element minOccurs="0" name="ORDER_TRADED_ON_EXCHANGE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CLEARER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ORDER_EXCHANGES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="THREAD" type="xs:int" />
+      <xs:element minOccurs="0" name="COUNTER_PARTY_ORDER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LOCK_DESK_TRADER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LOCK_ORDER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="COMMIT_ORDER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="INFORM_DESK_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NEGOTIATION_ORDER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ORDER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SPREAD_LEG_TYPE" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SPREAD_ORDER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CROSS_ORDER_ID1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CROSS_ORDER_ID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MM21" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY21" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="MM22" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY22" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SHORTDES2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRICE_INDICATED2" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PRICE_TYPE2" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="PRICE_TRY_BETTER2" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ORDER_QUANTITY2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DAY_QUALIFIER2" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="FLEXIBLE_QUANTITY2" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ORDER_EXCHANGES2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STRIKE_PRICE" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ICEBERG" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BROKER_INVISIBLE" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ORDERS_FFA1" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA3" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA5" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA7" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA9" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA11" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA13" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA15" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA_EXCHANGES" nillable="true" type="tns:ArrayOfORDERS_FFA_EXCHANGES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADES_FFA" nillable="true" type="tns:ArrayOfTRADES_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADES_FFA1" nillable="true" type="tns:ArrayOfTRADES_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ORDERS_FFA" nillable="true" type="tns:ORDERS_FFA" />
+  <xs:complexType name="ArrayOfORDERS_FFA_EXCHANGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ORDERS_FFA_EXCHANGES" nillable="true" type="tns:ORDERS_FFA_EXCHANGES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfORDERS_FFA_EXCHANGES" nillable="true" type="tns:ArrayOfORDERS_FFA_EXCHANGES" />
+  <xs:complexType name="ORDERS_FFA_EXCHANGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ORDER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="EXCHANGE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ACCOUNT_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ORDERS_FFA_EXCHANGES" nillable="true" type="tns:ORDERS_FFA_EXCHANGES" />
+  <xs:complexType name="ArrayOfTRADES_FFA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TRADES_FFA" nillable="true" type="tns:TRADES_FFA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTRADES_FFA" nillable="true" type="tns:ArrayOfTRADES_FFA" />
+  <xs:complexType name="TRADES_FFA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TRADE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ORDER_DATETIME" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TRADE_BOOKED_DATETIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TRADE_TYPE" type="xs:short" />
+      <xs:element minOccurs="0" name="ORDER_QUALIFIER" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="ORDER_ID1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ORDER_ID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADE_BS1" type="ser:char" />
+      <xs:element minOccurs="0" name="TRADE_BS2" type="ser:char" />
+      <xs:element minOccurs="0" name="DESK_TRADER_ID1" type="xs:int" />
+      <xs:element minOccurs="0" name="DESK_TRADER_ID2" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MM1" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY1" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="MM2" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY2" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SHORTDES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRICE_TRADED" type="xs:double" />
+      <xs:element minOccurs="0" name="AMMENDED_PRICE" type="xs:double" />
+      <xs:element minOccurs="0" name="UPDATE_STATUS" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DAY_QUALIFIER" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="QUANTITY" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MM21" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY21" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="MM22" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY22" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="PRICE_TRADED2" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="DAY_QUALIFIER2" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="QUANTITY2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EXCHANGE_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DEAL_CONFIRMATION_SENT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SENT_TO_CLEARING" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CLEARING_ACCEPTED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DEAL_CONFIRMATION_SENT2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SENT_TO_CLEARING2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CLEARING_ACCEPTED2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CLEARING_ID1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CLEARING_ID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PNC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="INFORM_DESK_ID1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="INFORM_DESK_ID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IS_SYNTHETIC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SPREAD_TRADE_ID1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BROKER_ID1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BROKER_ID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SPREAD_TRADE_ID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADES_FFA1" nillable="true" type="tns:ArrayOfTRADES_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADES_FFA3" nillable="true" type="tns:ArrayOfTRADES_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TRADES_FFA" nillable="true" type="tns:TRADES_FFA" />
+  <xs:complexType name="ArrayOfTRADE_CLASS_EXCHANGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TRADE_CLASS_EXCHANGES" nillable="true" type="tns:TRADE_CLASS_EXCHANGES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTRADE_CLASS_EXCHANGES" nillable="true" type="tns:ArrayOfTRADE_CLASS_EXCHANGES" />
+  <xs:complexType name="TRADE_CLASS_EXCHANGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="EXCHANGE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RANKING_ORDER" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TRADE_CLASS_EXCHANGES" nillable="true" type="tns:TRADE_CLASS_EXCHANGES" />
+  <xs:complexType name="ArrayOfTRADE_CLASS_RATIO_SPREADS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TRADE_CLASS_RATIO_SPREADS" nillable="true" type="tns:TRADE_CLASS_RATIO_SPREADS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTRADE_CLASS_RATIO_SPREADS" nillable="true" type="tns:ArrayOfTRADE_CLASS_RATIO_SPREADS" />
+  <xs:complexType name="TRADE_CLASS_RATIO_SPREADS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="ROUTE_ID1" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID2" type="xs:int" />
+      <xs:element minOccurs="0" name="PRICING_TICK" type="xs:double" />
+      <xs:element minOccurs="0" name="PRECISION_TICK" type="xs:double" />
+      <xs:element minOccurs="0" name="DEFAULT_MULTIPLIER" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TRADE_CLASS_RATIO_SPREADS" nillable="true" type="tns:TRADE_CLASS_RATIO_SPREADS" />
+  <xs:complexType name="ArrayOfVESSEL_CLASS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VESSEL_CLASS" nillable="true" type="tns:VESSEL_CLASS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVESSEL_CLASS" nillable="true" type="tns:ArrayOfVESSEL_CLASS" />
+  <xs:complexType name="VESSEL_CLASS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VESSEL_CLASS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VESSEL_CLASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DRYWET" type="ser:char" />
+      <xs:element minOccurs="0" name="WETSECTOR" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFAULT_ROUTE_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DESK_TRADER_VOICE" nillable="true" type="tns:ArrayOfDESK_TRADER_VOICE">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DESK_TRADERS_IM_SUBSCRIPTIONS" nillable="true" type="tns:ArrayOfDESK_TRADERS_IM_SUBSCRIPTIONS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EXCHANGE_ROUTES" nillable="true" type="tns:ArrayOfEXCHANGE_ROUTES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ROUTES" nillable="true" type="tns:ArrayOfROUTES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VESSEL_CLASS_SPREAD_MARGINS" nillable="true" type="tns:ArrayOfVESSEL_CLASS_SPREAD_MARGINS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VESSEL_CLASS" nillable="true" type="tns:VESSEL_CLASS" />
+  <xs:complexType name="ArrayOfEXCHANGE_ROUTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EXCHANGE_ROUTES" nillable="true" type="tns:EXCHANGE_ROUTES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEXCHANGE_ROUTES" nillable="true" type="tns:ArrayOfEXCHANGE_ROUTES" />
+  <xs:complexType name="EXCHANGE_ROUTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EXCHANGE_ROUTES_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="EXCHANGE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VESSEL_CLASS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EXCHANGE_ABRV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRADING_START" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="TRADING_END" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="TRADE_REGISTRATION_START" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="TRADE_REGISTRATION_END" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="TRADE_REGISTRATION_LAST" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="OPTIONS_AVAILABLE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EXCHANGE_ROUTE_PERIOD_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EXCHANGE_ROUTES" nillable="true" type="tns:EXCHANGE_ROUTES" />
+  <xs:complexType name="ArrayOfROUTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ROUTES" nillable="true" type="tns:ROUTES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfROUTES" nillable="true" type="tns:ArrayOfROUTES" />
+  <xs:complexType name="ROUTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VESSEL_CLASS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="QUOTE_TYPE" type="xs:short" />
+      <xs:element minOccurs="0" name="QUANTITY_TYPE" type="xs:short" />
+      <xs:element minOccurs="0" name="CCY_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_SHORT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTE_DESCR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BALTIC_ABRV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BALTIC_ABRV_FFA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTLEMENT_TYPE" type="xs:short" />
+      <xs:element minOccurs="0" name="LOT_SIZE" type="xs:int" />
+      <xs:element minOccurs="0" name="SETTLEMENT_TICK" type="xs:double" />
+      <xs:element minOccurs="0" name="PRICING_TICK" type="xs:double" />
+      <xs:element minOccurs="0" name="FULL_LOT_SIZE" type="xs:int" />
+      <xs:element minOccurs="0" name="FFA_TRADED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LAST_DAY_RULE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DEFAULT_QUANTITY" type="xs:double" />
+      <xs:element minOccurs="0" name="SETTL_ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="OPTIONS_TRADED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WET_FLAT_RATES" nillable="true" type="tns:ArrayOfWET_FLAT_RATES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BALTIC_FORWARD_RATES" nillable="true" type="tns:ArrayOfBALTIC_FORWARD_RATES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BALTIC_FTP" nillable="true" type="tns:ArrayOfBALTIC_FTP">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BALTIC_FTP_SETTLEMENT" nillable="true" type="tns:ArrayOfBALTIC_FTP_SETTLEMENT">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BALTIC_MONTHLY_SETTLEMENTS" nillable="true" type="tns:ArrayOfBALTIC_MONTHLY_SETTLEMENTS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BALTIC_OPTION_VOLATILITIES" nillable="true" type="tns:ArrayOfBALTIC_OPTION_VOLATILITIES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BALTIC_SPOT_RATES" nillable="true" type="tns:ArrayOfBALTIC_SPOT_RATES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CONTRACT_SERIES" nillable="true" type="tns:ArrayOfCONTRACT_SERIES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DESK_TRADER_VOICE" nillable="true" type="tns:ArrayOfDESK_TRADER_VOICE">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DESK_TRADERS_IM_SUBSCRIPTIONS" nillable="true" type="tns:ArrayOfDESK_TRADERS_IM_SUBSCRIPTIONS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EXCHANGE_ROUTES" nillable="true" type="tns:ArrayOfEXCHANGE_ROUTES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ORDERS_FFA1" nillable="true" type="tns:ArrayOfORDERS_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADE_CLASS_RATIO_SPREADS" nillable="true" type="tns:ArrayOfTRADE_CLASS_RATIO_SPREADS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADE_CLASS_RATIO_SPREADS1" nillable="true" type="tns:ArrayOfTRADE_CLASS_RATIO_SPREADS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADES_FFA" nillable="true" type="tns:ArrayOfTRADES_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TRADES_FFA1" nillable="true" type="tns:ArrayOfTRADES_FFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VESSEL_CLASS1" nillable="true" type="tns:ArrayOfVESSEL_CLASS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VESSEL_CLASS_SPREAD_MARGINS" nillable="true" type="tns:ArrayOfVESSEL_CLASS_SPREAD_MARGINS">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ROUTES" nillable="true" type="tns:ROUTES" />
+  <xs:complexType name="ArrayOfWET_FLAT_RATES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WET_FLAT_RATES" nillable="true" type="tns:WET_FLAT_RATES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWET_FLAT_RATES" nillable="true" type="tns:ArrayOfWET_FLAT_RATES" />
+  <xs:complexType name="WET_FLAT_RATES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FLAT_YEAR" type="xs:int" />
+      <xs:element minOccurs="0" name="FLAT_RATE" type="xs:double" />
+      <xs:element minOccurs="0" name="PROJECTION" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WET_FLAT_RATES" nillable="true" type="tns:WET_FLAT_RATES" />
+  <xs:complexType name="ArrayOfBALTIC_FORWARD_RATES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BALTIC_FORWARD_RATES" nillable="true" type="tns:BALTIC_FORWARD_RATES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBALTIC_FORWARD_RATES" nillable="true" type="tns:ArrayOfBALTIC_FORWARD_RATES" />
+  <xs:complexType name="BALTIC_FORWARD_RATES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="CMSROUTE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEXT_ROLLOVER_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FIXING" type="xs:double" />
+      <xs:element minOccurs="0" name="REPORTDESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MM1" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY1" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="MM2" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY2" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="PERIOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YY" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BALTIC_FORWARD_RATES" nillable="true" type="tns:BALTIC_FORWARD_RATES" />
+  <xs:complexType name="ArrayOfBALTIC_FTP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BALTIC_FTP" nillable="true" type="tns:BALTIC_FTP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBALTIC_FTP" nillable="true" type="tns:ArrayOfBALTIC_FTP" />
+  <xs:complexType name="BALTIC_FTP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="CMSROUTE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERIOD" type="ser:char" />
+      <xs:element minOccurs="0" name="QUALIFIER" type="ser:char" />
+      <xs:element minOccurs="0" name="BALTIC_FORWARD_RATES" nillable="true" type="tns:ArrayOfBALTIC_FORWARD_RATES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BALTIC_OPTION_VOLATILITIES" nillable="true" type="tns:ArrayOfBALTIC_OPTION_VOLATILITIES">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BALTIC_FTP" nillable="true" type="tns:BALTIC_FTP" />
+  <xs:complexType name="ArrayOfBALTIC_OPTION_VOLATILITIES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BALTIC_OPTION_VOLATILITIES" nillable="true" type="tns:BALTIC_OPTION_VOLATILITIES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBALTIC_OPTION_VOLATILITIES" nillable="true" type="tns:ArrayOfBALTIC_OPTION_VOLATILITIES" />
+  <xs:complexType name="BALTIC_OPTION_VOLATILITIES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="CMSROUTE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEXT_ROLLOVER_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FIXING" type="xs:double" />
+      <xs:element minOccurs="0" name="REPORTDESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MM1" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY1" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="MM2" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="YY2" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="PERIOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YY" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BALTIC_OPTION_VOLATILITIES" nillable="true" type="tns:BALTIC_OPTION_VOLATILITIES" />
+  <xs:complexType name="ArrayOfBALTIC_FTP_SETTLEMENT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BALTIC_FTP_SETTLEMENT" nillable="true" type="tns:BALTIC_FTP_SETTLEMENT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBALTIC_FTP_SETTLEMENT" nillable="true" type="tns:ArrayOfBALTIC_FTP_SETTLEMENT" />
+  <xs:complexType name="BALTIC_FTP_SETTLEMENT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="CMSROUTE_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BALTIC_FTP_SETTLEMENT" nillable="true" type="tns:BALTIC_FTP_SETTLEMENT" />
+  <xs:complexType name="ArrayOfBALTIC_MONTHLY_SETTLEMENTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BALTIC_MONTHLY_SETTLEMENTS" nillable="true" type="tns:BALTIC_MONTHLY_SETTLEMENTS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBALTIC_MONTHLY_SETTLEMENTS" nillable="true" type="tns:ArrayOfBALTIC_MONTHLY_SETTLEMENTS" />
+  <xs:complexType name="BALTIC_MONTHLY_SETTLEMENTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FIXINGEM" type="xs:double" />
+      <xs:element minOccurs="0" name="FIXING7" type="xs:double" />
+      <xs:element minOccurs="0" name="FIXING10" type="xs:double" />
+      <xs:element minOccurs="0" name="FIXING_MONTH" type="xs:short" />
+      <xs:element minOccurs="0" name="FIXING_YEAR" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BALTIC_MONTHLY_SETTLEMENTS" nillable="true" type="tns:BALTIC_MONTHLY_SETTLEMENTS" />
+  <xs:complexType name="ArrayOfBALTIC_SPOT_RATES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BALTIC_SPOT_RATES" nillable="true" type="tns:BALTIC_SPOT_RATES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBALTIC_SPOT_RATES" nillable="true" type="tns:ArrayOfBALTIC_SPOT_RATES" />
+  <xs:complexType name="BALTIC_SPOT_RATES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FIXING" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BALTIC_SPOT_RATES" nillable="true" type="tns:BALTIC_SPOT_RATES" />
+  <xs:complexType name="ArrayOfCONTRACT_SERIES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CONTRACT_SERIES" nillable="true" type="tns:CONTRACT_SERIES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCONTRACT_SERIES" nillable="true" type="tns:ArrayOfCONTRACT_SERIES" />
+  <xs:complexType name="CONTRACT_SERIES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ACCOUNT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FRONT_MONTHS" type="xs:short" />
+      <xs:element minOccurs="0" name="FRONT_QUARTERS" type="xs:short" />
+      <xs:element minOccurs="0" name="FRONT_HALF_YEARS" type="xs:short" />
+      <xs:element minOccurs="0" name="FRONT_YEARS" type="xs:short" />
+      <xs:element minOccurs="0" name="FRONT_MAX_MONTHS" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CONTRACT_SERIES" nillable="true" type="tns:CONTRACT_SERIES" />
+  <xs:complexType name="ArrayOfVESSEL_CLASS_SPREAD_MARGINS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VESSEL_CLASS_SPREAD_MARGINS" nillable="true" type="tns:VESSEL_CLASS_SPREAD_MARGINS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVESSEL_CLASS_SPREAD_MARGINS" nillable="true" type="tns:ArrayOfVESSEL_CLASS_SPREAD_MARGINS" />
+  <xs:complexType name="VESSEL_CLASS_SPREAD_MARGINS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VESSEL_CLASS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="CMSROUTE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MM1" type="xs:short" />
+      <xs:element minOccurs="0" name="YY1" type="xs:short" />
+      <xs:element minOccurs="0" name="MM2" type="xs:short" />
+      <xs:element minOccurs="0" name="YY2" type="xs:short" />
+      <xs:element minOccurs="0" name="PERIOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YY" type="xs:int" />
+      <xs:element minOccurs="0" name="MARGIN" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VESSEL_CLASS_SPREAD_MARGINS" nillable="true" type="tns:VESSEL_CLASS_SPREAD_MARGINS" />
+</xs:schema>

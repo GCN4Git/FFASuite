@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81507c709e754c2093d7b514c1ba6b7c" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="ARTBModel.ARTBOPTCALC_FINGERPRINTS" Width="1.5" PointX="2.100937196100567" PointY="21.536993066564666" />
+        <EntityTypeShape EntityType="ARTBModel.ARTBOPTCALC_LICENSES" Width="1.5" PointX="5.4149220443400194" PointY="11.122577195578524" />
+        <EntityTypeShape EntityType="ARTBModel.ARTBOPTCALC_PRODUCTS" Width="1.5" PointX="5.6375171624298748" PointY="5.3108384931976156" />
+        <EntityTypeShape EntityType="ARTBModel.BALTIC_FORWARD_RATES" Width="1.5" PointX="0.60318854665532173" PointY="5.5998172488062723" />
+        <EntityTypeShape EntityType="ARTBModel.BALTIC_FTP" Width="1.5" PointX="7.8147794994594424" PointY="27.421881479873267" />
+        <EntityTypeShape EntityType="ARTBModel.BALTIC_FTP_SETTLEMENT" Width="1.5" PointX="1.6972887784695667" PointY="28.716956330797149" />
+        <EntityTypeShape EntityType="ARTBModel.BALTIC_MONTHLY_SETTLEMENTS" Width="1.5" PointX="3.4242679455430567" PointY="22.264079298015719" />
+        <EntityTypeShape EntityType="ARTBModel.BALTIC_OPTION_VOLATILITIES" Width="1.5" PointX="9.2260592399286381" PointY="18.035292767936035" />
+        <EntityTypeShape EntityType="ARTBModel.BALTIC_SPOT_RATES" Width="1.5" PointX="5.1189774224157345" PointY="14.479057244248249" />
+        <EntityTypeShape EntityType="ARTBModel.ROUTES" Width="1.5" PointX="11.257830395948995" PointY="7.5606187170188033" />
+        <EntityTypeShape EntityType="ARTBModel.TRADE_CLASSES" Width="1.5" PointX="10.56368329122834" PointY="4.8555481903513655" />
+        <EntityTypeShape EntityType="ARTBModel.VESSEL_CLASS" Width="1.5" PointX="10.900879773730821" PointY="11.002843936440929" />
+        <EntityTypeShape EntityType="ARTBModel.VESSEL_CLASS_SPREAD_MARGINS" Width="1.5" PointX="5.2753277445562778" PointY="8.532016489902519" />
+        <AssociationConnector Association="ARTBModel.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES" />
+        <AssociationConnector Association="ARTBModel.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS" />
+        <AssociationConnector Association="ARTBModel.FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS" />
+        <AssociationConnector Association="ARTBModel.FK_BALTIC_FORWARD_RATES_BALTIC_FTP" />
+        <AssociationConnector Association="ARTBModel.FK_BALTIC_FORWARD_RATES_ROUTES" />
+        <AssociationConnector Association="ARTBModel.FK_BALTIC_FTP_ROUTES" />
+        <AssociationConnector Association="ARTBModel.FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP" />
+        <AssociationConnector Association="ARTBModel.FK_BALTIC_FTP_SETTLEMENT_ROUTES" />
+        <AssociationConnector Association="ARTBModel.FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES" />
+        <AssociationConnector Association="ARTBModel.FK_BALTIC_OPTION_VOLATILITIES_ROUTES" />
+        <AssociationConnector Association="ARTBModel.FK_BALTIC_SPOT_RATES_ROUTES" />
+        <AssociationConnector Association="ARTBModel.FK_VESSEL_CLASS_ROUTES" />
+        <AssociationConnector Association="ARTBModel.FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES" />
+        <AssociationConnector Association="ARTBModel.FK_VESSEL_CLASS_TRADE_CLASSES" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

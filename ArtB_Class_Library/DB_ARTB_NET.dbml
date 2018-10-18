@@ -1,0 +1,1363 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ARTB" Class="DB_ARTB_NETDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVERARTB;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf" SettingsObjectName="ArtB_Class_Library.My.MySettings" SettingsPropertyName="ARTBConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.WET_FLAT_RATES" Member="WET_FLAT_RATEs">
+    <Type Name="WET_FLAT_RATE">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FLAT_YEAR" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FLAT_RATE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PROJECTION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTE_WET_FLAT_RATE" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACCOUNT_TYPES" Member="ACCOUNT_TYPEs">
+    <Type Name="ACCOUNT_TYPE">
+      <Column Name="ACCOUNT_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACCOUNT_TYPE_DESCR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ACCOUNT_TYPE_ACCOUNT" Member="ACCOUNTs" ThisKey="ACCOUNT_TYPE_ID" OtherKey="ACCOUNT_TYPE_ID" Type="ACCOUNT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACCOUNTS_ADMIN" Member="ACCOUNTS_ADMINs">
+    <Type Name="ACCOUNTS_ADMIN">
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ADMIN_NAME" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ADMIN_PASSWORD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ADMIN_OF_ID" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ADMIN_OF_PASSWORD" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="ACCOUNT_ACCOUNTS_ADMIN" Member="ACCOUNT" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACCOUNTS_CONTACTS" Member="ACCOUNTS_CONTACTs">
+    <Type Name="ACCOUNTS_CONTACT">
+      <Column Name="ACCOUNTS_CONTACTS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CONTACT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MAIN_CONTACT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CONTACT_ACCOUNTS_CONTACT" Member="CONTACT" ThisKey="CONTACT_ID" OtherKey="CONTACT_ID" Type="CONTACT" IsForeignKey="true" />
+      <Association Name="ACCOUNT_ACCOUNTS_CONTACT" Member="ACCOUNT" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ARTB_SOUNDS" Member="ARTB_SOUNDs">
+    <Type Name="ARTB_SOUND">
+      <Column Name="SOUND_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SOUND_FILE" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOUND_DES" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_FFA_IMPORT" Member="BALTIC_FFA_IMPORTs">
+    <Type Name="BALTIC_FFA_IMPORT">
+      <Column Name="GroupDesc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ArchiveDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="RouteIdentifier" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RouteAverage" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="FFADescription" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_FORWARD_RATES" Member="BALTIC_FORWARD_RATEs">
+    <Type Name="BALTIC_FORWARD_RATE">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NEXT_ROLLOVER_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="REPORTDESC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="YY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BALTIC_FTP_BALTIC_FORWARD_RATE" Member="BALTIC_FTP" ThisKey="ROUTE_ID,CMSROUTE_ID" OtherKey="ROUTE_ID,CMSROUTE_ID" Type="BALTIC_FTP" IsForeignKey="true" />
+      <Association Name="ROUTE_BALTIC_FORWARD_RATE" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_FTP" Member="BALTIC_FTPs">
+    <Type Name="BALTIC_FTP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PERIOD" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="QUALIFIER" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="BALTIC_FTP_BALTIC_FORWARD_RATE" Member="BALTIC_FORWARD_RATEs" ThisKey="ROUTE_ID,CMSROUTE_ID" OtherKey="ROUTE_ID,CMSROUTE_ID" Type="BALTIC_FORWARD_RATE" />
+      <Association Name="BALTIC_FTP_BALTIC_OPTION_VOLATILITy" Member="BALTIC_OPTION_VOLATILITies" ThisKey="ROUTE_ID,CMSROUTE_ID" OtherKey="ROUTE_ID,CMSROUTE_ID" Type="BALTIC_OPTION_VOLATILITy" />
+      <Association Name="ROUTE_BALTIC_FTP" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_FTP_SETTLEMENT" Member="BALTIC_FTP_SETTLEMENTs">
+    <Type Name="BALTIC_FTP_SETTLEMENT">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="ROUTE_BALTIC_FTP_SETTLEMENT" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_OPTION_VOLATILITIES" Member="BALTIC_OPTION_VOLATILITies">
+    <Type Name="BALTIC_OPTION_VOLATILITy">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NEXT_ROLLOVER_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="REPORTDESC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="YY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BALTIC_FTP_BALTIC_OPTION_VOLATILITy" Member="BALTIC_FTP" ThisKey="ROUTE_ID,CMSROUTE_ID" OtherKey="ROUTE_ID,CMSROUTE_ID" Type="BALTIC_FTP" IsForeignKey="true" />
+      <Association Name="ROUTE_BALTIC_OPTION_VOLATILITy" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_SPOT_RATES" Member="BALTIC_SPOT_RATEs">
+    <Type Name="BALTIC_SPOT_RATE">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTE_BALTIC_SPOT_RATE" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BROKER_DESK_TRADE_CLASSES" Member="BROKER_DESK_TRADE_CLASSes">
+    <Type Name="BROKER_DESK_TRADE_CLASS">
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TRADE_CLASS_BROKER_DESK_TRADE_CLASS" Member="TRADE_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_BROKER_DESK_TRADE_CLASS" Member="ACCOUNT_DESK" ThisKey="ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CCY" Member="CCies">
+    <Type Name="CCY">
+      <Column Name="CCY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CCY" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CCY_DESCR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CCY_SYMBOL" Type="System.Char" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="CCY_UNICODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CCY_ROUTE" Member="ROUTEs" ThisKey="CCY_ID" OtherKey="CCY_ID" Type="ROUTE" />
+      <Association Name="CCY_ACCOUNT" Member="ACCOUNTs" ThisKey="CCY_ID" OtherKey="DEFAULT_CCY" Type="ACCOUNT" />
+      <Association Name="CCY_INTEREST_RATE" Member="INTEREST_RATEs" ThisKey="CCY_ID" OtherKey="CCY_ID" Type="INTEREST_RATE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONTACT_TYPE" Member="CONTACT_TYPEs">
+    <Type Name="CONTACT_TYPE">
+      <Column Name="CONTACT_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CONTACT_TYPEDES" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CONTACT_TYPE_CONTACT" Member="CONTACTs" ThisKey="CONTACT_TYPE_ID" OtherKey="CONTACT_TYPE_ID" Type="CONTACT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONTACTS" Member="CONTACTs">
+    <Type Name="CONTACT">
+      <Column Name="CONTACT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FIRSTNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LASTNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MSN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YAHOO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEL_B1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEL_B2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEL_MBL1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEL_MBL2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEL_H1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FAX_B" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FAX_H" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STREET" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CITY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REGION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ZIPCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COUNTRY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CONTACT_ACCOUNTS_CONTACT" Member="ACCOUNTS_CONTACTs" ThisKey="CONTACT_ID" OtherKey="CONTACT_ID" Type="ACCOUNTS_CONTACT" />
+      <Association Name="CONTACT_DESK_TRADE_CONFO" Member="DESK_TRADE_CONFOs" ThisKey="CONTACT_ID" OtherKey="CONTACT_ID" Type="DESK_TRADE_CONFO" />
+      <Association Name="CONTACT_DESK_TRADER" Member="DESK_TRADERs" ThisKey="CONTACT_ID" OtherKey="CONTACT_ID" Type="DESK_TRADER" />
+      <Association Name="CONTACT_TYPE_CONTACT" Member="CONTACT_TYPE" ThisKey="CONTACT_TYPE_ID" OtherKey="CONTACT_TYPE_ID" Type="CONTACT_TYPE" IsForeignKey="true" />
+      <Association Name="COUNTRy_CONTACT" Member="COUNTRy" ThisKey="COUNTRY_ID" OtherKey="COUNTRY_ID" Type="COUNTRy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONTRACT_SERIES" Member="CONTRACT_SERies">
+    <Type Name="CONTRACT_SERy">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FRONT_MONTHS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_QUARTERS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_HALF_YEARS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_YEARS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_MAX_MONTHS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTE_CONTRACT_SERy" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="ACCOUNT_CONTRACT_SERy" Member="ACCOUNT" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COUNTERPARTY_LIMITS" Member="COUNTERPARTY_LIMITs">
+    <Type Name="COUNTERPARTY_LIMIT">
+      <Column Name="PRI_ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SEC_ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CLEARED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CLEARED_SHOW_NAME" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OTC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OTC_SHOW_NAME" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PERIOD_LIMIT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PERIOD_LIMIT_DESCR_COUNTERPARTY_LIMIT" Member="PERIOD_LIMIT_DESCR" ThisKey="PERIOD_LIMIT" OtherKey="PERIOD_LIMIT" Type="PERIOD_LIMIT_DESCR" IsForeignKey="true" />
+      <Association Name="SHOW_NAME_TYPE_COUNTERPARTY_LIMIT" Member="SHOW_NAME_TYPE" ThisKey="CLEARED_SHOW_NAME" OtherKey="SHOW_NAME_ID" Type="SHOW_NAME_TYPE" IsForeignKey="true" />
+      <Association Name="SHOW_NAME_TYPE_COUNTERPARTY_LIMIT1" Member="SHOW_NAME_TYPE1" ThisKey="OTC_SHOW_NAME" OtherKey="SHOW_NAME_ID" Type="SHOW_NAME_TYPE" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_COUNTERPARTY_LIMIT" Member="ACCOUNT_DESK" ThisKey="PRI_ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_COUNTERPARTY_LIMIT1" Member="ACCOUNT_DESK1" ThisKey="SEC_ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COUNTRIES" Member="COUNTRies">
+    <Type Name="COUNTRy">
+      <Column Name="COUNTRY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COUNTRY_ISO" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="COUNTRY_UN" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="COUNTRY_DESCR" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="COUNTRy_CONTACT" Member="CONTACTs" ThisKey="COUNTRY_ID" OtherKey="COUNTRY_ID" Type="CONTACT" />
+      <Association Name="COUNTRy_EXCHANGE" Member="EXCHANGEs" ThisKey="COUNTRY_ID" OtherKey="COUNTRY_ID" Type="EXCHANGE" />
+      <Association Name="COUNTRy_ACCOUNT" Member="ACCOUNTs" ThisKey="COUNTRY_ID" OtherKey="COUNTRY_ID" Type="ACCOUNT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESK_EXCHANGES" Member="DESK_EXCHANGEs">
+    <Type Name="DESK_EXCHANGE">
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_INCLUDE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RANKING" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DESK_EXCHANGE_DESK_EXCHANGES_CLEARER" Member="DESK_EXCHANGES_CLEARERs" ThisKey="ACCOUNT_DESK_ID,EXCHANGE_ID,TRADE_CLASS_SHORT" OtherKey="ACCOUNT_DESK_ID,EXCHANGE_ID,TRADE_CLASS_SHORT" Type="DESK_EXCHANGES_CLEARER" />
+      <Association Name="EXCHANGE_DESK_EXCHANGE" Member="EXCHANGE" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="EXCHANGE" IsForeignKey="true" />
+      <Association Name="DESK_TRADE_CLASS_DESK_EXCHANGE" Member="DESK_TRADE_CLASS" ThisKey="ACCOUNT_DESK_ID,TRADE_CLASS_SHORT" OtherKey="ACCOUNT_DESK_ID,TRADE_CLASS_SHORT" Type="DESK_TRADE_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESK_EXCHANGES_CLEARERS" Member="DESK_EXCHANGES_CLEARERs">
+    <Type Name="DESK_EXCHANGES_CLEARER">
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CLEARER_ACCOUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLEARER_EXTRA1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLEARER_EXTRA2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLEARER_EXTRA3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MAIN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FORCE_TO_OTC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ISDA_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DESK_EXCHANGE_DESK_EXCHANGES_CLEARER" Member="DESK_EXCHANGE" ThisKey="ACCOUNT_DESK_ID,EXCHANGE_ID,TRADE_CLASS_SHORT" OtherKey="ACCOUNT_DESK_ID,EXCHANGE_ID,TRADE_CLASS_SHORT" Type="DESK_EXCHANGE" IsForeignKey="true" />
+      <Association Name="ISDA_TYPE_DESK_EXCHANGES_CLEARER" Member="ISDA_TYPE" ThisKey="ISDA_ID" OtherKey="ISDA_ID" Type="ISDA_TYPE" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_EXCHANGES_CLEARER" Member="ACCOUNT" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESK_QUALIFIER" Member="DESK_QUALIFIERs">
+    <Type Name="DESK_QUALIFIER">
+      <Column Name="DESK_QUALIFIER" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DESK_QUALIFIER_DESCR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DESK_QUALIFIER_DESK_QUALIFIER" Member="DESK_QUALIFIER2" ThisKey="DESK_QUALIFIER" OtherKey="DESK_QUALIFIER" Type="DESK_QUALIFIER" Cardinality="One" />
+      <Association Name="DESK_QUALIFIER_ACCOUNT_DESK" Member="ACCOUNT_DESKs" ThisKey="DESK_QUALIFIER" OtherKey="DESK_QUALIFIER" Type="ACCOUNT_DESK" />
+      <Association Name="DESK_QUALIFIER_DESK_QUALIFIER" Member="DESK_QUALIFIER1" ThisKey="DESK_QUALIFIER" OtherKey="DESK_QUALIFIER" Type="DESK_QUALIFIER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESK_TRADE_CONFOS" Member="DESK_TRADE_CONFOs">
+    <Type Name="DESK_TRADE_CONFO">
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CONTACT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SEND_TRADE_EMAIL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SEND_TRADE_RECAP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SEND_TRADE_SMS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CONTACT_DESK_TRADE_CONFO" Member="CONTACT" ThisKey="CONTACT_ID" OtherKey="CONTACT_ID" Type="CONTACT" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_DESK_TRADE_CONFO" Member="ACCOUNT_DESK" ThisKey="ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESK_TRADER_VOICE" Member="DESK_TRADER_VOICEs">
+    <Type Name="DESK_TRADER_VOICE">
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VOICE_SUBSCRIBE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTE_DESK_TRADER_VOICE" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_DESK_TRADER_VOICE" Member="TRADE_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+      <Association Name="VESSEL_CLASS_DESK_TRADER_VOICE" Member="VESSEL_CLASS" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="VESSEL_CLASS" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_DESK_TRADER_VOICE" Member="DESK_TRADER" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESK_TRADERS_IM_SUBSCRIPTIONS" Member="DESK_TRADERS_IM_SUBSCRIPTIONs">
+    <Type Name="DESK_TRADERS_IM_SUBSCRIPTION">
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IM_SUBSCRIBE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VOICE_SUBSCRIBE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="VOICE_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="IM_GATEWAY_DESK_TRADERS_IM_SUBSCRIPTION" Member="IM_GATEWAY" ThisKey="IM_ID" OtherKey="IM_ID" Type="IM_GATEWAY" IsForeignKey="true" />
+      <Association Name="ROUTE_DESK_TRADERS_IM_SUBSCRIPTION" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_DESK_TRADERS_IM_SUBSCRIPTION" Member="TRADE_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+      <Association Name="VESSEL_CLASS_DESK_TRADERS_IM_SUBSCRIPTION" Member="VESSEL_CLASS" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="VESSEL_CLASS" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_DESK_TRADERS_IM_SUBSCRIPTION" Member="DESK_TRADER" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EXCHANGE_HOLIDAYS" Member="EXCHANGE_HOLIDAYs">
+    <Type Name="EXCHANGE_HOLIDAY">
+      <Column Name="HOLIDAY" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EXCHANGE_ROUTE_PERIODS" Member="EXCHANGE_ROUTE_PERIODs">
+    <Type Name="EXCHANGE_ROUTE_PERIOD">
+      <Column Name="EXCHANGE_ROUTE_PERIOD_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EXCHANGE_ROUTE_PERIOD_DESCR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_MONTHS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_QUARTERS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_HALF_YEARS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_YEARS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FRONT_MAX_MONTHS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MC_0_1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MC_1_2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MC_0_1_2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="QC_0_1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="EXCHANGE_ROUTE_PERIOD_EXCHANGE_ROUTE" Member="EXCHANGE_ROUTEs" ThisKey="EXCHANGE_ROUTE_PERIOD_ID" OtherKey="EXCHANGE_ROUTE_PERIOD_ID" Type="EXCHANGE_ROUTE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EXCHANGE_ROUTES" Member="EXCHANGE_ROUTEs">
+    <Type Name="EXCHANGE_ROUTE">
+      <Column Name="EXCHANGE_ROUTES_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_ABRV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRADING_START" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="TRADING_END" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="TRADE_REGISTRATION_START" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="TRADE_REGISTRATION_END" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="TRADE_REGISTRATION_LAST" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="OPTIONS_AVAILABLE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_ROUTE_PERIOD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="EXCHANGE_ROUTE_PERIOD_EXCHANGE_ROUTE" Member="EXCHANGE_ROUTE_PERIOD" ThisKey="EXCHANGE_ROUTE_PERIOD_ID" OtherKey="EXCHANGE_ROUTE_PERIOD_ID" Type="EXCHANGE_ROUTE_PERIOD" IsForeignKey="true" />
+      <Association Name="EXCHANGE_EXCHANGE_ROUTE" Member="EXCHANGE" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="EXCHANGE" IsForeignKey="true" />
+      <Association Name="ROUTE_EXCHANGE_ROUTE" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="VESSEL_CLASS_EXCHANGE_ROUTE" Member="VESSEL_CLASS" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="VESSEL_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EXCHANGES" Member="EXCHANGEs">
+    <Type Name="EXCHANGE">
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EXCHANGE_NAME_FULL" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_NAME_SHORT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_OPEN_TIME" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_CLOSING_TIME" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="COUNTRY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_WEBSITE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EXCHANGE_GMT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HALF_DAYS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_CLEARER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FORCE_TO_OTC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ISDA_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_SHORTCUT" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="EXCHANGE_DESK_EXCHANGE" Member="DESK_EXCHANGEs" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="DESK_EXCHANGE" />
+      <Association Name="EXCHANGE_EXCHANGE_ROUTE" Member="EXCHANGE_ROUTEs" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="EXCHANGE_ROUTE" />
+      <Association Name="EXCHANGE_ORDERS_FFA_EXCHANGE" Member="ORDERS_FFA_EXCHANGEs" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="ORDERS_FFA_EXCHANGE" />
+      <Association Name="EXCHANGE_TRADE_CLASS_EXCHANGE" Member="TRADE_CLASS_EXCHANGEs" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="TRADE_CLASS_EXCHANGE" />
+      <Association Name="EXCHANGE_TRADES_FFA" Member="TRADES_FFAs" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="TRADES_FFA" />
+      <Association Name="COUNTRy_EXCHANGE" Member="COUNTRy" ThisKey="COUNTRY_ID" OtherKey="COUNTRY_ID" Type="COUNTRy" IsForeignKey="true" />
+      <Association Name="ISDA_TYPE_EXCHANGE" Member="ISDA_TYPE" ThisKey="ISDA_ID" OtherKey="ISDA_ID" Type="ISDA_TYPE" IsForeignKey="true" />
+      <Association Name="ACCOUNT_EXCHANGE" Member="ACCOUNT" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+      <Association Name="ACCOUNT_EXCHANGE1" Member="ACCOUNT1" ThisKey="DEFAULT_CLEARER_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FFAFIXINGS" Member="FFAFIXINGs">
+    <Type Name="FFAFIXING">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIXDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SPECIFIER" Type="System.Char" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PERIOD" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="YEAR" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="upsize_ts" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOLIDAYS" Member="HOLIDAYs">
+    <Type Name="HOLIDAY">
+      <Column Name="HOLIDAY" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IM_CLIENTS" Member="IM_CLIENTs">
+    <Type Name="IM_CLIENT">
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IM_ACCOUNT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OF_BARE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="IM_GATEWAY_IM_CLIENT" Member="IM_GATEWAY" ThisKey="IM_ID" OtherKey="IM_ID" Type="IM_GATEWAY" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_IM_CLIENT" Member="TRADE_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_IM_CLIENT" Member="DESK_TRADER" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IM_GATEWAYS" Member="IM_GATEWAYs">
+    <Type Name="IM_GATEWAY">
+      <Column Name="IM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IM_DES" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="IM_GATEWAY_DESK_TRADERS_IM_SUBSCRIPTION" Member="DESK_TRADERS_IM_SUBSCRIPTIONs" ThisKey="IM_ID" OtherKey="IM_ID" Type="DESK_TRADERS_IM_SUBSCRIPTION" />
+      <Association Name="IM_GATEWAY_IM_CLIENT" Member="IM_CLIENTs" ThisKey="IM_ID" OtherKey="IM_ID" Type="IM_CLIENT" />
+      <Association Name="IM_GATEWAY_IM_SERVER" Member="IM_SERVERs" ThisKey="IM_ID" OtherKey="IM_ID" Type="IM_SERVER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IM_ORDERSFFA" Member="IM_ORDERSFFAs">
+    <Type Name="IM_ORDERSFFA">
+      <Column Name="ORDER_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ORDER_THREAD" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ORDER_MARK" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ORDER_BUDDY" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ORDER_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_TEXT" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IMSERVICE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IM_SERVERS" Member="IM_SERVERs">
+    <Type Name="IM_SERVER">
+      <Column Name="IM_SERVERS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IM_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IM_SERVER_DES" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IM_CONNECT_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="IM_GATEWAY_IM_SERVER" Member="IM_GATEWAY" ThisKey="IM_ID" OtherKey="IM_ID" Type="IM_GATEWAY" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_IM_SERVER" Member="TRADE_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ISDA_TYPES" Member="ISDA_TYPEs">
+    <Type Name="ISDA_TYPE">
+      <Column Name="ISDA_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ISDA_DES" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ISDA_TYPE_DESK_EXCHANGES_CLEARER" Member="DESK_EXCHANGES_CLEARERs" ThisKey="ISDA_ID" OtherKey="ISDA_ID" Type="DESK_EXCHANGES_CLEARER" />
+      <Association Name="ISDA_TYPE_EXCHANGE" Member="EXCHANGEs" ThisKey="ISDA_ID" OtherKey="ISDA_ID" Type="EXCHANGE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LAST_DAY_RULE" Member="LAST_DAY_RULEs">
+    <Type Name="LAST_DAY_RULE">
+      <Column Name="LAST_DAY_RULE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LAST_DAY_RULE_DESCR" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LAST_DAY_RULE_LAST_DAY_RULE_MONTH" Member="LAST_DAY_RULE_MONTHs" ThisKey="LAST_DAY_RULE_ID" OtherKey="LAST_DAY_RULE_ID" Type="LAST_DAY_RULE_MONTH" />
+      <Association Name="LAST_DAY_RULE_ROUTE" Member="ROUTEs" ThisKey="LAST_DAY_RULE_ID" OtherKey="LAST_DAY_RULE_ID" Type="ROUTE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LAST_DAY_RULE_MONTHS" Member="LAST_DAY_RULE_MONTHs">
+    <Type Name="LAST_DAY_RULE_MONTH">
+      <Column Name="LAST_DAY_RULE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MONTH" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SETTLEMENT_DAY" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="LAST_DAY_RULE_LAST_DAY_RULE_MONTH" Member="LAST_DAY_RULE" ThisKey="LAST_DAY_RULE_ID" OtherKey="LAST_DAY_RULE_ID" Type="LAST_DAY_RULE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LAYOUTS" Member="LAYOUTs">
+    <Type Name="LAYOUT">
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FILENAME" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CONTENTS" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="DESK_TRADER_LAYOUT" Member="DESK_TRADER" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDER_GOOD_TILL" Member="ORDER_GOOD_TILLs">
+    <Type Name="ORDER_GOOD_TILL">
+      <Column Name="ORDER_GOOD_TILL_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ORDER_GOOD_TILL_DESCR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDER_STATUS" Member="ORDER_STATUS">
+    <Type Name="ORDER_STATUS">
+      <Column Name="ORDER_STATUS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ORDER_STATUS_DESCR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ORDER_STATUS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDERS_FFA_EXCHANGES" Member="ORDERS_FFA_EXCHANGEs">
+    <Type Name="ORDERS_FFA_EXCHANGE">
+      <Column Name="ORDER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="EXCHANGE_ORDERS_FFA_EXCHANGE" Member="EXCHANGE" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="EXCHANGE" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA_EXCHANGE" Member="ORDERS_FFA" ThisKey="ORDER_ID" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ACCOUNT_ORDERS_FFA_EXCHANGE" Member="ACCOUNT" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDERS_FFA_OPTIONS" Member="ORDERS_FFA_OPTIONs">
+    <Type Name="ORDERS_FFA_OPTION">
+      <Column Name="ORDER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ORDER_TYPE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PREV_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LINK_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDER_ORIGIN" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ORDER_STATUS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ORDER_QUALIFIER" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FOR_ACCOUNT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FOR_ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FOR_DESK_TRADER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDER_DATETIME" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="ORDER_BS" Type="System.Char" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRADE_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SHORTDES" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OPTION_TYPE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="STRIKE_PRICE1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STRIKE_PRICE2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SPOT_PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VOLATILITY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DELTA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORDER_QUANTITY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="QUANTITY_QUALIFIER" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="QUANTITY_FLEXIBLE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_QUALIFIER" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PARTIAL_FILL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ORDER_GT" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ORDER_TIME_LIMIT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDER_EXPIRES_AT" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="REQUIRE_DELTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PNC_ORDER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SINGLE_EXCHANGE_EXECUTION" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CLEARER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDER_EXCHANGES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDERS_FFA_OPTIONS_EXCHANGES" Member="ORDERS_FFA_OPTIONS_EXCHANGEs">
+    <Type Name="ORDERS_FFA_OPTIONS_EXCHANGE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ORDER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDERS_FFA_SPREADS" Member="ORDERS_FFA_SPREADs">
+    <Type Name="ORDERS_FFA_SPREAD">
+      <Column Name="SPREAD_ORDER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SPREAD_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_ID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_ID2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_DATETIME" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FOR_DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDERED_BY_WHO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PREVIOUS_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LIVE_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_QUALIFIER" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_FILL_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDN_TICK" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_BS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SHORTDES" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_INDICATED" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_TYPE" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_TRY_BETTER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FLEXIBLE_QUANTITY" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_GOOD_TILL" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_TIME_LIMIT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHOW_MY_NAME" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PNC_ORDER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="COUNTER_PARTY_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCK_DESK_TRADER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCK_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMMIT_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SINGLE_EXCHANGE_EXECUTION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="INFORM_DESK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NEGOTIATION_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCKED_BY_ORDER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CROSS_ORDER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CROSS_ORDER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROJECTED_ORDER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROJECTED_ORDER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD" Member="ORDERS_FFA_SPREAD1" ThisKey="SPREAD_ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA_SPREAD" Cardinality="One" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD1" Member="ORDERS_FFA_SPREADs" ThisKey="SPREAD_ORDER_ID" OtherKey="PREVIOUS_ORDER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD2" Member="ORDERS_FFA_SPREADs1" ThisKey="SPREAD_ORDER_ID" OtherKey="COUNTER_PARTY_ORDER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD3" Member="ORDERS_FFA_SPREADs2" ThisKey="SPREAD_ORDER_ID" OtherKey="LOCK_ORDER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD4" Member="ORDERS_FFA_SPREADs3" ThisKey="SPREAD_ORDER_ID" OtherKey="COMMIT_ORDER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD5" Member="ORDERS_FFA_SPREADs4" ThisKey="SPREAD_ORDER_ID" OtherKey="NEGOTIATION_ORDER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD6" Member="ORDERS_FFA_SPREADs5" ThisKey="SPREAD_ORDER_ID" OtherKey="LOCKED_BY_ORDER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD" Member="ORDERS_FFA_SPREAD" ThisKey="SPREAD_ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA_SPREAD" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD1" Member="ORDERS_FFA_SPREAD2" ThisKey="PREVIOUS_ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA_SPREAD" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD2" Member="ORDERS_FFA_SPREAD3" ThisKey="COUNTER_PARTY_ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA_SPREAD" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD3" Member="ORDERS_FFA_SPREAD4" ThisKey="LOCK_ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA_SPREAD" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD4" Member="ORDERS_FFA_SPREAD5" ThisKey="COMMIT_ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA_SPREAD" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD5" Member="ORDERS_FFA_SPREAD6" ThisKey="NEGOTIATION_ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA_SPREAD" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_SPREAD_ORDERS_FFA_SPREAD6" Member="ORDERS_FFA_SPREAD7" ThisKey="LOCKED_BY_ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA_SPREAD" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_ORDERS_FFA_SPREAD" Member="ACCOUNT_DESK" ThisKey="INFORM_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_ORDERS_FFA_SPREAD" Member="DESK_TRADER" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_ORDERS_FFA_SPREAD1" Member="DESK_TRADER1" ThisKey="FOR_DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_ORDERS_FFA_SPREAD2" Member="DESK_TRADER2" ThisKey="LOCK_DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERIOD_LIMIT_DESCRS" Member="PERIOD_LIMIT_DESCRs">
+    <Type Name="PERIOD_LIMIT_DESCR">
+      <Column Name="PERIOD_LIMIT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PERIOD_LIMIT_DESCR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="PERIOD_LIMIT_DESCR_COUNTERPARTY_LIMIT" Member="COUNTERPARTY_LIMITs" ThisKey="PERIOD_LIMIT" OtherKey="PERIOD_LIMIT" Type="COUNTERPARTY_LIMIT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUANTITY_QUALIFIERS" Member="QUANTITY_QUALIFIERs">
+    <Type Name="QUANTITY_QUALIFIER">
+      <Column Name="QUANTITY_QUALIFIER_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QUANTITY_QUALIFIER_DESCR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUANTITY_TYPES" Member="QUANTITY_TYPEs">
+    <Type Name="QUANTITY_TYPE">
+      <Column Name="QUANTITY_TYPE_ID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QUANTITY_TYPE_DES" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="QUANTITY_TYPE_ROUTE" Member="ROUTEs" ThisKey="QUANTITY_TYPE_ID" OtherKey="QUANTITY_TYPE" Type="ROUTE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUOTE_TYPES" Member="QUOTE_TYPEs">
+    <Type Name="QUOTE_TYPE">
+      <Column Name="QUOTE_TYPE_ID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QUOTE_TYPE_DES" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="QUOTE_TYPE_ROUTE" Member="ROUTEs" ThisKey="QUOTE_TYPE_ID" OtherKey="QUOTE_TYPE" Type="ROUTE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROUTES" Member="ROUTEs">
+    <Type Name="ROUTE">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUOTE_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CCY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROUTE_SHORT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ROUTE_DESCR" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BALTIC_ABRV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BALTIC_ABRV_FFA" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SETTLEMENT_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LOT_SIZE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SETTLEMENT_TICK" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PRICING_TICK" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="FULL_LOT_SIZE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FFA_TRADED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_DAY_RULE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_QUANTITY" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="SETTL_ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OPTIONS_TRADED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTE_WET_FLAT_RATE" Member="WET_FLAT_RATEs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="WET_FLAT_RATE" />
+      <Association Name="ROUTE_BALTIC_FORWARD_RATE" Member="BALTIC_FORWARD_RATEs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_FORWARD_RATE" />
+      <Association Name="ROUTE_BALTIC_FTP" Member="BALTIC_FTPs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_FTP" />
+      <Association Name="ROUTE_BALTIC_FTP_SETTLEMENT" Member="BALTIC_FTP_SETTLEMENTs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_FTP_SETTLEMENT" />
+      <Association Name="ROUTE_BALTIC_OPTION_VOLATILITy" Member="BALTIC_OPTION_VOLATILITies" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_OPTION_VOLATILITy" />
+      <Association Name="ROUTE_BALTIC_SPOT_RATE" Member="BALTIC_SPOT_RATEs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_SPOT_RATE" />
+      <Association Name="ROUTE_CONTRACT_SERy" Member="CONTRACT_SERies" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="CONTRACT_SERy" />
+      <Association Name="ROUTE_DESK_TRADER_VOICE" Member="DESK_TRADER_VOICEs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="DESK_TRADER_VOICE" />
+      <Association Name="ROUTE_DESK_TRADERS_IM_SUBSCRIPTION" Member="DESK_TRADERS_IM_SUBSCRIPTIONs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="DESK_TRADERS_IM_SUBSCRIPTION" />
+      <Association Name="ROUTE_EXCHANGE_ROUTE" Member="EXCHANGE_ROUTEs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="EXCHANGE_ROUTE" />
+      <Association Name="ROUTE_TRADE_CLASS_RATIO_SPREAD" Member="TRADE_CLASS_RATIO_SPREADs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID1" Type="TRADE_CLASS_RATIO_SPREAD" />
+      <Association Name="ROUTE_TRADE_CLASS_RATIO_SPREAD1" Member="TRADE_CLASS_RATIO_SPREADs1" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID2" Type="TRADE_CLASS_RATIO_SPREAD" />
+      <Association Name="ROUTE_TRADES_FFA" Member="TRADES_FFAs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="TRADES_FFA" />
+      <Association Name="ROUTE_TRADES_FFA1" Member="TRADES_FFAs1" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID2" Type="TRADES_FFA" />
+      <Association Name="ROUTE_VESSEL_CLASS" Member="VESSEL_CLASSes" ThisKey="ROUTE_ID" OtherKey="DEFAULT_ROUTE_ID" Type="VESSEL_CLASS" />
+      <Association Name="ROUTE_VESSEL_CLASS_SPREAD_MARGIN" Member="VESSEL_CLASS_SPREAD_MARGINs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="VESSEL_CLASS_SPREAD_MARGIN" />
+      <Association Name="ROUTE_ORDERS_FFA" Member="ORDERS_FFAs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID2" Type="ORDERS_FFA" />
+      <Association Name="ROUTE_ORDERS_FFA1" Member="ORDERS_FFAs1" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ORDERS_FFA" />
+      <Association Name="ROUTE_BALTIC_MONTHLY_SETTLEMENT" Member="BALTIC_MONTHLY_SETTLEMENTs" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_MONTHLY_SETTLEMENT" />
+      <Association Name="CCY_ROUTE" Member="CCY" ThisKey="CCY_ID" OtherKey="CCY_ID" Type="CCY" IsForeignKey="true" />
+      <Association Name="LAST_DAY_RULE_ROUTE" Member="LAST_DAY_RULE" ThisKey="LAST_DAY_RULE_ID" OtherKey="LAST_DAY_RULE_ID" Type="LAST_DAY_RULE" IsForeignKey="true" />
+      <Association Name="QUANTITY_TYPE_ROUTE" Member="QUANTITY_TYPE1" ThisKey="QUANTITY_TYPE" OtherKey="QUANTITY_TYPE_ID" Type="QUANTITY_TYPE" IsForeignKey="true" />
+      <Association Name="QUOTE_TYPE_ROUTE" Member="QUOTE_TYPE1" ThisKey="QUOTE_TYPE" OtherKey="QUOTE_TYPE_ID" Type="QUOTE_TYPE" IsForeignKey="true" />
+      <Association Name="VESSEL_CLASS_ROUTE" Member="VESSEL_CLASS" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="VESSEL_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SHOW_NAME_TYPES" Member="SHOW_NAME_TYPEs">
+    <Type Name="SHOW_NAME_TYPE">
+      <Column Name="SHOW_NAME_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SHOW_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="SHOW_NAME_TYPE_COUNTERPARTY_LIMIT" Member="COUNTERPARTY_LIMITs" ThisKey="SHOW_NAME_ID" OtherKey="CLEARED_SHOW_NAME" Type="COUNTERPARTY_LIMIT" />
+      <Association Name="SHOW_NAME_TYPE_COUNTERPARTY_LIMIT1" Member="COUNTERPARTY_LIMITs1" ThisKey="SHOW_NAME_ID" OtherKey="OTC_SHOW_NAME" Type="COUNTERPARTY_LIMIT" />
+      <Association Name="SHOW_NAME_TYPE_ACCOUNT_DESK" Member="ACCOUNT_DESKs" ThisKey="SHOW_NAME_ID" OtherKey="CLEARED_SHOW_NAME" Type="ACCOUNT_DESK" />
+      <Association Name="SHOW_NAME_TYPE_ACCOUNT_DESK1" Member="ACCOUNT_DESKs1" ThisKey="SHOW_NAME_ID" OtherKey="OTC_SHOW_NAME" Type="ACCOUNT_DESK" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMSINDEX" Member="SMSINDEXes">
+    <Type Name="SMSINDEX">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COMPANY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FIRST_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LAST_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MOBILE" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CAPES" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PMX" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SMX" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HSZ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RESPONSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SPOTFIXINGS" Member="SPOTFIXINGs">
+    <Type Name="SPOTFIXING">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIXDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="upsize_ts" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEST" Member="TESTs">
+    <Type Name="TEST">
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DES2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRADE_AUTHORITIES" Member="TRADE_AUTHORITies">
+    <Type Name="TRADE_AUTHORITy">
+      <Column Name="TRADE_AUTHORITY" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_AUTHORITY_DESCR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TRADE_AUTHORITy_DESK_TRADER" Member="DESK_TRADERs" ThisKey="TRADE_AUTHORITY" OtherKey="TRADE_AUTHORITY" Type="DESK_TRADER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRADE_CLASS_EXCHANGES" Member="TRADE_CLASS_EXCHANGEs">
+    <Type Name="TRADE_CLASS_EXCHANGE">
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RANKING_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="EXCHANGE_TRADE_CLASS_EXCHANGE" Member="EXCHANGE" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="EXCHANGE" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_TRADE_CLASS_EXCHANGE" Member="TRADE_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRADE_CLASS_RATIO_SPREADS" Member="TRADE_CLASS_RATIO_SPREADs">
+    <Type Name="TRADE_CLASS_RATIO_SPREAD">
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROUTE_ID1" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROUTE_ID2" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRICING_TICK" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PRECISION_TICK" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_MULTIPLIER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTE_TRADE_CLASS_RATIO_SPREAD" Member="ROUTE" ThisKey="ROUTE_ID1" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="ROUTE_TRADE_CLASS_RATIO_SPREAD1" Member="ROUTE1" ThisKey="ROUTE_ID2" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_TRADE_CLASS_RATIO_SPREAD" Member="TRADE_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRADE_CLASSES" Member="TRADE_CLASSes">
+    <Type Name="TRADE_CLASS">
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_DES" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TRADE_CLASS_BROKER_DESK_TRADE_CLASS" Member="BROKER_DESK_TRADE_CLASSes" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="BROKER_DESK_TRADE_CLASS" />
+      <Association Name="TRADE_CLASS_DESK_TRADER_VOICE" Member="DESK_TRADER_VOICEs" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="DESK_TRADER_VOICE" />
+      <Association Name="TRADE_CLASS_DESK_TRADERS_IM_SUBSCRIPTION" Member="DESK_TRADERS_IM_SUBSCRIPTIONs" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="DESK_TRADERS_IM_SUBSCRIPTION" />
+      <Association Name="TRADE_CLASS_IM_CLIENT" Member="IM_CLIENTs" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="IM_CLIENT" />
+      <Association Name="TRADE_CLASS_IM_SERVER" Member="IM_SERVERs" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="IM_SERVER" />
+      <Association Name="TRADE_CLASS_TRADE_CLASS_EXCHANGE" Member="TRADE_CLASS_EXCHANGEs" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS_EXCHANGE" />
+      <Association Name="TRADE_CLASS_TRADE_CLASS_RATIO_SPREAD" Member="TRADE_CLASS_RATIO_SPREADs" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS_RATIO_SPREAD" />
+      <Association Name="TRADE_CLASS_VESSEL_CLASS" Member="VESSEL_CLASSes" ThisKey="TRADE_CLASS_SHORT" OtherKey="DRYWET" Type="VESSEL_CLASS" />
+      <Association Name="TRADE_CLASS_DESK_TRADER" Member="DESK_TRADERs" ThisKey="TRADE_CLASS_SHORT" OtherKey="DEFAULT_MARKET" Type="DESK_TRADER" />
+      <Association Name="TRADE_CLASS_DESK_TRADE_CLASS" Member="DESK_TRADE_CLASSes" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="DESK_TRADE_CLASS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRADES_FFA" Member="TRADES_FFAs">
+    <Type Name="TRADES_FFA">
+      <Column Name="TRADE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ORDER_DATETIME" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_BOOKED_DATETIME" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="TRADE_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_QUALIFIER" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ORDER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRADE_BS1" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_BS2" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DESK_TRADER_ID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESK_TRADER_ID2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SHORTDES" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE_TRADED" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AMMENDED_PRICE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATE_STATUS" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="DAY_QUALIFIER" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MM21" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY21" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM22" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY22" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PRICE_TRADED2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DAY_QUALIFIER2" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="QUANTITY2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEAL_CONFIRMATION_SENT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SENT_TO_CLEARING" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CLEARING_ACCEPTED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEAL_CONFIRMATION_SENT2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SENT_TO_CLEARING2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CLEARING_ACCEPTED2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CLEARING_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CLEARING_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PNC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="INFORM_DESK_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INFORM_DESK_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_SYNTHETIC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SPREAD_TRADE_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BROKER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BROKER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SPREAD_TRADE_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TRADES_FFA_TRADES_FFA" Member="TRADES_FFAs" ThisKey="TRADE_ID" OtherKey="SPREAD_TRADE_ID1" Type="TRADES_FFA" />
+      <Association Name="TRADES_FFA_TRADES_FFA1" Member="TRADES_FFAs1" ThisKey="TRADE_ID" OtherKey="SPREAD_TRADE_ID2" Type="TRADES_FFA" />
+      <Association Name="EXCHANGE_TRADES_FFA" Member="EXCHANGE" ThisKey="EXCHANGE_ID" OtherKey="EXCHANGE_ID" Type="EXCHANGE" IsForeignKey="true" />
+      <Association Name="ROUTE_TRADES_FFA" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="ROUTE_TRADES_FFA1" Member="ROUTE1" ThisKey="ROUTE_ID2" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="TRADES_FFA_TRADES_FFA" Member="TRADES_FFA" ThisKey="SPREAD_TRADE_ID1" OtherKey="TRADE_ID" Type="TRADES_FFA" IsForeignKey="true" />
+      <Association Name="TRADES_FFA_TRADES_FFA1" Member="TRADES_FFA1" ThisKey="SPREAD_TRADE_ID2" OtherKey="TRADE_ID" Type="TRADES_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_TRADES_FFA" Member="ORDERS_FFA" ThisKey="ORDER_ID1" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_TRADES_FFA1" Member="ORDERS_FFA1" ThisKey="ORDER_ID2" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_TRADES_FFA" Member="ACCOUNT_DESK" ThisKey="INFORM_DESK_ID1" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_TRADES_FFA1" Member="ACCOUNT_DESK1" ThisKey="INFORM_DESK_ID2" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_TRADES_FFA" Member="DESK_TRADER" ThisKey="DESK_TRADER_ID1" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_TRADES_FFA1" Member="DESK_TRADER1" ThisKey="DESK_TRADER_ID2" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+      <Association Name="ACCOUNT_TRADES_FFA" Member="ACCOUNT" ThisKey="CLEARING_ID1" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+      <Association Name="ACCOUNT_TRADES_FFA1" Member="ACCOUNT1" ThisKey="CLEARING_ID2" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+      <Association Name="ACCOUNT_TRADES_FFA2" Member="ACCOUNT2" ThisKey="BROKER_ID1" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+      <Association Name="ACCOUNT_TRADES_FFA3" Member="ACCOUNT3" ThisKey="BROKER_ID2" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRADES_FFA_OPTIONS" Member="TRADES_FFA_OPTIONs">
+    <Type Name="TRADES_FFA_OPTION">
+      <Column Name="TRADE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_BOOKED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ORDER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRADE_BS1" Type="System.Char" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="TRADE_BS2" Type="System.Char" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="DESK_TRADER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESK_TRADER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SHORTDES" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OPTION_TYPE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="STRIKE_PRICE1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STRIKE_PRICE2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE_TRADED" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_TRADED1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_TRADED2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SPOT_PRICE_REF" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_VOLATILITY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRADE_DAYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCH" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SGX" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NOS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OTC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEAL_CONFIRMATION_SENT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEAL_CONFIRMATION_TEXT" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="NEEDS_SENT_TO_CLEARING" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SENT_TO_CLEARING" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SENT_WHEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CLEARING_RESPONDED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CLEARING_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRADE_STATUS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DELTA_TRADED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DELTA_DAYS" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FFA_TRADE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHOW_MY_TRADES_A" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SHOW_MY_TRADES_B" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="upsize_ts" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRADES_FFA_SPREADS" Member="TRADES_FFA_SPREADs">
+    <Type Name="TRADES_FFA_SPREAD">
+      <Column Name="TRADE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_BOOKED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ORDER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRADE_BS1" Type="System.Char" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="TRADE_BS2" Type="System.Char" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="DESK_TRADER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESK_TRADER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROUTE_ID_A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MM_A1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY_A1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM_A2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY_A2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SHORTDES_A" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ROUTE_ID_B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MM_B1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY_B1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM_B2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY_B2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SHORTDES_B" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHORTDES" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE_TRADED" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_TRADED_A" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FFA_TRADE_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE_TRADED_B" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FFA_TRADE_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE_TYPE" Type="System.Char" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="TRADE_DAYS_A" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TRADE_DAYS_B" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LCH" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SGX" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NOS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OTC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEAL_CONFIRMATION_SENT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEAL_CONFIRMATION_TEXT" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="NEEDS_SENT_TO_CLEARING" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SENT_TO_CLEARING" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SENT_WHEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CLEARING_RESPONDED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CLEARING_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRADE_STATUS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SHOW_MY_TRADES_A" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SHOW_MY_TRADES_B" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="upsize_ts" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VESSEL_CLASS" Member="VESSEL_CLASSes">
+    <Type Name="VESSEL_CLASS">
+      <Column Name="VESSEL_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DRYWET" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="WETSECTOR" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_ROUTE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="VESSEL_CLASS_DESK_TRADER_VOICE" Member="DESK_TRADER_VOICEs" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="DESK_TRADER_VOICE" />
+      <Association Name="VESSEL_CLASS_DESK_TRADERS_IM_SUBSCRIPTION" Member="DESK_TRADERS_IM_SUBSCRIPTIONs" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="DESK_TRADERS_IM_SUBSCRIPTION" />
+      <Association Name="VESSEL_CLASS_EXCHANGE_ROUTE" Member="EXCHANGE_ROUTEs" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="EXCHANGE_ROUTE" />
+      <Association Name="VESSEL_CLASS_ROUTE" Member="ROUTEs" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="ROUTE" />
+      <Association Name="VESSEL_CLASS_VESSEL_CLASS_SPREAD_MARGIN" Member="VESSEL_CLASS_SPREAD_MARGINs" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="VESSEL_CLASS_SPREAD_MARGIN" />
+      <Association Name="ROUTE_VESSEL_CLASS" Member="ROUTE" ThisKey="DEFAULT_ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_VESSEL_CLASS" Member="TRADE_CLASS" ThisKey="DRYWET" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_FORWARD_RATES_VIEW" Member="BALTIC_FORWARD_RATES_VIEWs">
+    <Type Name="BALTIC_FORWARD_RATES_VIEW">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NEXT_ROLLOVER_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="REPORTDESC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="YY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_SPOT_RATES_DIFF" Member="BALTIC_SPOT_RATES_DIFFs">
+    <Type Name="BALTIC_SPOT_RATES_DIFF">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PREV_FIXING" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FIXING_DIFF" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_DESK_ACTIVE_FUTURE_ORDERS" Member="VIEW_DESK_ACTIVE_FUTURE_ORDERs">
+    <Type Name="VIEW_DESK_ACTIVE_FUTURE_ORDER">
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FOR_DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIRSTNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LASTNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ORDER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_DATETIME" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="LIVE_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_BS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SHORTDES" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_SHORT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="VESSEL_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_INDICATED" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_TYPE_DES" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_DESK_ACTIVE_TRADE_CLASSES" Member="VIEW_DESK_ACTIVE_TRADE_CLASSes">
+    <Type Name="VIEW_DESK_ACTIVE_TRADE_CLASS">
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_CLASS" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_TRADES_FFA_DAILY" Member="VIEW_TRADES_FFA_DAILies">
+    <Type Name="VIEW_TRADES_FFA_DAILY">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRADE_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY21" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM21" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY22" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM22" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MINP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MAXP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OPENP" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CLOSEP" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_TRADES_FFA_HOURLY" Member="VIEW_TRADES_FFA_HOURLies">
+    <Type Name="VIEW_TRADES_FFA_HOURLY">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY21" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM21" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY22" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM22" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MINP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MAXP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OPENP" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CLOSEP" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VESSEL_CLASS_SPREAD_MARGINS" Member="VESSEL_CLASS_SPREAD_MARGINs">
+    <Type Name="VESSEL_CLASS_SPREAD_MARGIN">
+      <Column Name="VESSEL_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="YY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MARGIN" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTE_VESSEL_CLASS_SPREAD_MARGIN" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="VESSEL_CLASS_VESSEL_CLASS_SPREAD_MARGIN" Member="VESSEL_CLASS" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="VESSEL_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDERS_FFA" Member="ORDERS_FFAs">
+    <Type Name="ORDERS_FFA">
+      <Column Name="ORDER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ORDER_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_DATETIME" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FOR_DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDERED_BY_WHO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PREVIOUS_ORDER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LIVE_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_QUALIFIER" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_BS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SHORTDES" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_INDICATED" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_TYPE" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_TRY_BETTER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DAY_QUALIFIER" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="FLEXIBLE_QUANTITY" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_STEP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_GOOD_TILL" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_TIME_LIMIT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHOW_MY_NAME" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PNC_ORDER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SINGLE_EXCHANGE_EXECUTION" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_TRADED_ON_EXCHANGE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CLEARER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDER_EXCHANGES" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="THREAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COUNTER_PARTY_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCK_DESK_TRADER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCK_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMMIT_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INFORM_DESK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NEGOTIATION_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCKED_BY_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SPREAD_LEG_TYPE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SPREAD_ORDER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CROSS_ORDER_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CROSS_ORDER_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROUTE_ID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MM21" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY21" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM22" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY22" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SHORTDES2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE_INDICATED2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_TYPE2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PRICE_TRY_BETTER2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ORDER_QUANTITY2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DAY_QUALIFIER2" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="FLEXIBLE_QUANTITY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ORDER_EXCHANGES2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="STRIKE_PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ICEBERG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BROKER_INVISIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA_EXCHANGE" Member="ORDERS_FFA_EXCHANGEs" ThisKey="ORDER_ID" OtherKey="ORDER_ID" Type="ORDERS_FFA_EXCHANGE" />
+      <Association Name="ORDERS_FFA_TRADES_FFA" Member="TRADES_FFAs" ThisKey="ORDER_ID" OtherKey="ORDER_ID1" Type="TRADES_FFA" />
+      <Association Name="ORDERS_FFA_TRADES_FFA1" Member="TRADES_FFAs1" ThisKey="ORDER_ID" OtherKey="ORDER_ID2" Type="TRADES_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA" Member="ORDERS_FFAs" ThisKey="ORDER_ID" OtherKey="COUNTER_PARTY_ORDER_ID" Type="ORDERS_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA1" Member="ORDERS_FFAs1" ThisKey="ORDER_ID" OtherKey="LOCKED_BY_ORDER_ID" Type="ORDERS_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA2" Member="ORDERS_FFAs2" ThisKey="ORDER_ID" OtherKey="SPREAD_ORDER_ID" Type="ORDERS_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA3" Member="ORDERS_FFAs3" ThisKey="ORDER_ID" OtherKey="LOCK_ORDER_ID" Type="ORDERS_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA4" Member="ORDERS_FFAs4" ThisKey="ORDER_ID" OtherKey="COMMIT_ORDER_ID" Type="ORDERS_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA5" Member="ORDERS_FFAs5" ThisKey="ORDER_ID" OtherKey="NEGOTIATION_ORDER_ID" Type="ORDERS_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA6" Member="ORDERS_FFAs6" ThisKey="ORDER_ID" OtherKey="CROSS_ORDER_ID1" Type="ORDERS_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA7" Member="ORDERS_FFAs7" ThisKey="ORDER_ID" OtherKey="CROSS_ORDER_ID2" Type="ORDERS_FFA" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA" Member="ORDERS_FFA" ThisKey="COUNTER_PARTY_ORDER_ID" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA1" Member="ORDERS_FFA1" ThisKey="LOCKED_BY_ORDER_ID" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA2" Member="ORDERS_FFA2" ThisKey="SPREAD_ORDER_ID" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA3" Member="ORDERS_FFA3" ThisKey="LOCK_ORDER_ID" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA4" Member="ORDERS_FFA4" ThisKey="COMMIT_ORDER_ID" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA5" Member="ORDERS_FFA5" ThisKey="NEGOTIATION_ORDER_ID" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA6" Member="ORDERS_FFA6" ThisKey="CROSS_ORDER_ID1" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ORDERS_FFA_ORDERS_FFA7" Member="ORDERS_FFA7" ThisKey="CROSS_ORDER_ID2" OtherKey="ORDER_ID" Type="ORDERS_FFA" IsForeignKey="true" />
+      <Association Name="ROUTE_ORDERS_FFA" Member="ROUTE" ThisKey="ROUTE_ID2" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="ROUTE_ORDERS_FFA1" Member="ROUTE1" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_ORDERS_FFA" Member="ACCOUNT_DESK" ThisKey="INFORM_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_ORDERS_FFA" Member="DESK_TRADER" ThisKey="LOCK_DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_ORDERS_FFA1" Member="DESK_TRADER1" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+      <Association Name="DESK_TRADER_ORDERS_FFA2" Member="DESK_TRADER2" ThisKey="FOR_DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER" IsForeignKey="true" />
+      <Association Name="ACCOUNT_ORDERS_FFA" Member="ACCOUNT" ThisKey="CLEARER_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACCOUNT_DESKS" Member="ACCOUNT_DESKs">
+    <Type Name="ACCOUNT_DESK">
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESK_DESCR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DESK_QUALIFIER" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DESK_ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SEE_OTHER_DESKS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AMMEND_OTHER_DESKS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CLEARED_SHOW_NAME" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OTC_SHOW_NAME" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SUSPENDED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LOST_CONNECTION" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="WAIT_CONNECTION" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_NUKE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_SEE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_BI" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ACCOUNT_DESK_BROKER_DESK_TRADE_CLASS" Member="BROKER_DESK_TRADE_CLASSes" ThisKey="ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="BROKER_DESK_TRADE_CLASS" />
+      <Association Name="ACCOUNT_DESK_COUNTERPARTY_LIMIT" Member="COUNTERPARTY_LIMITs" ThisKey="ACCOUNT_DESK_ID" OtherKey="PRI_ACCOUNT_DESK_ID" Type="COUNTERPARTY_LIMIT" />
+      <Association Name="ACCOUNT_DESK_COUNTERPARTY_LIMIT1" Member="COUNTERPARTY_LIMITs1" ThisKey="ACCOUNT_DESK_ID" OtherKey="SEC_ACCOUNT_DESK_ID" Type="COUNTERPARTY_LIMIT" />
+      <Association Name="ACCOUNT_DESK_DESK_TRADE_CONFO" Member="DESK_TRADE_CONFOs" ThisKey="ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="DESK_TRADE_CONFO" />
+      <Association Name="ACCOUNT_DESK_ORDERS_FFA_SPREAD" Member="ORDERS_FFA_SPREADs" ThisKey="ACCOUNT_DESK_ID" OtherKey="INFORM_DESK_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="ACCOUNT_DESK_TRADES_FFA" Member="TRADES_FFAs" ThisKey="ACCOUNT_DESK_ID" OtherKey="INFORM_DESK_ID1" Type="TRADES_FFA" />
+      <Association Name="ACCOUNT_DESK_TRADES_FFA1" Member="TRADES_FFAs1" ThisKey="ACCOUNT_DESK_ID" OtherKey="INFORM_DESK_ID2" Type="TRADES_FFA" />
+      <Association Name="ACCOUNT_DESK_ORDERS_FFA" Member="ORDERS_FFAs" ThisKey="ACCOUNT_DESK_ID" OtherKey="INFORM_DESK_ID" Type="ORDERS_FFA" />
+      <Association Name="ACCOUNT_DESK_DESK_TRADER" Member="DESK_TRADERs" ThisKey="ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="DESK_TRADER" />
+      <Association Name="ACCOUNT_DESK_DESK_TRADE_CLASS" Member="DESK_TRADE_CLASSes" ThisKey="ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="DESK_TRADE_CLASS" />
+      <Association Name="DESK_QUALIFIER_ACCOUNT_DESK" Member="DESK_QUALIFIER1" ThisKey="DESK_QUALIFIER" OtherKey="DESK_QUALIFIER" Type="DESK_QUALIFIER" IsForeignKey="true" />
+      <Association Name="SHOW_NAME_TYPE_ACCOUNT_DESK" Member="SHOW_NAME_TYPE" ThisKey="CLEARED_SHOW_NAME" OtherKey="SHOW_NAME_ID" Type="SHOW_NAME_TYPE" IsForeignKey="true" />
+      <Association Name="SHOW_NAME_TYPE_ACCOUNT_DESK1" Member="SHOW_NAME_TYPE1" ThisKey="OTC_SHOW_NAME" OtherKey="SHOW_NAME_ID" Type="SHOW_NAME_TYPE" IsForeignKey="true" />
+      <Association Name="ACCOUNT_ACCOUNT_DESK" Member="ACCOUNT" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SERVER_INFO" Member="SERVER_INFOs">
+    <Type Name="SERVER_INFO">
+      <Column Name="SERVER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SERVER_ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_CONNECTION_TIME" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="SERVICE_ON" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SERVICE_OF_CONNECTED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SERVICE_START_HOUR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SERVICE_END_HOUR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESK_TRADERS" Member="DESK_TRADERs">
+    <Type Name="DESK_TRADER">
+      <Column Name="DESK_TRADER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CONTACT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AUTHORISED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AUTHORISATION_RECEIVED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIVED_WHEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXPIRES_WHEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRADE_AUTHORITY" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EXPIRED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OF_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OF_PASSWORD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IS_DESK_ADMIN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SUSPENDED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TOOLBAR_SHOW" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_MARKET" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_SHOW_NAMES" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GRID_MARKET_DEPTH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BID_COLOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OFFER_COLOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FONT_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CHANGE_PSW" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AGREES_TO_STATEMENT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="INDICATIVES_VISIBLE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ONE_CLICK_HIT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DESK_TRADER_DESK_TRADER_VOICE" Member="DESK_TRADER_VOICEs" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADER_VOICE" />
+      <Association Name="DESK_TRADER_DESK_TRADERS_IM_SUBSCRIPTION" Member="DESK_TRADERS_IM_SUBSCRIPTIONs" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="DESK_TRADERS_IM_SUBSCRIPTION" />
+      <Association Name="DESK_TRADER_IM_CLIENT" Member="IM_CLIENTs" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="IM_CLIENT" />
+      <Association Name="DESK_TRADER_LAYOUT" Member="LAYOUTs" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="LAYOUT" />
+      <Association Name="DESK_TRADER_ORDERS_FFA_SPREAD" Member="ORDERS_FFA_SPREADs" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="DESK_TRADER_ORDERS_FFA_SPREAD1" Member="ORDERS_FFA_SPREADs1" ThisKey="DESK_TRADER_ID" OtherKey="FOR_DESK_TRADER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="DESK_TRADER_ORDERS_FFA_SPREAD2" Member="ORDERS_FFA_SPREADs2" ThisKey="DESK_TRADER_ID" OtherKey="LOCK_DESK_TRADER_ID" Type="ORDERS_FFA_SPREAD" />
+      <Association Name="DESK_TRADER_TRADES_FFA" Member="TRADES_FFAs" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID1" Type="TRADES_FFA" />
+      <Association Name="DESK_TRADER_TRADES_FFA1" Member="TRADES_FFAs1" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID2" Type="TRADES_FFA" />
+      <Association Name="DESK_TRADER_ORDERS_FFA" Member="ORDERS_FFAs" ThisKey="DESK_TRADER_ID" OtherKey="LOCK_DESK_TRADER_ID" Type="ORDERS_FFA" />
+      <Association Name="DESK_TRADER_ORDERS_FFA1" Member="ORDERS_FFAs1" ThisKey="DESK_TRADER_ID" OtherKey="DESK_TRADER_ID" Type="ORDERS_FFA" />
+      <Association Name="DESK_TRADER_ORDERS_FFA2" Member="ORDERS_FFAs2" ThisKey="DESK_TRADER_ID" OtherKey="FOR_DESK_TRADER_ID" Type="ORDERS_FFA" />
+      <Association Name="ACCOUNT_DESK_DESK_TRADER" Member="ACCOUNT_DESK" ThisKey="ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+      <Association Name="CONTACT_DESK_TRADER" Member="CONTACT" ThisKey="CONTACT_ID" OtherKey="CONTACT_ID" Type="CONTACT" IsForeignKey="true" />
+      <Association Name="TRADE_AUTHORITy_DESK_TRADER" Member="TRADE_AUTHORITy1" ThisKey="TRADE_AUTHORITY" OtherKey="TRADE_AUTHORITY" Type="TRADE_AUTHORITy" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_DESK_TRADER" Member="TRADE_CLASS" ThisKey="DEFAULT_MARKET" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_TRADER" Member="ACCOUNT" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESK_TRADE_CLASSES" Member="DESK_TRADE_CLASSes">
+    <Type Name="DESK_TRADE_CLASS">
+      <Column Name="ACCOUNT_DESK_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BROKER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DESK_TRADE_CLASS_DESK_EXCHANGE" Member="DESK_EXCHANGEs" ThisKey="ACCOUNT_DESK_ID,TRADE_CLASS_SHORT" OtherKey="ACCOUNT_DESK_ID,TRADE_CLASS_SHORT" Type="DESK_EXCHANGE" />
+      <Association Name="ACCOUNT_DESK_DESK_TRADE_CLASS" Member="ACCOUNT_DESK" ThisKey="ACCOUNT_DESK_ID" OtherKey="ACCOUNT_DESK_ID" Type="ACCOUNT_DESK" IsForeignKey="true" />
+      <Association Name="TRADE_CLASS_DESK_TRADE_CLASS" Member="TRADE_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASS" IsForeignKey="true" />
+      <Association Name="ACCOUNT_DESK_TRADE_CLASS" Member="ACCOUNT" ThisKey="BROKER_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACCOUNTS" Member="ACCOUNTs">
+    <Type Name="ACCOUNT">
+      <Column Name="ACCOUNT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FULL_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHORT_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STREET" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CITY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REGION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ZIPCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COUNTRY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TEL_B1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEL_B2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FAX_B" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WEBSITE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACCOUNT_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_AUTHORISED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_CCY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CAN_DELETE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BROKER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUSPENDED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_BROKER_CLIENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ACCOUNT_ACCOUNTS_ADMIN" Member="ACCOUNTS_ADMINs" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNTS_ADMIN" />
+      <Association Name="ACCOUNT_ACCOUNTS_CONTACT" Member="ACCOUNTS_CONTACTs" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNTS_CONTACT" />
+      <Association Name="ACCOUNT_CONTRACT_SERy" Member="CONTRACT_SERies" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="CONTRACT_SERy" />
+      <Association Name="ACCOUNT_DESK_EXCHANGES_CLEARER" Member="DESK_EXCHANGES_CLEARERs" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="DESK_EXCHANGES_CLEARER" />
+      <Association Name="ACCOUNT_EXCHANGE" Member="EXCHANGEs" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="EXCHANGE" />
+      <Association Name="ACCOUNT_EXCHANGE1" Member="EXCHANGEs1" ThisKey="ACCOUNT_ID" OtherKey="DEFAULT_CLEARER_ID" Type="EXCHANGE" />
+      <Association Name="ACCOUNT_ORDERS_FFA_EXCHANGE" Member="ORDERS_FFA_EXCHANGEs" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ORDERS_FFA_EXCHANGE" />
+      <Association Name="ACCOUNT_TRADES_FFA" Member="TRADES_FFAs" ThisKey="ACCOUNT_ID" OtherKey="CLEARING_ID1" Type="TRADES_FFA" />
+      <Association Name="ACCOUNT_TRADES_FFA1" Member="TRADES_FFAs1" ThisKey="ACCOUNT_ID" OtherKey="CLEARING_ID2" Type="TRADES_FFA" />
+      <Association Name="ACCOUNT_TRADES_FFA2" Member="TRADES_FFAs2" ThisKey="ACCOUNT_ID" OtherKey="BROKER_ID1" Type="TRADES_FFA" />
+      <Association Name="ACCOUNT_TRADES_FFA3" Member="TRADES_FFAs3" ThisKey="ACCOUNT_ID" OtherKey="BROKER_ID2" Type="TRADES_FFA" />
+      <Association Name="ACCOUNT_ORDERS_FFA" Member="ORDERS_FFAs" ThisKey="ACCOUNT_ID" OtherKey="CLEARER_ID" Type="ORDERS_FFA" />
+      <Association Name="ACCOUNT_ACCOUNT_DESK" Member="ACCOUNT_DESKs" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT_DESK" />
+      <Association Name="ACCOUNT_DESK_TRADER" Member="DESK_TRADERs" ThisKey="ACCOUNT_ID" OtherKey="ACCOUNT_ID" Type="DESK_TRADER" />
+      <Association Name="ACCOUNT_DESK_TRADE_CLASS" Member="DESK_TRADE_CLASSes" ThisKey="ACCOUNT_ID" OtherKey="BROKER_ID" Type="DESK_TRADE_CLASS" />
+      <Association Name="ACCOUNT_ACCOUNT" Member="ACCOUNTs" ThisKey="ACCOUNT_ID" OtherKey="BROKER_ID" Type="ACCOUNT" />
+      <Association Name="ACCOUNT_ACCOUNT1" Member="ACCOUNTs1" ThisKey="ACCOUNT_ID" OtherKey="DEFAULT_BROKER_CLIENT" Type="ACCOUNT" />
+      <Association Name="ACCOUNT_TYPE_ACCOUNT" Member="ACCOUNT_TYPE" ThisKey="ACCOUNT_TYPE_ID" OtherKey="ACCOUNT_TYPE_ID" Type="ACCOUNT_TYPE" IsForeignKey="true" />
+      <Association Name="ACCOUNT_ACCOUNT" Member="ACCOUNT" ThisKey="BROKER_ID" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+      <Association Name="CCY_ACCOUNT" Member="CCY" ThisKey="DEFAULT_CCY" OtherKey="CCY_ID" Type="CCY" IsForeignKey="true" />
+      <Association Name="COUNTRy_ACCOUNT" Member="COUNTRy" ThisKey="COUNTRY_ID" OtherKey="COUNTRY_ID" Type="COUNTRy" IsForeignKey="true" />
+      <Association Name="ACCOUNT_ACCOUNT1" Member="ACCOUNT1" ThisKey="DEFAULT_BROKER_CLIENT" OtherKey="ACCOUNT_ID" Type="ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_MONTHLY_SETTLEMENTS" Member="BALTIC_MONTHLY_SETTLEMENTs">
+    <Type Name="BALTIC_MONTHLY_SETTLEMENT">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXINGEM" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING7" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING10" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING_MONTH" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING_YEAR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTE_BALTIC_MONTHLY_SETTLEMENT" Member="ROUTE" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INTEREST_RATES" Member="INTEREST_RATEs">
+    <Type Name="INTEREST_RATE">
+      <Column Name="CCY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PERIOD" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RATE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="CCY_INTEREST_RATE" Member="CCY" ThisKey="CCY_ID" OtherKey="CCY_ID" Type="CCY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetTraderNameWithRules" Method="GetTraderNameWithRules" IsComposable="true">
+    <Parameter Name="TraderID" Parameter="traderID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ForTraderID" Parameter="forTraderID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ExchangeID" Parameter="exchangeID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.TradeConfos" Method="TradeConfos" IsComposable="true">
+    <Parameter Name="TradeId" Parameter="tradeId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="TradeConfosResult">
+      <Column Name="TRADE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CONFIRMATION_SENT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SIDE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SPREAD_TRADE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRADE_BS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TRADER_ID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRADER_ID2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE_TRADED" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_TRADED2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IS_SYNTHETIC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DAY_QUALIFIER" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DAY_QUALIFIER2" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="QUANTITY2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROUTE_ID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_ID2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SHORTDES" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SEND_TRADE_EMAIL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SEND_TRADE_SMS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TEL_MBL1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_SHORT1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TICK1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QUOTEDES1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QDES1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_SHORT2" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TICK2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QUOTEDES2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QDES2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EXCHANGE_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CPT" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.HasOrdersTrades" Method="HasOrdersTrades" IsComposable="true">
+    <Parameter Name="DeskTraderId" Parameter="deskTraderId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HasOrdersTradesClearers" Method="HasOrdersTradesClearers" IsComposable="true">
+    <Parameter Name="AccountDeskId" Parameter="accountDeskId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ExchangeId" Parameter="exchangeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccountId" Parameter="accountId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

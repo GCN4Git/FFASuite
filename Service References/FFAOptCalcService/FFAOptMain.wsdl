@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FFAOptMain" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" />
+      <xsd:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" />
+      <xsd:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFFAOptMain_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_AmmendReportedTrade_InputMessage">
+    <wsdl:part name="parameters" element="tns:AmmendReportedTrade" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_AmmendReportedTrade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AmmendReportedTradeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetDailyTrades_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDailyTrades" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetDailyTrades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDailyTradesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_RefreshIntradayData_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshIntradayData" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_RefreshIntradayData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshIntradayDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetMarketView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketView" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetMarketView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_SwapFixings_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwapFixings" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_SwapFixings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwapFixingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_BuildGDPostFixing_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuildGDPostFixing" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_KeepAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:KeepAlive" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_Graph_InputMessage">
+    <wsdl:part name="parameters" element="tns:Graph" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_Graph_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GraphResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_SpotFixings_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpotFixings" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_SpotFixings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpotFixingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetMVPeriods_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMVPeriods" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetMVPeriods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMVPeriodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_CheckCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCredentials" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_CheckCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_CheckLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLicense" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_CheckLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_ServerDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServerDate" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_ServerDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServerDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_ServerDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServerDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_ServerDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServerDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetTradeClases_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTradeClases" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetTradeClases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTradeClasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetVesselClases_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVesselClases" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetVesselClases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVesselClasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetRoutes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutes" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetRoutes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetHolidays_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHolidays" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetHolidays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHolidaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastVolFixDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:LastVolFixDate" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastVolFixDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LastVolFixDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastInterestFixDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:LastInterestFixDate" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastInterestFixDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LastInterestFixDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastSwapFixDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:LastSwapFixDate" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastSwapFixDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LastSwapFixDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastSpotFixDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:LastSpotFixDate" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastSpotFixDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LastSpotFixDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_RouteSpotAverage_InputMessage">
+    <wsdl:part name="parameters" element="tns:RouteSpotAverage" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_RouteSpotAverage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RouteSpotAverageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_InterestRates_InputMessage">
+    <wsdl:part name="parameters" element="tns:InterestRates" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_InterestRates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InterestRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastSwapFixing_InputMessage">
+    <wsdl:part name="parameters" element="tns:LastSwapFixing" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_LastSwapFixing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LastSwapFixingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_SwapData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwapData" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_SwapData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwapDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_ROUTE_DETAIL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ROUTE_DETAIL" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_ROUTE_DETAIL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ROUTE_DETAILResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetSwapFixingsHistorical_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSwapFixingsHistorical" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetSwapFixingsHistorical_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSwapFixingsHistoricalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_SwapVolatility_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwapVolatility" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_SwapVolatility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwapVolatilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_QueryRouteData_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryRouteData" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_QueryRouteData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryRouteDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_ServiceCommands_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceCommands" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_ServiceCommands_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceCommandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetFFASuiteCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFFASuiteCredentials" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetFFASuiteCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFFASuiteCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetFFAMessageClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFFAMessageClass" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetFFAMessageClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFFAMessageClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetVolRecordTypeEnum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVolRecordTypeEnum" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetVolRecordTypeEnum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVolRecordTypeEnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetMessageEnum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageEnum" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetMessageEnum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageEnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetOrderTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderTypes" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetOrderTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetRouteAvgTypeEnum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteAvgTypeEnum" />
+  </wsdl:message>
+  <wsdl:message name="IFFAOptMain_GetRouteAvgTypeEnum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteAvgTypeEnumResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFFAOptMain">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetData" message="tns:IFFAOptMain_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetDataResponse" message="tns:IFFAOptMain_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetDataUsingDataContract" message="tns:IFFAOptMain_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetDataUsingDataContractResponse" message="tns:IFFAOptMain_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AmmendReportedTrade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/AmmendReportedTrade" message="tns:IFFAOptMain_AmmendReportedTrade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/AmmendReportedTradeResponse" message="tns:IFFAOptMain_AmmendReportedTrade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyTrades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetDailyTrades" message="tns:IFFAOptMain_GetDailyTrades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetDailyTradesResponse" message="tns:IFFAOptMain_GetDailyTrades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshIntradayData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/RefreshIntradayData" message="tns:IFFAOptMain_RefreshIntradayData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/RefreshIntradayDataResponse" message="tns:IFFAOptMain_RefreshIntradayData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetMarketView" message="tns:IFFAOptMain_GetMarketView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetMarketViewResponse" message="tns:IFFAOptMain_GetMarketView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwapFixings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/SwapFixings" message="tns:IFFAOptMain_SwapFixings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/SwapFixingsResponse" message="tns:IFFAOptMain_SwapFixings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuildGDPostFixing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/BuildGDPostFixing" message="tns:IFFAOptMain_BuildGDPostFixing_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KeepAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/KeepAlive" message="tns:IFFAOptMain_KeepAlive_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Graph">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/Graph" message="tns:IFFAOptMain_Graph_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GraphResponse" message="tns:IFFAOptMain_Graph_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpotFixings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/SpotFixings" message="tns:IFFAOptMain_SpotFixings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/SpotFixingsResponse" message="tns:IFFAOptMain_SpotFixings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMVPeriods">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetMVPeriods" message="tns:IFFAOptMain_GetMVPeriods_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetMVPeriodsResponse" message="tns:IFFAOptMain_GetMVPeriods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCredentials">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/CheckCredentials" message="tns:IFFAOptMain_CheckCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/CheckCredentialsResponse" message="tns:IFFAOptMain_CheckCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/RegisterUser" message="tns:IFFAOptMain_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/RegisterUserResponse" message="tns:IFFAOptMain_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/CheckLicense" message="tns:IFFAOptMain_CheckLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/CheckLicenseResponse" message="tns:IFFAOptMain_CheckLicense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/ServerDate" message="tns:IFFAOptMain_ServerDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/ServerDateResponse" message="tns:IFFAOptMain_ServerDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/ServerDateTime" message="tns:IFFAOptMain_ServerDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/ServerDateTimeResponse" message="tns:IFFAOptMain_ServerDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTradeClases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetTradeClases" message="tns:IFFAOptMain_GetTradeClases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetTradeClasesResponse" message="tns:IFFAOptMain_GetTradeClases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVesselClases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetVesselClases" message="tns:IFFAOptMain_GetVesselClases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetVesselClasesResponse" message="tns:IFFAOptMain_GetVesselClases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetRoutes" message="tns:IFFAOptMain_GetRoutes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetRoutesResponse" message="tns:IFFAOptMain_GetRoutes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHolidays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetHolidays" message="tns:IFFAOptMain_GetHolidays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetHolidaysResponse" message="tns:IFFAOptMain_GetHolidays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LastVolFixDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/LastVolFixDate" message="tns:IFFAOptMain_LastVolFixDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/LastVolFixDateResponse" message="tns:IFFAOptMain_LastVolFixDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LastInterestFixDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/LastInterestFixDate" message="tns:IFFAOptMain_LastInterestFixDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/LastInterestFixDateResponse" message="tns:IFFAOptMain_LastInterestFixDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LastSwapFixDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/LastSwapFixDate" message="tns:IFFAOptMain_LastSwapFixDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/LastSwapFixDateResponse" message="tns:IFFAOptMain_LastSwapFixDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LastSpotFixDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/LastSpotFixDate" message="tns:IFFAOptMain_LastSpotFixDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/LastSpotFixDateResponse" message="tns:IFFAOptMain_LastSpotFixDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RouteSpotAverage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/RouteSpotAverage" message="tns:IFFAOptMain_RouteSpotAverage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/RouteSpotAverageResponse" message="tns:IFFAOptMain_RouteSpotAverage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InterestRates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/InterestRates" message="tns:IFFAOptMain_InterestRates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/InterestRatesResponse" message="tns:IFFAOptMain_InterestRates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LastSwapFixing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/LastSwapFixing" message="tns:IFFAOptMain_LastSwapFixing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/LastSwapFixingResponse" message="tns:IFFAOptMain_LastSwapFixing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwapData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/SwapData" message="tns:IFFAOptMain_SwapData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/SwapDataResponse" message="tns:IFFAOptMain_SwapData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ROUTE_DETAIL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/ROUTE_DETAIL" message="tns:IFFAOptMain_ROUTE_DETAIL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/ROUTE_DETAILResponse" message="tns:IFFAOptMain_ROUTE_DETAIL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSwapFixingsHistorical">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetSwapFixingsHistorical" message="tns:IFFAOptMain_GetSwapFixingsHistorical_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetSwapFixingsHistoricalResponse" message="tns:IFFAOptMain_GetSwapFixingsHistorical_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwapVolatility">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/SwapVolatility" message="tns:IFFAOptMain_SwapVolatility_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/SwapVolatilityResponse" message="tns:IFFAOptMain_SwapVolatility_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryRouteData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/QueryRouteData" message="tns:IFFAOptMain_QueryRouteData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/QueryRouteDataResponse" message="tns:IFFAOptMain_QueryRouteData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceCommands">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/ServiceCommands" message="tns:IFFAOptMain_ServiceCommands_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/ServiceCommandsResponse" message="tns:IFFAOptMain_ServiceCommands_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFFASuiteCredentials">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetFFASuiteCredentials" message="tns:IFFAOptMain_GetFFASuiteCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetFFASuiteCredentialsResponse" message="tns:IFFAOptMain_GetFFASuiteCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFFAMessageClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetFFAMessageClass" message="tns:IFFAOptMain_GetFFAMessageClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetFFAMessageClassResponse" message="tns:IFFAOptMain_GetFFAMessageClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVolRecordTypeEnum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetVolRecordTypeEnum" message="tns:IFFAOptMain_GetVolRecordTypeEnum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetVolRecordTypeEnumResponse" message="tns:IFFAOptMain_GetVolRecordTypeEnum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageEnum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetMessageEnum" message="tns:IFFAOptMain_GetMessageEnum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetMessageEnumResponse" message="tns:IFFAOptMain_GetMessageEnum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetOrderTypes" message="tns:IFFAOptMain_GetOrderTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetOrderTypesResponse" message="tns:IFFAOptMain_GetOrderTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRouteAvgTypeEnum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFFAOptMain/GetRouteAvgTypeEnum" message="tns:IFFAOptMain_GetRouteAvgTypeEnum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFFAOptMain/GetRouteAvgTypeEnumResponse" message="tns:IFFAOptMain_GetRouteAvgTypeEnum_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFFAOptMain" type="tns:IFFAOptMain">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmmendReportedTrade">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/AmmendReportedTrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyTrades">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetDailyTrades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshIntradayData">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/RefreshIntradayData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketView">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetMarketView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwapFixings">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/SwapFixings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuildGDPostFixing">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/BuildGDPostFixing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="KeepAlive">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/KeepAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Graph">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/Graph" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpotFixings">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/SpotFixings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMVPeriods">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetMVPeriods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCredentials">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/CheckCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicense">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/CheckLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerDate">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/ServerDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerDateTime">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/ServerDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTradeClases">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetTradeClases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVesselClases">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetVesselClases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutes">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetRoutes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHolidays">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetHolidays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastVolFixDate">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/LastVolFixDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastInterestFixDate">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/LastInterestFixDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastSwapFixDate">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/LastSwapFixDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastSpotFixDate">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/LastSpotFixDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RouteSpotAverage">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/RouteSpotAverage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InterestRates">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/InterestRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastSwapFixing">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/LastSwapFixing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwapData">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/SwapData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ROUTE_DETAIL">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/ROUTE_DETAIL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSwapFixingsHistorical">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetSwapFixingsHistorical" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwapVolatility">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/SwapVolatility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryRouteData">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/QueryRouteData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceCommands">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/ServiceCommands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFFASuiteCredentials">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetFFASuiteCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFFAMessageClass">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetFFAMessageClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVolRecordTypeEnum">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetVolRecordTypeEnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageEnum">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetMessageEnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderTypes">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetOrderTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRouteAvgTypeEnum">
+      <soap:operation soapAction="http://tempuri.org/IFFAOptMain/GetRouteAvgTypeEnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FFAOptMain">
+    <wsdl:port name="BasicHttpBinding_IFFAOptMain" binding="tns:BasicHttpBinding_IFFAOptMain">
+      <soap:address location="http://localhost/ArtBOptWCFService/FFAOptMain.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

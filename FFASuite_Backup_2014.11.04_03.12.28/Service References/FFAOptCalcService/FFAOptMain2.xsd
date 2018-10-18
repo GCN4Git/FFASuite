@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" />
+  <xs:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmmendReportedTrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="Trade" nillable="true" type="q3:VolDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmmendReportedTradeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AmmendReportedTradeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDailyTrades">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TRADE_DATE" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDailyTradesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetDailyTradesResult" nillable="true" type="q4:ArrayOfVolDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefreshIntradayData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="f_ROUTES" nillable="true" type="q5:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefreshIntradayDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="RefreshIntradayDataResult" nillable="true" type="q6:ArrayOfVolDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarketView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="f_ROUTES" nillable="true" type="q7:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarketViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetMarketViewResult" nillable="true" type="q8:ArrayOfVolDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SwapFixings">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SwapFixingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="SwapFixingsResult" nillable="true" type="q9:ArrayOfSwapFixingsClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuildGDPostFixing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FINGERPRINT" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KeepAlive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Graph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+        <xs:element minOccurs="0" name="YY1" type="xs:int" />
+        <xs:element minOccurs="0" name="MM1" type="xs:int" />
+        <xs:element minOccurs="0" name="YY2" type="xs:int" />
+        <xs:element minOccurs="0" name="MM2" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GraphResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GraphResult" nillable="true" type="q10:ArrayOfVolDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpotFixings">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpotFixingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="SpotFixingsResult" nillable="true" type="q11:ArrayOfSpotFixingsClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMVPeriods">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+        <xs:element minOccurs="0" name="ReturnAll" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMVPeriodsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetMVPeriodsResult" nillable="true" type="q12:ArrayOfArtBTimePeriod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCredentials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="UD" nillable="true" type="q13:FingerPrintClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="CheckCredentialsResult" nillable="true" type="q14:FingerPrintClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="UD" nillable="true" type="q15:FingerPrintClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="RegisterUserResult" nillable="true" type="q16:FingerPrintClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckLicense">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="UD" nillable="true" type="q17:FingerPrintClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckLicenseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="CheckLicenseResult" nillable="true" type="q18:FingerPrintClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServerDate">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServerDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServerDateResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServerDateTime">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServerDateTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServerDateTimeResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTradeClases">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTradeClasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" minOccurs="0" name="GetTradeClasesResult" nillable="true" type="q19:ArrayOfTRADE_CLASSES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVesselClases">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVesselClasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" minOccurs="0" name="GetVesselClasesResult" nillable="true" type="q20:ArrayOfVESSEL_CLASS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" minOccurs="0" name="GetRoutesResult" nillable="true" type="q21:ArrayOfROUTES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHolidays">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHolidaysResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetHolidaysResult" nillable="true" type="q22:ArrayOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastVolFixDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastVolFixDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastVolFixDateResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastInterestFixDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_CCY_ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastInterestFixDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastInterestFixDateResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastSwapFixDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastSwapFixDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastSwapFixDateResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastSpotFixDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastSpotFixDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastSpotFixDateResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RouteSpotAverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+        <xs:element minOccurs="0" name="f_YY" type="xs:int" />
+        <xs:element minOccurs="0" name="f_MM" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RouteSpotAverageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RouteSpotAverageResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InterestRates">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InterestRatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="InterestRatesResult" nillable="true" type="q23:ArrayOfInterestRatesClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastSwapFixing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+        <xs:element minOccurs="0" name="f_YY1" type="xs:int" />
+        <xs:element minOccurs="0" name="f_MM1" type="xs:int" />
+        <xs:element minOccurs="0" name="f_YY2" type="xs:int" />
+        <xs:element minOccurs="0" name="f_MM2" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastSwapFixingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastSwapFixingResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SwapData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SwapDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="SwapDataResult" nillable="true" type="q24:ArrayOfSwapDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ROUTE_DETAIL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="f_ROUTE_ID" nillable="true" type="q25:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ROUTE_DETAILResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="ROUTE_DETAILResult" nillable="true" type="q26:ArrayOfSwapDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSwapFixingsHistorical">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+        <xs:element minOccurs="0" name="f_YY1" type="xs:int" />
+        <xs:element minOccurs="0" name="f_MM1" type="xs:int" />
+        <xs:element minOccurs="0" name="f_YY2" type="xs:int" />
+        <xs:element minOccurs="0" name="f_MM2" type="xs:int" />
+        <xs:element minOccurs="0" name="f_StartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="f_EndDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSwapFixingsHistoricalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetSwapFixingsHistoricalResult" nillable="true" type="q27:ArrayOfVolDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SwapVolatility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+        <xs:element minOccurs="0" name="f_TPeriod" type="xs:int" />
+        <xs:element minOccurs="0" name="f_VPeriod" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SwapVolatilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="SwapVolatilityResult" nillable="true" type="q28:ArrayOfVolDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryRouteData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="f_ROUTE_ID" type="xs:int" />
+        <xs:element minOccurs="0" name="f_TPeriod" type="xs:int" />
+        <xs:element minOccurs="0" name="f_VPeriod" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryRouteDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="QueryRouteDataResult" nillable="true" type="q29:ArrayOfVolDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceCommands">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="f_Command" type="q30:OptCalcServiceEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceCommandsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="ServiceCommandsResult" type="q31:OptCalcServiceEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFFASuiteCredentials">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFFASuiteCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetFFASuiteCredentialsResult" nillable="true" type="q32:FFASuiteCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFFAMessageClass">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFFAMessageClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetFFAMessageClassResult" nillable="true" type="q33:FFAMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVolRecordTypeEnum">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVolRecordTypeEnumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetVolRecordTypeEnumResult" type="q34:VolRecordTypeEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageEnum">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageEnumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetMessageEnumResult" type="q35:MessageEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetOrderTypesResult" type="q36:OrderTypes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteAvgTypeEnum">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteAvgTypeEnumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" minOccurs="0" name="GetRouteAvgTypeEnumResult" type="q37:RouteAvgTypeEnum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

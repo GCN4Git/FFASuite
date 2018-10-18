@@ -1,0 +1,13 @@
+﻿Installing assembly 'c:\ArtBServices\FFASuiteRepeater\FFASUiteRepeater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = c:\ArtBServices\FFASuiteRepeater\FFASUiteRepeater.InstallLog
+   assemblypath = c:\ArtBServices\FFASuiteRepeater\FFASUiteRepeater.exe
+Installing service FFSuiteRepeaterService...
+Service FFSuiteRepeaterService has been successfully installed.
+Creating EventLog source FFSuiteRepeaterService in log Application...
+Committing assembly 'c:\ArtBServices\FFASuiteRepeater\FFASUiteRepeater.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = c:\ArtBServices\FFASuiteRepeater\FFASUiteRepeater.InstallLog
+   assemblypath = c:\ArtBServices\FFASuiteRepeater\FFASUiteRepeater.exe

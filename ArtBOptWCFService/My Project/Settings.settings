@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="LiveOpenFireJID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="DebugAddUserPswd" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">@ndr0s</Value>
+    </Setting>
+    <Setting Name="LiveAddUserPswd" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">@ndr0s</Value>
+    </Setting>
+    <Setting Name="MarketView" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;36&lt;/string&gt;
+  &lt;string&gt;37&lt;/string&gt;
+  &lt;string&gt;38&lt;/string&gt;
+  &lt;string&gt;39&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="TradeClassesSupported" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;D&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="DebugOpenFireJID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">demo.artbtrading.com</Value>
+    </Setting>
+    <Setting Name="OFUserPswd" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">@ndr0s</Value>
+    </Setting>
+    <Setting Name="DBConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s</Value>
+    </Setting>
+    <Setting Name="DBConnectionStringServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

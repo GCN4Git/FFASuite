@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAD5A992-9748-420A-BE2E-1DE17CEEB699}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>FFASuite.My.MyApplication</StartupObject>
+    <RootNamespace>FFASuite</RootNamespace>
+    <AssemblyName>FFASuite</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <DeepSeaExtensionsPath Condition=" '$(DeepSeaExtensionsPath)' == '' ">$(MSBuildExtensionsPath)\DeepSea Obfuscator\v4</DeepSeaExtensionsPath>
+    <PublishUrl>ftp://hipathsystems.cloudapp.net/ArtBFFASuite/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.artbtrading.com/ArtBFFASuite/</InstallUrl>
+    <UpdateUrl>http://www.artbtrading.com/ArtBFFASuite/</UpdateUrl>
+    <SupportUrl>http://www.artbtrading.com</SupportUrl>
+    <ProductName>FFA Suite Client</ProductName>
+    <PublisherName>HiPath Systems</PublisherName>
+    <MinimumRequiredVersion>1.0.0.124</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>125</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DeepSeaObfuscate>false</DeepSeaObfuscate>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Text</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3A4378CC7984582ADCAE8412E2CF2B0879D78C2D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ArtB_Robots_ 48X48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="agsXMPP, Version=1.3.0.0, Culture=neutral, PublicKeyToken=ff839b81f1debe86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\AG-Software\agsXMPP\MostRecent\agsXMPP.dll</HintPath>
+    </Reference>
+    <Reference Include="FFASuitePL">
+      <HintPath>..\Visual Studio 2013\Projects\ArtBFFAOptDemo\ArtBFFAOptTest\FFASuitePL\bin\Release\FFASuitePL.dll</HintPath>
+    </Reference>
+    <Reference Include="FM, Version=2.1.4.0, Culture=neutral, PublicKeyToken=5d9b678c7ad6da32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\FrozenMountainWebSyncCE\Libraries\DotNet40\FM.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.WebSync, Version=4.1.4.0, Culture=neutral, PublicKeyToken=0aa23b529c9d5e81, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\FrozenMountainWebSyncCE\Libraries\DotNet40\FM.WebSync.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.WebSync.Chat, Version=4.1.4.0, Culture=neutral, PublicKeyToken=e61fe440ab1dccce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\FrozenMountainWebSyncCE\Libraries\DotNet40\FM.WebSync.Chat.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.WebSync.Subscribers, Version=4.1.4.0, Culture=neutral, PublicKeyToken=d99cdc965763cb7b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\FrozenMountainWebSyncCE\Libraries\DotNet40\FM.WebSync.Subscribers.dll</HintPath>
+    </Reference>
+    <Reference Include="libFfaOption, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SciComp\libFFAOptionNet4\Win32\Release\libFfaOption.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.WinControls, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddTradeForm.Designer.vb">
+      <DependentUpon>AddTradeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddTradeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArtBConfigureForm.Designer.vb">
+      <DependentUpon>ArtBConfigureForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ArtBConfigureForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArtBOptCalcClasses.vb" />
+    <Compile Include="ArtBOptCalcControlForm.Designer.vb">
+      <DependentUpon>ArtBOptCalcControlForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ArtBOptCalcControlForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArtBOptCalcFunctions.vb" />
+    <Compile Include="ArtBTimePeriod.vb" />
+    <Compile Include="DayTrades.Designer.vb">
+      <DependentUpon>DayTrades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DayTrades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFAOptCalc.designer.vb">
+      <DependentUpon>FFAOptCalc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FFAOptCalc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFAOptCalcClass.vb" />
+    <Compile Include="FFAOptWebClass.vb" />
+    <Compile Include="FFATCOptClass.vb" />
+    <Compile Include="FFATimeCharterOptionForm.Designer.vb">
+      <DependentUpon>FFATimeCharterOptionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FFATimeCharterOptionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FingerPrintClass.vb" />
+    <Compile Include="FirstTimeUserForm.designer.vb">
+      <DependentUpon>FirstTimeUserForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FirstTimeUserForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphContract.Designer.vb">
+      <DependentUpon>GraphContract.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GraphContract.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketRename.Designer.vb">
+      <DependentUpon>MarketRename.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MarketRename.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketWatch.Designer.vb">
+      <DependentUpon>MarketWatch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MarketWatch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RijndaelManagedEncryption.vb" />
+    <Compile Include="Service References\FFAOptCalcService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="StartModule.vb" />
+    <Compile Include="WebHelpForm.Designer.vb">
+      <DependentUpon>WebHelpForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WebHelpForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XMPPZipClass.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddTradeForm.resx">
+      <DependentUpon>AddTradeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtBConfigureForm.resx">
+      <DependentUpon>ArtBConfigureForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtBOptCalcControlForm.resx">
+      <DependentUpon>ArtBOptCalcControlForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayTrades.resx">
+      <DependentUpon>DayTrades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFAOptCalc.resx">
+      <DependentUpon>FFAOptCalc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFATimeCharterOptionForm.resx">
+      <DependentUpon>FFATimeCharterOptionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstTimeUserForm.resx">
+      <DependentUpon>FirstTimeUserForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphContract.resx">
+      <DependentUpon>GraphContract.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketRename.resx">
+      <DependentUpon>MarketRename.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketWatch.resx">
+      <DependentUpon>MarketWatch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebHelpForm.resx">
+      <DependentUpon>WebHelpForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PayPalGetOneFree.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Tool.ico" />
+    <None Include="Resources\Stats2.ico" />
+    <None Include="Resources\Table.ico" />
+    <None Include="Resources\Calendar.ico" />
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.ArtBTimePeriod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.FFAMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.FFASuiteCredentials.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.FingerPrintClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.InterestRatesClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.MessageEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.OptCalcServiceEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.OrderTypes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.RouteAvgTypeEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.ROUTES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.SpotFixingsClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.SwapDataClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.SwapFixingsClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.TRADE_CLASSES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.VESSEL_CLASS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.VolDataClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuite.FFAOptCalcService.VolRecordTypeEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\FFAOptCalcService\configuration.svcinfo" />
+    <None Include="Service References\FFAOptCalcService\configuration91.svcinfo" />
+    <None Include="Service References\FFAOptCalcService\FFAOptMain.disco" />
+    <None Include="LiveAppCopy.config" />
+    <None Include="BACKUP.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="HelpForm1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HelpForm2.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HelpForm0.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HelpForm3.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HelpForm4.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\ArtB_Class_Library.ArtBTimePeriod.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\Nuke_R16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain.wsdl" />
+    <None Include="Service References\FFAOptCalcService\FFAOptMain.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Wizard_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image3091.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minus_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\OpenFileHS.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openHS.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Save.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveHS.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SciComp.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShareItLogo.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text Large_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Text Meduim_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Text Minus_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Text Plus_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Text Small_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\WebAlert16.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WebAlert24.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WebAlert32.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ArtB_Robots_ 48X48.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cudart32_40_17.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Stats2_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Question_GR16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Save_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Hdd_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Question_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ArtB_Robots_ 48X48.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Tool_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Table_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Info2__B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Info__B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Gear_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Currency Dollar_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Cube_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Calendar_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Calc_B16R.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Question.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\NV_Tesla_3D.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".ffa">
+      <Visible>False</Visible>
+      <Description>FFA TC Structure</Description>
+      <Progid>FFATCSTRUCTURE</Progid>
+      <DefaultIcon>ArtB_Robots_ 48X48.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="ArtB_Robots_ 48X48.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="cudart32_40_17.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="HelpForm0.pdf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="HelpForm1.pdf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="HelpForm2.pdf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="HelpForm3.pdf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="HelpForm4.pdf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="libFfaOption">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="PayPalGetOneFree.html">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.GridView">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.RadDock">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.Office2010Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.UI">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TelerikCommon">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FFAOptCalcService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ArtB_Class_Library\ArtB_Class_Library.vbproj">
+      <Project>{9e8bbdff-c043-4fbd-987e-c500ac7b786b}</Project>
+      <Name>ArtB_Class_Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(DeepSeaExtensionsPath)\DeepSea.Obfuscator.targets" Condition=" '$(DeepSeaObfuscate)'=='true' " />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

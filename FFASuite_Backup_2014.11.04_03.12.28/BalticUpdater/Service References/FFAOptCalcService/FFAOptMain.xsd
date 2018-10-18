@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArtBOptWCFService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" />
+  <xs:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/ArtBOptWCFService/FFAOptMain.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="VolDataClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESK_TRADER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FFA_PRICE" type="xs:double" />
+      <xs:element minOccurs="0" name="FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HVOL" type="xs:double" />
+      <xs:element minOccurs="0" name="INTEREST_RATE" type="xs:double" />
+      <xs:element minOccurs="0" name="IVOL" type="xs:double" />
+      <xs:element minOccurs="0" name="MM1" type="xs:int" />
+      <xs:element minOccurs="0" name="MM2" type="xs:int" />
+      <xs:element minOccurs="0" name="MM21" type="xs:int" />
+      <xs:element minOccurs="0" name="MM22" type="xs:int" />
+      <xs:element minOccurs="0" name="ONLYHISTORICAL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PERIOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PNC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID2" type="xs:int" />
+      <xs:element minOccurs="0" name="SPOT_PRICE" type="xs:double" />
+      <xs:element minOccurs="0" name="TRADE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TRADE_TYPE" type="tns:OrderTypes" />
+      <xs:element minOccurs="0" name="VolRecordType" type="tns:VolRecordTypeEnum" />
+      <xs:element minOccurs="0" name="YY1" type="xs:int" />
+      <xs:element minOccurs="0" name="YY2" type="xs:int" />
+      <xs:element minOccurs="0" name="YY21" type="xs:int" />
+      <xs:element minOccurs="0" name="YY22" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VolDataClass" nillable="true" type="tns:VolDataClass" />
+  <xs:simpleType name="OrderTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FFA" />
+      <xs:enumeration value="RatioSpread" />
+      <xs:enumeration value="CalendarSpread" />
+      <xs:enumeration value="PriceSpread" />
+      <xs:enumeration value="MarketSpread" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderTypes" nillable="true" type="tns:OrderTypes" />
+  <xs:simpleType name="VolRecordTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="spot" />
+      <xs:enumeration value="nspot" />
+      <xs:enumeration value="swap" />
+      <xs:enumeration value="live" />
+      <xs:enumeration value="level" />
+      <xs:enumeration value="all" />
+      <xs:enumeration value="mvperiods" />
+      <xs:enumeration value="decimals" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VolRecordTypeEnum" nillable="true" type="tns:VolRecordTypeEnum" />
+  <xs:complexType name="ArrayOfVolDataClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VolDataClass" nillable="true" type="tns:VolDataClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVolDataClass" nillable="true" type="tns:ArrayOfVolDataClass" />
+  <xs:complexType name="ArrayOfSwapFixingsClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SwapFixingsClass" nillable="true" type="tns:SwapFixingsClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSwapFixingsClass" nillable="true" type="tns:ArrayOfSwapFixingsClass" />
+  <xs:complexType name="SwapFixingsClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FIXING" type="xs:double" />
+      <xs:element minOccurs="0" name="FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MM1" type="xs:int" />
+      <xs:element minOccurs="0" name="MM2" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="YY1" type="xs:int" />
+      <xs:element minOccurs="0" name="YY2" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SwapFixingsClass" nillable="true" type="tns:SwapFixingsClass" />
+  <xs:complexType name="ArrayOfSpotFixingsClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpotFixingsClass" nillable="true" type="tns:SpotFixingsClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpotFixingsClass" nillable="true" type="tns:ArrayOfSpotFixingsClass" />
+  <xs:complexType name="SpotFixingsClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AVG_FIXING" type="xs:double" />
+      <xs:element minOccurs="0" name="FIXING" type="xs:double" />
+      <xs:element minOccurs="0" name="FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpotFixingsClass" nillable="true" type="tns:SpotFixingsClass" />
+  <xs:complexType name="ArrayOfArtBTimePeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArtBTimePeriod" nillable="true" type="tns:ArtBTimePeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArtBTimePeriod" nillable="true" type="tns:ArrayOfArtBTimePeriod" />
+  <xs:complexType name="ArtBTimePeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DPM" type="xs:double" />
+      <xs:element minOccurs="0" name="Descr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="MM1" type="xs:int" />
+      <xs:element minOccurs="0" name="MM2" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SERVER_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="TotDays" type="xs:int" />
+      <xs:element minOccurs="0" name="YY1" type="xs:int" />
+      <xs:element minOccurs="0" name="YY2" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArtBTimePeriod" nillable="true" type="tns:ArtBTimePeriod" />
+  <xs:complexType name="FingerPrintClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FPMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FPStatus" type="tns:FPStatusEnum" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" minOccurs="0" name="FingerPrints" nillable="true" type="q1:ArrayOfARTBOPTCALC_FINGERPRINTS" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" minOccurs="0" name="License" nillable="true" type="q2:ARTBOPTCALC_LICENSES" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" minOccurs="0" name="MYFINGERPRINT" nillable="true" type="q3:ARTBOPTCALC_FINGERPRINTS" />
+      <xs:element minOccurs="0" name="OFPswd" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ArtBOptWCFService" minOccurs="0" name="PRODUCT" nillable="true" type="q4:ARTBOPTCALC_PRODUCTS" />
+      <xs:element minOccurs="0" name="PRODUCT_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FingerPrintClass" nillable="true" type="tns:FingerPrintClass" />
+  <xs:simpleType name="FPStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InvalidLicenseKey" />
+      <xs:enumeration value="ValidLicenseKey" />
+      <xs:enumeration value="ExistingClientAllOK" />
+      <xs:enumeration value="NewClient" />
+      <xs:enumeration value="NewClientFPTrialCreated" />
+      <xs:enumeration value="ExistingFPTrialLicenseExpired" />
+      <xs:enumeration value="ExistingFPLiveLicenseExpired" />
+      <xs:enumeration value="ExistingFPTrialRenewed" />
+      <xs:enumeration value="ExistingFPLiveRenewed" />
+      <xs:enumeration value="ExistingFPLiveMaxLicensesError" />
+      <xs:enumeration value="UserDataAmmendSuccess" />
+      <xs:enumeration value="UserDataAmmendError" />
+      <xs:enumeration value="LiveLicenseNewFingerPrintAdded" />
+      <xs:enumeration value="DemoLicenseNewFingerPrintAdded" />
+      <xs:enumeration value="LiveLicenseExistingFingerPrintAdded" />
+      <xs:enumeration value="DemoLicenseExistingFingerPrintAdded" />
+      <xs:enumeration value="LiveLicenseHasExpiredNoFingerPrintAdded" />
+      <xs:enumeration value="DemoLicenseHasExpiredNoFingerPrintAdded" />
+      <xs:enumeration value="DemoFingerPrintHasExpired" />
+      <xs:enumeration value="UserWantsToRegisterPC" />
+      <xs:enumeration value="DBError" />
+      <xs:enumeration value="OFError" />
+      <xs:enumeration value="NoInternetConnection" />
+      <xs:enumeration value="InternetConnectionOK" />
+      <xs:enumeration value="ServiceOK" />
+      <xs:enumeration value="ServiceError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FPStatusEnum" nillable="true" type="tns:FPStatusEnum" />
+  <xs:complexType name="ArrayOfInterestRatesClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InterestRatesClass" nillable="true" type="tns:InterestRatesClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInterestRatesClass" nillable="true" type="tns:ArrayOfInterestRatesClass" />
+  <xs:complexType name="InterestRatesClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CCY_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PERIOD" type="xs:int" />
+      <xs:element minOccurs="0" name="RATE" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InterestRatesClass" nillable="true" type="tns:InterestRatesClass" />
+  <xs:complexType name="ArrayOfSwapDataClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SwapDataClass" nillable="true" type="tns:SwapDataClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSwapDataClass" nillable="true" type="tns:ArrayOfSwapDataClass" />
+  <xs:complexType name="SwapDataClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AVERAGE_INCLUDES_TODAY" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CCY_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DECIMAL_PLACES" type="xs:int" />
+      <xs:element minOccurs="0" name="FIXING_AVG" type="xs:double" />
+      <xs:element minOccurs="0" name="FORMAT_STRING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRICING_TICK" type="xs:double" />
+      <xs:element minOccurs="0" name="ROUTE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROUTE_SHORT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPOT_FIXING_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SPOT_PRICE" type="xs:double" />
+      <xs:element minOccurs="0" name="TRADE_CLASS_SHORT" type="ser:char" />
+      <xs:element minOccurs="0" name="VESSEL_CLASS_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SwapDataClass" nillable="true" type="tns:SwapDataClass" />
+  <xs:simpleType name="OptCalcServiceEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SpotsUploaded" />
+      <xs:enumeration value="ForwardsUploaded" />
+      <xs:enumeration value="RefreshAll" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ServiceError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OptCalcServiceEnum" nillable="true" type="tns:OptCalcServiceEnum" />
+  <xs:complexType name="FFASuiteCredentials">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANSWER" type="tns:FPStatusEnum" />
+      <xs:element minOccurs="0" name="FINGERPRINT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRODUCT_ID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubscribedRoutes" nillable="true" type="q5:ArrayOfint" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FFASuiteCredentials" nillable="true" type="tns:FFASuiteCredentials" />
+  <xs:complexType name="FFAMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MsgType" type="tns:MessageEnum" />
+      <xs:element minOccurs="0" name="Payload" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FFAMessage" nillable="true" type="tns:FFAMessage" />
+  <xs:simpleType name="MessageEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MarketViewUpdate" />
+      <xs:enumeration value="TradeAnnouncement" />
+      <xs:enumeration value="SpotRatesUpdate" />
+      <xs:enumeration value="SwapRatesUpdate" />
+      <xs:enumeration value="CloseClient" />
+      <xs:enumeration value="AmmendReportedTrade" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MessageEnum" nillable="true" type="tns:MessageEnum" />
+  <xs:simpleType name="RouteAvgTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WholeMonth" />
+      <xs:enumeration value="LastSevenDays">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LastTenDays">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RouteAvgTypeEnum" nillable="true" type="tns:RouteAvgTypeEnum" />
+</xs:schema>

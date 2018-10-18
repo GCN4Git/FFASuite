@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ARTB" Class="BRSDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=83.244.253.98;Initial Catalog=ARTB;Persist Security Info=True;User ID=george" SettingsObjectName="FFASuiteUpdater.My.MySettings" SettingsPropertyName="ConnectionString_BRS2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BALTIC_FORWARD_RATES" Member="BALTIC_FORWARD_RATES">
+    <Type Name="BALTIC_FORWARD_RATES">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NEXT_ROLLOVER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="REPORTDESC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="YY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BALTIC_FTP_BALTIC_FORWARD_RATES" Member="BALTIC_FTP" ThisKey="ROUTE_ID,CMSROUTE_ID" OtherKey="ROUTE_ID,CMSROUTE_ID" Type="BALTIC_FTP" IsForeignKey="true" />
+      <Association Name="ROUTES_BALTIC_FORWARD_RATES" Member="ROUTES" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTES" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VESSEL_CLASS" Member="VESSEL_CLASS">
+    <Type Name="VESSEL_CLASS">
+      <Column Name="VESSEL_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DRYWET" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="WETSECTOR" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_ROUTE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="VESSEL_CLASS_ROUTES" Member="ROUTES" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="ROUTES" />
+      <Association Name="TRADE_CLASSES_VESSEL_CLASS" Member="TRADE_CLASSES" ThisKey="DRYWET" OtherKey="TRADE_CLASS_SHORT" Type="TRADE_CLASSES" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_FTP" Member="BALTIC_FTP">
+    <Type Name="BALTIC_FTP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PERIOD" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="QUALIFIER" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="BALTIC_FTP_BALTIC_FORWARD_RATES" Member="BALTIC_FORWARD_RATES" ThisKey="ROUTE_ID,CMSROUTE_ID" OtherKey="ROUTE_ID,CMSROUTE_ID" Type="BALTIC_FORWARD_RATES" />
+      <Association Name="BALTIC_FTP_BALTIC_OPTION_VOLATILITIES" Member="BALTIC_OPTION_VOLATILITIES" ThisKey="ROUTE_ID,CMSROUTE_ID" OtherKey="ROUTE_ID,CMSROUTE_ID" Type="BALTIC_OPTION_VOLATILITIES" />
+      <Association Name="ROUTES_BALTIC_FTP" Member="ROUTES" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTES" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_OPTION_VOLATILITIES" Member="BALTIC_OPTION_VOLATILITIES">
+    <Type Name="BALTIC_OPTION_VOLATILITIES">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMSROUTE_ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NEXT_ROLLOVER_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="REPORTDESC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MM1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MM2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YY2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="YY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BALTIC_FTP_BALTIC_OPTION_VOLATILITIES" Member="BALTIC_FTP" ThisKey="ROUTE_ID,CMSROUTE_ID" OtherKey="ROUTE_ID,CMSROUTE_ID" Type="BALTIC_FTP" IsForeignKey="true" />
+      <Association Name="ROUTES_BALTIC_OPTION_VOLATILITIES" Member="ROUTES" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTES" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_SPOT_RATES" Member="BALTIC_SPOT_RATES">
+    <Type Name="BALTIC_SPOT_RATES">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTES_BALTIC_SPOT_RATES" Member="ROUTES" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="ROUTES" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROUTES" Member="ROUTES">
+    <Type Name="ROUTES">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VESSEL_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUOTE_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CCY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROUTE_SHORT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ROUTE_DESCR" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BALTIC_ABRV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BALTIC_ABRV_FFA" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SETTLEMENT_TYPE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LOT_SIZE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SETTLEMENT_TICK" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PRICING_TICK" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="FULL_LOT_SIZE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FFA_TRADED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_DAY_RULE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DEFAULT_QUANTITY" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="SETTL_ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OPTIONS_TRADED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ROUTES_BALTIC_FORWARD_RATES" Member="BALTIC_FORWARD_RATES" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_FORWARD_RATES" />
+      <Association Name="ROUTES_BALTIC_FTP" Member="BALTIC_FTP" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_FTP" />
+      <Association Name="ROUTES_BALTIC_OPTION_VOLATILITIES" Member="BALTIC_OPTION_VOLATILITIES" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_OPTION_VOLATILITIES" />
+      <Association Name="ROUTES_BALTIC_SPOT_RATES" Member="BALTIC_SPOT_RATES" ThisKey="ROUTE_ID" OtherKey="ROUTE_ID" Type="BALTIC_SPOT_RATES" />
+      <Association Name="VESSEL_CLASS_ROUTES" Member="VESSEL_CLASS" ThisKey="VESSEL_CLASS_ID" OtherKey="VESSEL_CLASS_ID" Type="VESSEL_CLASS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMSCLIENTS" Member="SMSCLIENTS">
+    <Type Name="SMSCLIENTS">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COMPANY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FIRST_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LAST_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MOBILE" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SMSPROVIDERID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CAPES" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PMX" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RESPONSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="SMSPROVIDERS_SMSCLIENTS" Member="SMSPROVIDERS" ThisKey="SMSPROVIDERID" OtherKey="ID" Type="SMSPROVIDERS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMSPROVIDERS" Member="SMSPROVIDERS">
+    <Type Name="SMSPROVIDERS">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SMSPROVIDER" Type="System.String" DbType="NChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="SMSPROVIDERS_SMSCLIENTS" Member="SMSCLIENTS" ThisKey="ID" OtherKey="SMSPROVIDERID" Type="SMSCLIENTS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRADE_CLASSES" Member="TRADE_CLASSES">
+    <Type Name="TRADE_CLASSES">
+      <Column Name="TRADE_CLASS_SHORT" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRADE_CLASS" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TRADE_CLASS_DES" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TRADE_CLASSES_VESSEL_CLASS" Member="VESSEL_CLASS" ThisKey="TRADE_CLASS_SHORT" OtherKey="DRYWET" Type="VESSEL_CLASS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BALTIC_SPOT_RATES_DIFF" Member="BALTIC_SPOT_RATES_DIFF">
+    <Type Name="BALTIC_SPOT_RATES_DIFF">
+      <Column Name="ROUTE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FIXING" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PREV_FIXING" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FIXING_DIFF" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

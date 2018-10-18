@@ -1,0 +1,58 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="xmpp_server" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">artbtrading.com</Value>
+    </Setting>
+    <Setting Name="xmpp_user" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ffasuite</Value>
+    </Setting>
+    <Setting Name="xmpp_password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">@ndr0s</Value>
+    </Setting>
+    <Setting Name="ws_server" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/WSFFASuiteServer/websync.ashx</Value>
+    </Setting>
+    <Setting Name="ws_user" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ffasuite</Value>
+    </Setting>
+    <Setting Name="product_id" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2908</Value>
+    </Setting>
+    <Setting Name="ws_generalchannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/ffasuite</Value>
+    </Setting>
+    <Setting Name="ServiceLog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FFASuiteRepeater</Value>
+    </Setting>
+    <Setting Name="OrdersJid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">orders</Value>
+    </Setting>
+    <Setting Name="xmpp_serverdemo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">artbtrading.com</Value>
+    </Setting>
+    <Setting Name="ws_tradeschannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/trades</Value>
+    </Setting>
+    <Setting Name="ws_serverdemo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/WSFFASuiteServer/websync.ashx</Value>
+    </Setting>
+    <Setting Name="ARTBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=hipathsystems.cloudapp.net;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=hipathsystems.cloudapp.net;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf</Value>
+    </Setting>
+    <Setting Name="ARTBConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

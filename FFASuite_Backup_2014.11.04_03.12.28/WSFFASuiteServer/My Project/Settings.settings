@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DeskTopClient" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2908</Value>
+    </Setting>
+    <Setting Name="SilverLightClient" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2909</Value>
+    </Setting>
+    <Setting Name="ws_ServiceChannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/services</Value>
+    </Setting>
+    <Setting Name="ws_TradesChannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/trades</Value>
+    </Setting>
+    <Setting Name="ws_SubscriptionChannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/ffasuite</Value>
+    </Setting>
+    <Setting Name="ws_ChatChannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/chat</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,155 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="FileSaveDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Messages" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Model" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PRODUCT_ID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2908</Value>
+    </Setting>
+    <Setting Name="ModelQuantity" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="UserFingerPrint" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UsesProxy" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="xmppUserID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="xmppUserPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MarketView" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;36&lt;/string&gt;
+  &lt;string&gt;37&lt;/string&gt;
+  &lt;string&gt;38&lt;/string&gt;
+  &lt;string&gt;39&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="MarketViewStandard" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;36&lt;/string&gt;
+  &lt;string&gt;37&lt;/string&gt;
+  &lt;string&gt;38&lt;/string&gt;
+  &lt;string&gt;39&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="MarketViewPeriodWidth" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">105</Value>
+    </Setting>
+    <Setting Name="MarketViewContractWidths" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">65</Value>
+    </Setting>
+    <Setting Name="MarketViewFontSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ValidCertificates" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;787F9C7CA71AD09949025059BB47C369&lt;/string&gt;
+  &lt;string&gt;E24DD330841A0CBA48EBF47829A64377&lt;/string&gt;
+  &lt;string&gt;2B1F2C9E2426FC3D&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="xmppserverdemo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">artbtrading.com</Value>
+    </Setting>
+    <Setting Name="TradeClassesSupported" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;D&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="DataPeriodDefault" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="DataVolDefault" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="UpdateCalcLive" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="proxyuser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="proxypswd" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="proxyaddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="OrdersJid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">orders</Value>
+    </Setting>
+    <Setting Name="MainFormDimensions" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">775, 637</Value>
+    </Setting>
+    <Setting Name="FlashInterval" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="PayPalNotifyURL_Demo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/FFASuitePayPal/PayPalVerify.aspx</Value>
+    </Setting>
+    <Setting Name="PayPalNotifyURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/FFASuiteLicenseServer/FFASuitePayPal.aspx</Value>
+    </Setting>
+    <Setting Name="PayPalMerchantID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Q6QMA4JJ4YZ2A</Value>
+    </Setting>
+    <Setting Name="PayPalMerchantID_Demo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sales@artbtrading.com</Value>
+    </Setting>
+    <Setting Name="PayPalSrvc" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.paypal.com/cgi-bin/webscr</Value>
+    </Setting>
+    <Setting Name="PayPAlSrvc_Demo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.sandbox.paypal.com/cgi-bin/webscr</Value>
+    </Setting>
+    <Setting Name="xmppUseTCP" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ws_ServerLive" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/WSFFASuiteServer/websync.ashx</Value>
+    </Setting>
+    <Setting Name="ws_ServerDemo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/WSFFASuiteServer/websync.ashx</Value>
+    </Setting>
+    <Setting Name="ws_SubscriptionChannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/ffasuite</Value>
+    </Setting>
+    <Setting Name="ws_TradesChannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/trades</Value>
+    </Setting>
+    <Setting Name="msgServiceType" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="ws_ServiceChannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/services</Value>
+    </Setting>
+    <Setting Name="MarketViews" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MarketViewStandardName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Dry Major Routes</Value>
+    </Setting>
+    <Setting Name="xmppserver" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">artbtrading.com</Value>
+    </Setting>
+    <Setting Name="BIDASK" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

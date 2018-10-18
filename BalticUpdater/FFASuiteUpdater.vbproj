@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F7DC6EF-5AF9-45BF-A909-36FF8614D020}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>FFASuiteUpdater.My.MyApplication</StartupObject>
+    <RootNamespace>FFASuiteUpdater</RootNamespace>
+    <AssemblyName>FFASuiteUpdater</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <DeepSeaExtensionsPath Condition=" '$(DeepSeaExtensionsPath)' == '' ">$(MSBuildExtensionsPath)\DeepSea Obfuscator\v4</DeepSeaExtensionsPath>
+    <PublishUrl>C:\Temp\ArtBFFASuiteUpdater\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.artbtrading.com/ArtBFFASuiteUpdater/</InstallUrl>
+    <UpdateUrl>http://www.artbtrading.com/ArtBFFASuiteUpdater/</UpdateUrl>
+    <SupportUrl>http://www.artbtrading.com</SupportUrl>
+    <ProductName>FFA Suite Updater</ProductName>
+    <PublisherName>HiPath Systems</PublisherName>
+    <MinimumRequiredVersion>1.0.0.75</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>80</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FFASuiteUpdater.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FFASuiteUpdater.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DeepSeaObfuscate>false</DeepSeaObfuscate>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Text</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3A4378CC7984582ADCAE8412E2CF2B0879D78C2D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ArtB_Robots_ 48X48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FM, Version=2.1.4.0, Culture=neutral, PublicKeyToken=5d9b678c7ad6da32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\FrozenMountainWebSyncCE\Libraries\DotNet40\FM.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.WebSync, Version=4.1.4.0, Culture=neutral, PublicKeyToken=0aa23b529c9d5e81, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\FrozenMountainWebSyncCE\Libraries\DotNet40\FM.WebSync.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.WinControls, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Telerik.WinControls.ChartView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Telerik.WinControls.RadDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextBox, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Telerik.WinControls.RichTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Telerik.WinControls.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Telerik Cabs\TelerikCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\FingerPrintClass.vb">
+      <Link>FingerPrintClass.vb</Link>
+    </Compile>
+    <Compile Include="ArtBManageClasses.vb" />
+    <Compile Include="ArtBNBalticServiceUpdate.vb" />
+    <Compile Include="ArtBNBalticServiceUpdateBackUp.vb" />
+    <Compile Include="ArtBNSGXServiceUpdate.designer.vb">
+      <DependentUpon>ArtBNSGXServiceUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ArtBNSGXServiceUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BalticClasses.vb" />
+    <Compile Include="BalticFTP.Designer.vb">
+      <DependentUpon>BalticFTP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BalticFTP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BalticFTPClass.vb" />
+    <Compile Include="BALTICFTPNEWRECORD.Designer.vb">
+      <DependentUpon>BALTICFTPNEWRECORD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BALTICFTPNEWRECORD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BalticSaveFTPDataClass.vb" />
+    <Compile Include="BalticXMLSerialization.vb" />
+    <Compile Include="BRS.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BRS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="BRSClientsSMS.Designer.vb">
+      <DependentUpon>BRSClientsSMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BRSClientsSMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BRSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BRSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataContractsClass.vb" />
+    <Compile Include="LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service References\FFAOptCalcService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FFASuiteDataService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsUserOverride.vb" />
+    <Compile Include="SMSMainForm.designer.vb">
+      <DependentUpon>SMSMainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMSMainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdaterSettings.Designer.vb">
+      <DependentUpon>UpdaterSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdaterSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatesForm.Designer.vb">
+      <DependentUpon>UpdatesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainModule.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SGXUpdateForm.Designer.vb">
+      <DependentUpon>SGXUpdateForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SGXUpdateForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppBackUp.config" />
+    <None Include="BRS.dbml.layout">
+      <DependentUpon>BRS.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="ArtBNSGXServiceUpdate.resx">
+      <DependentUpon>ArtBNSGXServiceUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BRSClientsSMS.resx">
+      <DependentUpon>BRSClientsSMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="SMSMainForm.resx">
+      <DependentUpon>SMSMainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdaterSettings.resx">
+      <DependentUpon>UpdaterSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatesForm.resx">
+      <DependentUpon>UpdatesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SGXUpdateForm.resx">
+      <DependentUpon>SGXUpdateForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BalticFTP.resx">
+      <DependentUpon>BalticFTP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BALTICFTPNEWRECORD.resx">
+      <DependentUpon>BALTICFTPNEWRECORD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="BRS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BRS.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BRSDataSet.xsc">
+      <DependentUpon>BRSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BRSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BRSDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BRSDataSet.xss">
+      <DependentUpon>BRSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FFASuiteUpdater_TemporaryKey.pfx" />
+    <None Include="LiveAppCopy.config" />
+    <None Include="My Project\DataSources\BalticUpdater.ArtBwcfDataService.ARTBEntities.datasource" />
+    <None Include="My Project\DataSources\FFASuiteUpdater.ArtBwcfDataService.ARTBEntities.datasource" />
+    <None Include="My Project\DataSources\FFASuiteUpdater.ArtBwcfDataService.ROUTES.datasource" />
+    <None Include="packages.config" />
+    <None Include="Service References\FFAOptCalcService\FFAOptMain1.wsdl" />
+    <None Include="Service References\FFAOptCalcService\FFAOptMain6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.ArtBTimePeriod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.BALTIC_FTP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.FFAMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.FFASuiteCredentials.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.FingerPrintClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.GeneralFFDataClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.InterestRatesClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.MessageEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.NSwapPeriodsClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.NSwapPeriodsEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.OptCalcServiceEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.OrderTypes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.PriceStatusEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.RecordTypeEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.RouteAvgTypeEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.ROUTES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.SpotFixingsClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.SwapCurveClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.SwapDataClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.SwapFixingsClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.TRADE_CLASSES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.VESSEL_CLASS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.VolDataClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.VolRecordTypeEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFAOptCalcService\FFASuiteUpdater.FFAOptCalcService.WP8FFAData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FFASuiteDataService\service.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FFAOptCalcService\FFAOptMain1.disco" />
+    <None Include="Service References\FFAOptCalcService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\FFAOptCalcService\configuration.svcinfo" />
+    <None Include="Service References\FFAOptCalcService\configuration91.svcinfo" />
+    <None Include="Service References\FFASuiteDataService\Reference.datasvcmap">
+      <Generator>DataServicesCoreClientGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <Content Include="ArtB_Robots_ 48X48.ico" />
+    <Content Include="BSD_ALL.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BSD_SINGLE.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMSIA_SPOT.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMSRA_FFA.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMSRA_OPTIONS.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMSRA_SMX.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMSRA_SPOT.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMSRA_SPOT2.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="ArtB_Robots_ 48X48.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="BSD_ALL.xsd">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="BSD_SINGLE.xsd">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="CMSIA_SPOT.xsd">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="CMSRA_FFA.xsd">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="CMSRA_OPTIONS.xsd">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="CMSRA_SMX.xsd">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="CMSRA_SPOT.xsd">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="CMSRA_SPOT2.xsd">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="FM">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FM.WebSync">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Edm">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.OData">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Services.Client">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Diagnostics.Measurement">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.OLE.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TestTools.UITest.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TestTools.UITest.Extension">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TestTools.UITesting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Spatial">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.ChartView">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.GridView">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.PdfViewer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.RadChart">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.RadDock">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.RichTextBox">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.RichTextEditor">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.Office2010Silver">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.UI">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TelerikCommon">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\FFASuiteDataService\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FFAOptCalcService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SMS_COMAPILib">
+      <Guid>{B8AD23B5-6449-4797-A90A-A8698D226600}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(DeepSeaExtensionsPath)\DeepSea.Obfuscator.targets" Condition=" '$(DeepSeaObfuscate)'=='true' " />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

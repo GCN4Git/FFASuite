@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17, 11.375" name="BRS">
+  <DataContextMoniker Name="/BRSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7f1af2e1-4bea-4038-8d5f-2d28a8829687" absoluteBounds="14.75, 4, 2, 2.7396264648437505">
+      <DataClassMoniker Name="/BRSDataContext/BALTIC_FORWARD_RATES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ea745a1-e4ea-45b3-8274-bd12ab0c57b3" absoluteBounds="14.765, 4.46, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c3734f52-cde9-4f36-a70c-5d3866aeff82" absoluteBounds="3.5, 4.5, 2, 1.7535424804687505">
+      <DataClassMoniker Name="/BRSDataContext/VESSEL_CLASS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f198076e-b2ba-43f6-9cc8-6593941bd430" absoluteBounds="3.515, 4.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4d197dda-48de-49ee-bee1-533fbe4cafd5" absoluteBounds="9, 5.625, 2, 1.5891951497395827">
+      <DataClassMoniker Name="/BRSDataContext/BALTIC_FTP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0e1e841-6607-40b6-87b9-57d3d10f5b72" absoluteBounds="9.015, 6.085, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b3b2271a-cc32-47d4-bb40-5a31f6368537" absoluteBounds="11.75, 4, 2, 2.7396264648437505">
+      <DataClassMoniker Name="/BRSDataContext/BALTIC_OPTION_VOLATILITIES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aae7c13e-6f48-4924-a205-2a068dcb4e1f" absoluteBounds="11.765, 4.46, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="900275f3-3f43-4740-b6e9-55c4efd6d22f" absoluteBounds="9, 3.5, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/BRSDataContext/BALTIC_SPOT_RATES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9971efb6-5616-4e9b-82b5-33ea72bc0cbb" absoluteBounds="9.015, 3.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d7d83bf9-a59e-467d-95f7-0386ff61525a" absoluteBounds="6.25, 3.375, 2, 3.8900577799479166">
+      <DataClassMoniker Name="/BRSDataContext/ROUTES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74427d5d-b003-44ab-b845-d678e3b57611" absoluteBounds="6.265, 3.835, 1.9700000000000002, 3.3300577799479165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ed47808-0899-4e3e-ae4e-e211a1d417c6" absoluteBounds="3.5, 8.875, 2, 2.2465844726562487">
+      <DataClassMoniker Name="/BRSDataContext/SMSCLIENTS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36f66c45-c06b-4e54-975d-a852593e6239" absoluteBounds="3.515, 9.335, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="290f5ddd-a695-40b3-8e99-f41edf0f2a27" absoluteBounds="0.75, 9.5, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/BRSDataContext/SMSPROVIDERS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0d4a0e4-5338-457d-a64e-19b8d0dded0a" absoluteBounds="0.765, 9.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b56fab8-fdda-48b2-b598-3d6a60193b66" absoluteBounds="0.75, 4.75, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/BRSDataContext/TRADE_CLASSES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f09b588b-67a9-40dd-b52b-405369292852" absoluteBounds="0.765, 5.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4843130c-691a-49a7-885e-a78ba7fabcaf" absoluteBounds="0.75, 0.75, 2, 1.75354248046875">
+      <DataClassMoniker Name="/BRSDataContext/BALTIC_SPOT_RATES_DIFF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49146df4-84f9-4706-be2c-96159ae4e052" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11 : 7.21419514973958); (11.375 : 7.58919514973958); (11.375 : 7.11462646484375); (14.375 : 7.11462646484375); (14.75 : 6.73962646484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BRSDataContext/BALTIC_FTP/BALTIC_FTP_BALTIC_FORWARD_RATES" />
+      <nodes>
+        <classShapeMoniker Id="4d197dda-48de-49ee-bee1-533fbe4cafd5" />
+        <classShapeMoniker Id="7f1af2e1-4bea-4038-8d5f-2d28a8829687" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 6.18231323242188); (11.75 : 6.18231323242188)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BRSDataContext/BALTIC_FTP/BALTIC_FTP_BALTIC_OPTION_VOLATILITIES" />
+      <nodes>
+        <classShapeMoniker Id="4d197dda-48de-49ee-bee1-533fbe4cafd5" />
+        <classShapeMoniker Id="b3b2271a-cc32-47d4-bb40-5a31f6368537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 3.40625); (15.75 : 3.40625); (15.75 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BRSDataContext/ROUTES/ROUTES_BALTIC_FORWARD_RATES" />
+      <nodes>
+        <classShapeMoniker Id="d7d83bf9-a59e-467d-95f7-0386ff61525a" />
+        <classShapeMoniker Id="7f1af2e1-4bea-4038-8d5f-2d28a8829687" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 6.41959757486979); (9 : 6.41959757486979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BRSDataContext/ROUTES/ROUTES_BALTIC_FTP" />
+      <nodes>
+        <classShapeMoniker Id="d7d83bf9-a59e-467d-95f7-0386ff61525a" />
+        <classShapeMoniker Id="4d197dda-48de-49ee-bee1-533fbe4cafd5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.19275024414063); (11.75 : 5.19275024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BRSDataContext/ROUTES/ROUTES_BALTIC_OPTION_VOLATILITIES" />
+      <nodes>
+        <classShapeMoniker Id="d7d83bf9-a59e-467d-95f7-0386ff61525a" />
+        <classShapeMoniker Id="b3b2271a-cc32-47d4-bb40-5a31f6368537" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.13025024414063); (9 : 4.13025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BRSDataContext/ROUTES/ROUTES_BALTIC_SPOT_RATES" />
+      <nodes>
+        <classShapeMoniker Id="d7d83bf9-a59e-467d-95f7-0386ff61525a" />
+        <classShapeMoniker Id="900275f3-3f43-4740-b6e9-55c4efd6d22f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.37677124023438); (6.25 : 5.37677124023438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BRSDataContext/VESSEL_CLASS/VESSEL_CLASS_ROUTES" />
+      <nodes>
+        <classShapeMoniker Id="c3734f52-cde9-4f36-a70c-5d3866aeff82" />
+        <classShapeMoniker Id="d7d83bf9-a59e-467d-95f7-0386ff61525a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.048076578776); (3.5 : 10.048076578776)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BRSDataContext/SMSPROVIDERS/SMSPROVIDERS_SMSCLIENTS" />
+      <nodes>
+        <classShapeMoniker Id="290f5ddd-a695-40b3-8e99-f41edf0f2a27" />
+        <classShapeMoniker Id="0ed47808-0899-4e3e-ae4e-e211a1d417c6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.38025024414063); (3.5 : 5.38025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BRSDataContext/TRADE_CLASSES/TRADE_CLASSES_VESSEL_CLASS" />
+      <nodes>
+        <classShapeMoniker Id="6b56fab8-fdda-48b2-b598-3d6a60193b66" />
+        <classShapeMoniker Id="c3734f52-cde9-4f36-a70c-5d3866aeff82" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

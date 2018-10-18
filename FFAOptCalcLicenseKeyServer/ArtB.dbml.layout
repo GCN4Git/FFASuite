@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.5" name="ArtB">
+  <DataContextMoniker Name="/ArtBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c2abb183-89eb-4f18-9a8e-9c1cd704e75a" absoluteBounds="6.25, 4.875, 2, 2.4109318033854166">
+      <DataClassMoniker Name="/ArtBDataContext/ARTBOPTCALC_FINGERPRINTS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f33318bd-890f-4389-9c43-390edc5c926d" absoluteBounds="6.265, 5.335, 1.9700000000000002, 1.8509318033854165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a143bae2-4c48-4d97-a905-ffb8519cd044" absoluteBounds="3.5, 5.875, 2, 3.3970157877604166">
+      <DataClassMoniker Name="/ArtBDataContext/ARTBOPTCALC_LICENSES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98d9ea84-3468-4baf-814c-6a92e92f91da" absoluteBounds="3.515, 6.335, 1.9700000000000002, 2.8370157877604165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0eecb894-4b83-4f57-bc7d-6d81c3674cdf" absoluteBounds="0.75, 3, 2, 2.9039737955729166">
+      <DataClassMoniker Name="/ArtBDataContext/ARTBOPTCALC_PRODUCTS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bdf2b53-b3c9-4409-bbda-a3a209cfe29d" absoluteBounds="0.765, 3.46, 1.9700000000000002, 2.3439737955729165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.58046590169271); (6.25 : 6.58046590169271)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ArtBDataContext/ARTBOPTCALC_LICENSES/ARTBOPTCALC_LICENSES_ARTBOPTCALC_FINGERPRINTS" />
+      <nodes>
+        <classShapeMoniker Id="a143bae2-4c48-4d97-a905-ffb8519cd044" />
+        <classShapeMoniker Id="c2abb183-89eb-4f18-9a8e-9c1cd704e75a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.34375); (6.25 : 5.34375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ArtBDataContext/ARTBOPTCALC_PRODUCTS/ARTBOPTCALC_PRODUCTS_ARTBOPTCALC_FINGERPRINTS" />
+      <nodes>
+        <classShapeMoniker Id="0eecb894-4b83-4f57-bc7d-6d81c3674cdf" />
+        <classShapeMoniker Id="c2abb183-89eb-4f18-9a8e-9c1cd704e75a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.53244907877604); (3.90625 : 4.53244907877604); (3.90625 : 5.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ArtBDataContext/ARTBOPTCALC_PRODUCTS/ARTBOPTCALC_PRODUCTS_ARTBOPTCALC_LICENSES" />
+      <nodes>
+        <classShapeMoniker Id="0eecb894-4b83-4f57-bc7d-6d81c3674cdf" />
+        <classShapeMoniker Id="a143bae2-4c48-4d97-a905-ffb8519cd044" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7216984f-5d01-4917-8f16-ed36b76a0f25" absoluteBounds="4, 2.125, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/ArtBDataContext/ARTTBOPTCALC_PAYPAL_IPN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ad3f756-276e-4db2-8bd3-a2ff0663b84e" absoluteBounds="4.015, 2.585, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

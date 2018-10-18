@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="618ef19c-f618-497f-90a1-292d8d311efa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50733/FFAOptMain.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FFAOptMain.xsd" MetadataType="Schema" ID="f76fd399-403e-449a-b56e-087563d8d897" SourceId="1" SourceUrl="http://localhost:50733/FFAOptMain.svc?xsd=xsd0" />
+    <MetadataFile FileName="FFAOptMain1.xsd" MetadataType="Schema" ID="1cef575a-3900-4d97-9e8c-38ab86ab935b" SourceId="1" SourceUrl="http://localhost:50733/FFAOptMain.svc?xsd=xsd1" />
+    <MetadataFile FileName="FFAOptMain2.xsd" MetadataType="Schema" ID="cdacfd1d-3f41-4c9f-b40b-fe7cb947e3b0" SourceId="1" SourceUrl="http://localhost:50733/FFAOptMain.svc?xsd=xsd2" />
+    <MetadataFile FileName="FFAOptMain3.xsd" MetadataType="Schema" ID="3d284e1d-a735-46fe-8f00-dffeee047873" SourceId="1" SourceUrl="http://localhost:50733/FFAOptMain.svc?xsd=xsd3" />
+    <MetadataFile FileName="FFAOptMain4.xsd" MetadataType="Schema" ID="02642aed-c2da-4bf9-aaf6-d92ad686b97f" SourceId="1" SourceUrl="http://localhost:50733/FFAOptMain.svc?xsd=xsd4" />
+    <MetadataFile FileName="FFAOptMain5.xsd" MetadataType="Schema" ID="5957c2ea-fa3f-4f6b-9802-90ec591f3998" SourceId="1" SourceUrl="http://localhost:50733/FFAOptMain.svc?xsd=xsd5" />
+    <MetadataFile FileName="FFAOptMain.disco" MetadataType="Disco" ID="a9c963e1-f240-4caa-b7dd-6e2d3f44613d" SourceId="1" SourceUrl="http://localhost:50733/FFAOptMain.svc?disco" />
+    <MetadataFile FileName="FFAOptMain.wsdl" MetadataType="Wsdl" ID="4508bd4e-0954-4221-b565-418c57f9e296" SourceId="1" SourceUrl="http://localhost:50733/FFAOptMain.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

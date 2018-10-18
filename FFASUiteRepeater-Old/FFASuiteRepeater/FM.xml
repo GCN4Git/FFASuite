@@ -1,0 +1,2305 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FM</name>
+    </assembly>
+    <members>
+        <member name="T:FM.UdpReceiveArgs">
+            <summary>
+            UDP receive arguments.
+            </summary>
+        </member>
+        <member name="T:FM.Dynamic">
+            <summary>
+            Supplies class instances with a key-value
+            mapping to support dynamic property storage.
+            </summary>
+        </member>
+        <member name="T:FM.Serializable">
+            <summary>
+            Base definition for classes that allow serialization to/from JSON.
+            </summary>
+        </member>
+        <member name="M:FM.Serializable.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.Serializable"/> class.
+            </summary>
+        </member>
+        <member name="P:FM.Serializable.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether this instance is dirty.
+            </summary>
+        </member>
+        <member name="P:FM.Serializable.IsSerialized">
+            <summary>
+            Gets or sets a value indicating whether this instance is serialized.
+            </summary>
+        </member>
+        <member name="P:FM.Serializable.Serialized">
+            <summary>
+            Gets or sets the serialized value of this instance.
+            </summary>
+        </member>
+        <member name="M:FM.Dynamic.GetDynamicValue(System.String)">
+            <summary>
+            Gets a property value from the local cache.
+            </summary>
+            <param name="key">The property key. This key is used internally only, but should be namespaced to avoid conflict with third-party extensions.</param>
+            <returns>The stored value, if found; otherwise null.</returns>
+        </member>
+        <member name="M:FM.Dynamic.SetDynamicValue(System.String,System.Object)">
+            <summary>
+            Sets a property value in the local cache.
+            </summary>
+            <param name="key">The property key. This key is used internally only, but should be namespaced to avoid conflict with third-party extensions.</param>
+            <param name="value">The property value. This can be any object that needs to be stored for future use.</param>
+        </member>
+        <member name="M:FM.Dynamic.UnsetDynamicValue(System.String)">
+            <summary>
+            Unsets a property value in the local cache.
+            </summary>
+            <param name="key">The property key. This key is used internally only, but should be namespaced to avoid conflict with third-party extensions.</param>
+            <returns><c>true</c> if the value was removed; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:FM.Dynamic.DynamicProperties">
+            <summary>
+            Gets or sets the dynamic properties on this instance.
+            </summary>
+        </member>
+        <member name="M:FM.UdpReceiveArgs.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.UdpReceiveArgs"/> class.
+            </summary>
+            <param name="state">A custom state object.</param>
+        </member>
+        <member name="P:FM.UdpReceiveArgs.State">
+            <summary>
+            Gets or sets the custom state object.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveArgs.OnSuccess">
+            <summary>
+            Gets or sets the callback to invoke on success.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveArgs.OnFailure">
+            <summary>
+            Gets or sets the callback to invoke on failure.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveArgs.OnComplete">
+            <summary>
+            Gets or sets the callback to invoke on complete.
+            </summary>
+        </member>
+        <member name="T:FM.UdpReceiveCompleteArgs">
+            <summary>
+            UDP receive-complete arguments.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveCompleteArgs.State">
+            <summary>
+            Gets or sets the custom state object.
+            </summary>
+        </member>
+        <member name="T:FM.UdpReceiveFailureArgs">
+            <summary>
+            UDP receive-failure arguments.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveFailureArgs.State">
+            <summary>
+            Gets or sets the custom state object.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveFailureArgs.Exception">
+            <summary>
+            Gets or sets the exception that occurred.
+            </summary>
+        </member>
+        <member name="T:FM.UdpReceiveSuccessArgs">
+            <summary>
+            UDP receive-success arguments.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveSuccessArgs.State">
+            <summary>
+            Gets or sets the custom state object.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveSuccessArgs.Buffer">
+            <summary>
+            Gets or sets the buffer of received data.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveSuccessArgs.RemoteIPAddress">
+            <summary>
+            Gets or sets the remote IP address.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveSuccessArgs.RemotePort">
+            <summary>
+            Gets or sets the remote port.
+            </summary>
+        </member>
+        <member name="P:FM.UdpReceiveSuccessArgs.DiscardedPacketCount">
+            <summary>
+            Gets or sets the number of packets discarded after this read.
+            For more information, see <see cref="P:FM.UdpSocket.MaxQueuedPackets"/>.
+            </summary>
+        </member>
+        <member name="T:FM.UdpSendArgs">
+            <summary>
+            UDP send arguments.
+            </summary>
+        </member>
+        <member name="M:FM.UdpSendArgs.#ctor(System.Byte[],System.String,System.Int32,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.UdpSendArgs"/> class.
+            </summary>
+            <param name="buffer">The buffer of data to send.</param>
+            <param name="ipAddress">The remote IP address.</param>
+            <param name="port">The remote port.</param>
+            <param name="state">The custom state object.</param>
+        </member>
+        <member name="P:FM.UdpSendArgs.Buffer">
+            <summary>
+            Gets or sets the buffer of data to send.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendArgs.IPAddress">
+            <summary>
+            Gets or sets the remote IP address.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendArgs.Port">
+            <summary>
+            Gets or sets the remote port.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendArgs.State">
+            <summary>
+            Gets or sets the custom state object.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendArgs.OnSuccess">
+            <summary>
+            Gets or sets the callback to invoke on success.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendArgs.OnFailure">
+            <summary>
+            Gets or sets the callback to invoke on failure.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendArgs.OnComplete">
+            <summary>
+            Gets or sets the callback to invoke on complete.
+            </summary>
+        </member>
+        <member name="T:FM.UdpSendCompleteArgs">
+            <summary>
+            UDP send-complete arguments.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendCompleteArgs.Buffer">
+            <summary>
+            Gets or sets the original buffer of data to send.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendCompleteArgs.IPAddress">
+            <summary>
+            Gets or sets the original remote IP address.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendCompleteArgs.Port">
+            <summary>
+            Gets or sets the original remote port.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendCompleteArgs.State">
+            <summary>
+            Gets or sets the custom state object.
+            </summary>
+        </member>
+        <member name="T:FM.UdpSendFailureArgs">
+            <summary>
+            UDP send-failure arguments.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendFailureArgs.Buffer">
+            <summary>
+            Gets or sets the original buffer of data to send.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendFailureArgs.IPAddress">
+            <summary>
+            Gets or sets the original remote IP address.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendFailureArgs.Port">
+            <summary>
+            Gets or sets the original remote port.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendFailureArgs.State">
+            <summary>
+            Gets or sets the custom state object.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendFailureArgs.Exception">
+            <summary>
+            Gets or sets the exception that occurred.
+            </summary>
+        </member>
+        <member name="T:FM.UdpSendSuccessArgs">
+            <summary>
+            UDP send-success arguments.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendSuccessArgs.Buffer">
+            <summary>
+            Gets or sets the original buffer of data to send.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendSuccessArgs.IPAddress">
+            <summary>
+            Gets or sets the original remote IP address.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendSuccessArgs.Port">
+            <summary>
+            Gets or sets the original remote port.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSendSuccessArgs.State">
+            <summary>
+            Gets or sets the custom state object.
+            </summary>
+        </member>
+        <member name="T:FM.TcpReceiveArgs">
+            <summary>
+            TCP receive arguments.
+            </summary>
+        </member>
+        <member name="M:FM.TcpReceiveArgs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.TcpReceiveArgs"/> class.
+            </summary>
+        </member>
+        <member name="M:FM.TcpReceiveArgs.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.TcpReceiveArgs"/> class.
+            </summary>
+            <param name="timeout">The timeout.</param>
+        </member>
+        <member name="P:FM.TcpReceiveArgs.Timeout">
+            <summary>
+            Gets or sets the timeout.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveArgs.WillTimeout">
+            <summary>
+            Gets whether the receive will timeout eventually.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveArgs.OnSuccess">
+            <summary>
+            Gets or sets the callback to invoke on success.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveArgs.OnFailure">
+            <summary>
+            Gets or sets the callback to invoke on failure.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveArgs.OnComplete">
+            <summary>
+            Gets or sets the callback to invoke on complete.
+            </summary>
+        </member>
+        <member name="T:FM.TcpReceiveCompleteArgs">
+            <summary>
+            TCP receive-complete arguments.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveCompleteArgs.Timeout">
+            <summary>
+            Gets or sets the original timeout.
+            </summary>
+        </member>
+        <member name="T:FM.TcpReceiveFailureArgs">
+            <summary>
+            TCP receive-failure arguments.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveFailureArgs.Timeout">
+            <summary>
+            Gets or sets the original timeout.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveFailureArgs.Exception">
+            <summary>
+            Gets or sets the exception that occurred.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveFailureArgs.TimedOut">
+            <summary>
+            Gets or sets whether the receive timed out.
+            </summary>
+        </member>
+        <member name="T:FM.TcpReceiveSuccessArgs">
+            <summary>
+            TCP receive-success arguments.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveSuccessArgs.Timeout">
+            <summary>
+            Gets or sets the original timeout.
+            </summary>
+        </member>
+        <member name="P:FM.TcpReceiveSuccessArgs.Buffer">
+            <summary>
+            Gets or sets the buffer of received data.
+            </summary>
+        </member>
+        <member name="T:FM.TcpSendArgs">
+            <summary>
+            TCP send arguments.
+            </summary>
+        </member>
+        <member name="M:FM.TcpSendArgs.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.TcpSendArgs"/> class.
+            </summary>
+            <param name="buffer">The buffer of data to send.</param>
+        </member>
+        <member name="M:FM.TcpSendArgs.#ctor(System.Byte[],System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.TcpSendArgs"/> class.
+            </summary>
+            <param name="buffer">The buffer of data to send.</param>
+            <param name="timeout">The timeout.</param>
+        </member>
+        <member name="P:FM.TcpSendArgs.Buffer">
+            <summary>
+            Gets or sets the buffer of data to send.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendArgs.Timeout">
+            <summary>
+            Gets or sets the timeout.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendArgs.WillTimeout">
+            <summary>
+            Gets whether the send will timeout eventually.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendArgs.OnSuccess">
+            <summary>
+            Gets or sets the callback to invoke on success.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendArgs.OnFailure">
+            <summary>
+            Gets or sets the callback to invoke on failure.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendArgs.OnComplete">
+            <summary>
+            Gets or sets the callback to invoke on complete.
+            </summary>
+        </member>
+        <member name="T:FM.TcpSendCompleteArgs">
+            <summary>
+            TCP send-complete arguments.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendCompleteArgs.Buffer">
+            <summary>
+            Gets or sets the original buffer of data to send.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendCompleteArgs.Timeout">
+            <summary>
+            Gets or sets the original timeout.
+            </summary>
+        </member>
+        <member name="T:FM.TcpSendFailureArgs">
+            <summary>
+            TCP send-failure arguments.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendFailureArgs.Buffer">
+            <summary>
+            Gets or sets the original buffer of data to send.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendFailureArgs.Timeout">
+            <summary>
+            Gets or sets the original timeout.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendFailureArgs.Exception">
+            <summary>
+            Gets or sets the exception that occurred.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendFailureArgs.TimedOut">
+            <summary>
+            Gets or sets whether the send timed out.
+            </summary>
+        </member>
+        <member name="T:FM.TcpSendSuccessArgs">
+            <summary>
+            TCP send-success arguments.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendSuccessArgs.Buffer">
+            <summary>
+            Gets or sets the original buffer of data to send.
+            </summary>
+        </member>
+        <member name="P:FM.TcpSendSuccessArgs.Timeout">
+            <summary>
+            Gets or sets the original timeout.
+            </summary>
+        </member>
+        <member name="T:FM.TcpConnectCompleteArgs">
+            <summary>
+            TCP connect-complete arguments.
+            </summary>
+        </member>
+        <member name="T:FM.TcpConnectFailureArgs">
+            <summary>
+            TCP connect-failure arguments.
+            </summary>
+        </member>
+        <member name="P:FM.TcpConnectFailureArgs.Exception">
+            <summary>
+            Gets or sets the exception that occurred.
+            </summary>
+        </member>
+        <member name="T:FM.TcpConnectSuccessArgs">
+            <summary>
+            TCP connect-success arguments.
+            </summary>
+        </member>
+        <member name="T:FM.TcpConnectArgs">
+            <summary>
+            TCP connect arguments.
+            </summary>
+        </member>
+        <member name="P:FM.TcpConnectArgs.OnSuccess">
+            <summary>
+            Gets or sets the callback to invoke on success.
+            </summary>
+        </member>
+        <member name="P:FM.TcpConnectArgs.OnFailure">
+            <summary>
+            Gets or sets the callback to invoke on failure.
+            </summary>
+        </member>
+        <member name="P:FM.TcpConnectArgs.OnComplete">
+            <summary>
+            Gets or sets the callback to invoke on complete.
+            </summary>
+        </member>
+        <member name="T:FM.HttpResponseReceivedArgs">
+            <summary>
+            Arguments passed into callbacks when an HTTP response is received.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseReceivedArgs.RequestArgs">
+            <summary>
+            Gets or sets the original request arguments.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseReceivedArgs.Sender">
+            <summary>
+            Gets or sets the sender of the request, either a client or publisher.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseReceivedArgs.Response">
+            <summary>
+            Gets or sets the incoming HTTP response received from the server.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseReceivedArgs.Content">
+            <summary>
+            Gets or sets the binary content received from the server.
+            </summary>
+        </member>
+        <member name="T:FM.AsyncException">
+            <summary>
+            Throws exceptions on a separate thread.
+            </summary>
+        </member>
+        <member name="M:FM.AsyncException.AsyncThrow(System.Exception)">
+            <summary>
+            Throws an exception on a separate thread.
+            </summary>
+            <param name="ex">The exception to throw.</param>
+        </member>
+        <member name="T:FM.CallbackState">
+            <summary>
+            A wrapper for a callback and state object.
+            </summary>
+        </member>
+        <member name="M:FM.CallbackState.Execute">
+            <summary>
+            Executes the callback, passing in the state as a parameter.
+            </summary>
+        </member>
+        <member name="M:FM.CallbackState.#ctor(FM.SingleAction{System.Object},System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.CallbackState"/> class.
+            </summary>
+            <param name="callback">The callback.</param>
+            <param name="state">The state.</param>
+        </member>
+        <member name="P:FM.CallbackState.Callback">
+            <summary>
+            Gets or sets the callback.
+            </summary>
+        </member>
+        <member name="P:FM.CallbackState.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+        </member>
+        <member name="T:FM.ConsoleLogProvider">
+            <summary>
+            Log provider that writes output to the Console.
+            </summary>
+        </member>
+        <member name="T:FM.LogProvider">
+            <summary>
+            Base class for all logging provider implementations.
+            Provides logging for 5 key levels - Debug, Info, Warn,
+            Error, and Fatal.
+            </summary>
+        </member>
+        <member name="M:FM.LogProvider.IsEnabled(FM.LogLevel)">
+            <summary>
+            Determines whether logging is enabled for the specified log level.
+            </summary>
+            <param name="level">The log level.</param>
+            <returns>
+              <c>true</c> if logging is enabled for the specified log level; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:FM.LogProvider.Log(FM.LogLevel,System.String)">
+            <summary>
+            Logs a message at the specified log level.
+            </summary>
+            <param name="level">The log level.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:FM.LogProvider.Log(FM.LogLevel,System.String,System.Exception)">
+            <summary>
+            Logs a message at the specified log level.
+            </summary>
+            <param name="level">The log level.</param>
+            <param name="message">The message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:FM.LogProvider.Debug(System.String)">
+            <summary>
+            Logs a debug-level message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:FM.LogProvider.Info(System.String)">
+            <summary>
+            Logs an info-level message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:FM.LogProvider.Warn(System.String)">
+            <summary>
+            Logs a warn-level message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:FM.LogProvider.Error(System.String)">
+            <summary>
+            Logs an error-level message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:FM.LogProvider.Fatal(System.String)">
+            <summary>
+            Logs a fatal-level message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:FM.LogProvider.Debug(System.String,System.Exception)">
+            <summary>
+            Logs a debug-level message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:FM.LogProvider.Info(System.String,System.Exception)">
+            <summary>
+            Logs an info-level message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:FM.LogProvider.Warn(System.String,System.Exception)">
+            <summary>
+            Logs a warn-level message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:FM.LogProvider.Error(System.String,System.Exception)">
+            <summary>
+            Logs an error-level message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:FM.LogProvider.Fatal(System.String,System.Exception)">
+            <summary>
+            Logs a fatal-level message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:FM.LogProvider.DebugFormat(System.String,System.Object[])">
+            <summary>
+            Logs a debug-level message.
+            </summary>
+            <param name="format">A composite format string.</param>
+            <param name="args">An array containing zero or more objects to format.</param>
+        </member>
+        <member name="M:FM.LogProvider.InfoFormat(System.String,System.Object[])">
+            <summary>
+            Logs an info-level message.
+            </summary>
+            <param name="format">A composite format string.</param>
+            <param name="args">An array containing zero or more objects to format.</param>
+        </member>
+        <member name="M:FM.LogProvider.WarnFormat(System.String,System.Object[])">
+            <summary>
+            Logs a warn-level message.
+            </summary>
+            <param name="format">A composite format string.</param>
+            <param name="args">An array containing zero or more objects to format.</param>
+        </member>
+        <member name="M:FM.LogProvider.ErrorFormat(System.String,System.Object[])">
+            <summary>
+            Logs an error-level message.
+            </summary>
+            <param name="format">A composite format string.</param>
+            <param name="args">An array containing zero or more objects to format.</param>
+        </member>
+        <member name="M:FM.LogProvider.FatalFormat(System.String,System.Object[])">
+            <summary>
+            Logs a fatal-level message.
+            </summary>
+            <param name="format">A composite format string.</param>
+            <param name="args">An array containing zero or more objects to format.</param>
+        </member>
+        <member name="P:FM.LogProvider.IsDebugEnabled">
+            <summary>
+            Gets or sets a value indicating whether logging is enabled for debug-level messages.
+            </summary>
+            <value>
+              <c>true</c> if logging is enabled for debug-level messages; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FM.LogProvider.IsInfoEnabled">
+            <summary>
+            Gets or sets a value indicating whether logging is enabled for info-level messages.
+            </summary>
+            <value>
+              <c>true</c> if logging is enabled for info-level messages; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FM.LogProvider.IsWarnEnabled">
+            <summary>
+            Gets or sets a value indicating whether logging is enabled for warn-level messages.
+            </summary>
+            <value>
+              <c>true</c> if logging is enabled for warn-level messages; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FM.LogProvider.IsErrorEnabled">
+            <summary>
+            Gets or sets a value indicating whether logging is enabled for error-level messages.
+            </summary>
+            <value>
+              <c>true</c> if logging is enabled for error-level messages; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FM.LogProvider.IsFatalEnabled">
+            <summary>
+            Gets or sets a value indicating whether logging is enabled for fatal-level messages.
+            </summary>
+            <value>
+              <c>true</c> if logging is enabled for fatal-level messages; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:FM.ConsoleLogProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.ConsoleLogProvider"/> class using <see cref="F:FM.LogLevel.Warn"/>.
+            </summary>
+        </member>
+        <member name="M:FM.ConsoleLogProvider.#ctor(FM.LogLevel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.ConsoleLogProvider"/> class.
+            </summary>
+            <param name="level">The log level.</param>
+        </member>
+        <member name="M:FM.ConsoleLogProvider.IsEnabled(FM.LogLevel)">
+            <summary>
+            Determines whether logging is enabled for the specified log level.
+            </summary>
+            <param name="level">The log level.</param>
+            <returns>
+              <c>true</c> if logging is enabled for the specified log level; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:FM.ConsoleLogProvider.Log(FM.LogLevel,System.String)">
+            <summary>
+            Logs a message at the specified log level.
+            </summary>
+            <param name="level">The log level.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:FM.ConsoleLogProvider.Log(FM.LogLevel,System.String,System.Exception)">
+            <summary>
+            Logs a message at the specified log level.
+            </summary>
+            <param name="level">The log level.</param>
+            <param name="message">The message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="P:FM.ConsoleLogProvider.Level">
+            <summary>
+            Gets or sets the log level.
+            </summary>
+        </member>
+        <member name="P:FM.ConsoleLogProvider.Colorize">
+            <summary>
+            Gets or sets whether the output should be colorized.
+            </summary>
+        </member>
+        <member name="T:FM.HttpMethod">
+            <summary>
+            The method used by an HTTP request.
+            </summary>
+        </member>
+        <member name="F:FM.HttpMethod.Get">
+            <summary>
+            Indicates a GET request.
+            </summary>
+        </member>
+        <member name="F:FM.HttpMethod.Post">
+            <summary>
+            Indicates a POST request.
+            </summary>
+        </member>
+        <member name="F:FM.HttpMethod.Put">
+            <summary>
+            Indicates a PUT request.
+            </summary>
+        </member>
+        <member name="F:FM.HttpMethod.Delete">
+            <summary>
+            Indicates a DELETE request.
+            </summary>
+        </member>
+        <member name="T:FM.HttpRequestArgs">
+            <summary>
+            Arguments for sending an HTTP request.
+            </summary>
+        </member>
+        <member name="M:FM.HttpRequestArgs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.HttpRequestArgs"/> class
+            with default values.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.Sender">
+            <summary>
+            Gets or sets the sender of the content, either a client or publisher.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.Method">
+            <summary>
+            Gets or sets the HTTP method.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.BinaryContent">
+            <summary>
+            Gets or sets the binary content to transfer over HTTP.
+            Overrides <see cref="P:FM.HttpRequestArgs.TextContent"/>.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.TextContent">
+            <summary>
+            Gets or sets the text content to transfer over HTTP.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.Url">
+            <summary>
+            Gets or sets the target URL for the HTTP request.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.Headers">
+            <summary>
+            Gets or sets the headers to transfer over HTTP.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.Timeout">
+            <summary>
+            Gets or sets the number of milliseconds to wait before timing out the HTTP transfer.
+            Defaults to 15000 (15 seconds).
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.OnRequestCreated">
+            <summary>
+            Gets or sets the callback to invoke once the outgoing HTTP request is created.
+            See <see cref="T:FM.HttpRequestCreatedArgs"/> for callback argument details.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestArgs.OnResponseReceived">
+            <summary>
+            Gets or sets the callback to invoke once the incoming HTTP response has been
+            received. See <see cref="T:FM.HttpResponseReceivedArgs"/> for callback argument details.
+            </summary>
+        </member>
+        <member name="T:FM.HttpRequestCreatedArgs">
+            <summary>
+            Arguments passed into callbacks when an HTTP request is created.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestCreatedArgs.RequestArgs">
+            <summary>
+            Gets or sets the original request arguments.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestCreatedArgs.Sender">
+            <summary>
+            Gets or sets the sender of the request, either a client or publisher.
+            </summary>
+        </member>
+        <member name="P:FM.HttpRequestCreatedArgs.Request">
+            <summary>
+            Gets or sets the outgoing HTTP request about to be sent to the server.
+            </summary>
+        </member>
+        <member name="T:FM.HttpResponseArgs">
+            <summary>
+            Arguments for receiving an HTTP response.
+            </summary>
+        </member>
+        <member name="M:FM.HttpResponseArgs.#ctor(FM.HttpRequestArgs)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.HttpResponseArgs"/> class.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+        </member>
+        <member name="P:FM.HttpResponseArgs.BinaryContent">
+            <summary>
+            Gets or sets the binary content read from the HTTP response.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseArgs.TextContent">
+            <summary>
+            Gets or sets the text content read from the HTTP response.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseArgs.StatusCode">
+            <summary>
+            Gets or sets the status code read from the HTTP response.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseArgs.Headers">
+            <summary>
+            Gets or sets the headers read from the HTTP response.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseArgs.Exception">
+            <summary>
+            Gets or sets the exception generated while completing the request.
+            </summary>
+        </member>
+        <member name="P:FM.HttpResponseArgs.RequestArgs">
+            <summary>
+            Gets or sets the original <see cref="T:FM.HttpRequestArgs"/>.
+            </summary>
+        </member>
+        <member name="T:FM.HttpSendFinishArgs">
+            <summary>
+            Arguments for <see cref="E:FM.HttpTransfer.OnSendStart"/>.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendFinishArgs.Sender">
+            <summary>
+            Gets or sets the sender of the request, either a client or publisher.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendFinishArgs.RequestBinaryContent">
+            <summary>
+            Gets or sets the binary content of the request.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendFinishArgs.RequestTextContent">
+            <summary>
+            Gets or sets the text content of the request.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendFinishArgs.ResponseBinaryContent">
+            <summary>
+            Gets or sets the binary content of the response.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendFinishArgs.ResponseTextContent">
+            <summary>
+            Gets or sets the binary content of the response.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendFinishArgs.ResponseHeaders">
+            <summary>
+            Gets or sets the headers of the response.
+            </summary>
+        </member>
+        <member name="T:FM.HttpSendStartArgs">
+            <summary>
+            Arguments for <see cref="E:FM.HttpTransfer.OnSendStart"/>.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendStartArgs.Sender">
+            <summary>
+            Gets or sets the sender of the request, either a client or publisher.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendStartArgs.RequestBinaryContent">
+            <summary>
+            Gets or sets the binary content of the request.
+            </summary>
+        </member>
+        <member name="P:FM.HttpSendStartArgs.RequestTextContent">
+            <summary>
+            Gets or sets the text content of the request.
+            </summary>
+        </member>
+        <member name="T:FM.BackoffMode">
+            <summary>
+            The algorithm to use when calculating sleep time between failed requests.
+            </summary>
+        </member>
+        <member name="F:FM.BackoffMode.Additive">
+            <summary>
+            Indicates that the backoff algorithm uses an additive calculation
+            where the current backoff is equal to the previously calculated
+            backoff plus the specified backoff in milliseconds.
+            </summary>
+        </member>
+        <member name="F:FM.BackoffMode.Constant">
+            <summary>
+            Indicates that the backoff algorithm uses a constant calculation
+            where the current backoff is always equal to exactly the specified
+            backoff in milliseconds.
+            </summary>
+        </member>
+        <member name="F:FM.BackoffMode.None">
+            <summary>
+            Indicates that no backoff interval exists between failed requests.
+            </summary>
+        </member>
+        <member name="T:FM.DoubleFunction`3">
+            <summary>
+            Generic method signature for callbacks with two parameters and a return value.
+            </summary>
+        </member>
+        <member name="T:FM.EmptyFunction`1">
+            <summary>
+            Generic method signature for callbacks with no parameters and a return value.
+            </summary>
+        </member>
+        <member name="T:FM.SingleFunction`2">
+            <summary>
+            Generic method signature for callbacks with a single parameter and a return value.
+            </summary>
+        </member>
+        <member name="T:FM.DoubleAction`2">
+            <summary>
+            Generic method signature for callbacks with two parameters.
+            </summary>
+        </member>
+        <member name="T:FM.EmptyAction">
+            <summary>
+            Generic method signature for callbacks with no parameters.
+            </summary>
+        </member>
+        <member name="T:FM.SingleAction`1">
+            <summary>
+            Generic method signature for callbacks with a single parameter.
+            </summary>
+        </member>
+        <member name="T:FM.BitAssistant">
+            <summary>
+            Contains methods for cross-platform bit manipulation.
+            </summary>
+        </member>
+        <member name="M:FM.BitAssistant.IsLittleEndian">
+            <summary>
+            Indicates the byte order in which data is stored in this computer architecture.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.SequencesAreEqual(System.Byte[],System.Byte[])">
+            <summary>
+            Compares two sequences of bytes for equality.
+            </summary>
+            <param name="array1">The first byte array.</param>
+            <param name="array2">The second byte array.</param>
+            <returns><c>true</c> if the sequences are equals; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.BitAssistant.SubArray(System.Byte[],System.Int32)">
+            <summary>
+            Creates a subarray from an existing array.
+            </summary>
+            <param name="array">The source array.</param>
+            <param name="offset">The offset into the source array.</param>
+            <returns>The subarray.</returns>
+        </member>
+        <member name="M:FM.BitAssistant.SubArray(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Creates a subarray from an existing array.
+            </summary>
+            <param name="array">The source array.</param>
+            <param name="offset">The offset into the source array.</param>
+            <param name="count">The number of bytes to copy into the subarray.</param>
+            <returns>The subarray.</returns>
+        </member>
+        <member name="M:FM.BitAssistant.Reverse(System.Byte[])">
+            <summary>
+            Performs an in-place reversal of a byte array.
+            </summary>
+            <param name="array">The array to reverse.</param>
+        </member>
+        <member name="M:FM.BitAssistant.GetHexString(System.Byte[])">
+            <summary>
+            Converts a byte array to a hexadecimal string.
+            </summary>
+            <param name="array">The byte array.</param>
+            <returns>The hexadecimal string.</returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetHexBytes(System.String)">
+            <summary>
+            Converts a hexadecimal string to a byte array.
+            </summary>
+            <param name="s">The hexadecimal string.</param>
+            <returns>The byte array.</returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetBooleanBytes(System.Boolean)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetDoubleBytes(System.Double)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetFloatBytes(System.Single)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetIntegerBytes(System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetIntegerBytesFromLong(System.Int64)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetLongBytes(System.Int64)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetShortBytes(System.Int16)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetShortBytesFromInteger(System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToBoolean(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToDouble(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToFloat(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToInteger(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToIntegerFromShort(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToLong(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToLongFromInteger(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToShort(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetBooleanBytesNetwork(System.Boolean)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetDoubleBytesNetwork(System.Double)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetFloatBytesNetwork(System.Single)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetIntegerBytesNetwork(System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetIntegerBytesFromLongNetwork(System.Int64)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetLongBytesNetwork(System.Int64)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetShortBytesNetwork(System.Int16)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.GetShortBytesFromIntegerNetwork(System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToBooleanNetwork(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToDoubleNetwork(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToFloatNetwork(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToIntegerNetwork(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToIntegerFromShortNetwork(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToLongNetwork(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToLongFromIntegerNetwork(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FM.BitAssistant.ToShortNetwork(System.Byte[],System.Int32)">
+            <summary>
+            Returns the specified value as an array of bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="startIndex">The start index.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FM.UdpSocket">
+            <summary>
+            UDP socket implementation.
+            </summary>
+        </member>
+        <member name="M:FM.UdpSocket.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.UdpSocket"/> class.
+            </summary>
+            <param name="ipv6">Whether an IPv6 socket should be created.</param>
+        </member>
+        <member name="M:FM.UdpSocket.Bind(System.String,System.Int32,System.Boolean@)">
+            <summary>
+            Binds the socket to a local endpoint.
+            </summary>
+            <param name="ipAddress">The local IP address.</param>
+            <param name="port">The local port.</param>
+            <param name="addressInUse">Whether or not the address is in use.</param>
+        </member>
+        <member name="M:FM.UdpSocket.Send(System.Byte[],System.String,System.Int32)">
+            <summary>
+            Sends data synchronously.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="ipAddress">The remote IP address.</param>
+            <param name="port">The remote port.</param>
+        </member>
+        <member name="M:FM.UdpSocket.SendAsync(FM.UdpSendArgs)">
+            <summary>
+            Sends data asynchronously.
+            </summary>
+            <param name="sendArgs">The send arguments.</param>
+        </member>
+        <member name="M:FM.UdpSocket.ReceiveAsync(FM.UdpReceiveArgs)">
+            <summary>
+            Receives data asynchronously.
+            </summary>
+            <param name="receiveArgs">The receive arguments.</param>
+        </member>
+        <member name="M:FM.UdpSocket.ReceiveAsync(FM.UdpReceiveArgs,FM.UdpReceiveSuccessArgs@,FM.UdpReceiveFailureArgs@,FM.UdpReceiveCompleteArgs@)">
+            <summary>
+            Receives data asynchronously.
+            </summary>
+            <param name="receiveArgs">The receive arguments.</param>
+            <param name="receiveSuccessArgs">The receive success arguments, if the operation succeeded synchronously.</param>
+            <param name="receiveFailureArgs">The receive failure arguments, if the operation failed synchronously.</param>
+            <param name="receiveCompleteArgs">The receive complete arguments, if the operation was completed synchronously.</param>
+            <returns>
+              <c>true</c> if the operation completed synchronously; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:FM.UdpSocket.Close">
+            <summary>
+            Closes the socket.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSocket.IsClosed">
+            <summary>
+            Gets a value indicating whether this instance is closed.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSocket.MaxQueuedPackets">
+            <summary>
+            Gets or sets the maximum number of packets
+            that can be queued at any given point in time.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSocket.LocalPort">
+            <summary>
+            Gets the local port.
+            </summary>
+        </member>
+        <member name="P:FM.UdpSocket.LocalIPAddress">
+            <summary>
+            Gets the local IP address.
+            </summary>
+        </member>
+        <member name="T:FM.StringAssistant">
+            <summary>
+            Contains methods for string manipulation.
+            </summary>
+        </member>
+        <member name="M:FM.StringAssistant.SubArray(System.String[],System.Int32)">
+            <summary>
+            Creates a subarray from an existing array.
+            </summary>
+            <param name="array">The source array.</param>
+            <param name="offset">The offset into the source array.</param>
+            <returns>The subarray.</returns>
+        </member>
+        <member name="M:FM.StringAssistant.SubArray(System.String[],System.Int32,System.Int32)">
+            <summary>
+            Creates a subarray from an existing array.
+            </summary>
+            <param name="array">The source array.</param>
+            <param name="offset">The offset into the source array.</param>
+            <param name="count">The number of elements to copy into the subarray.</param>
+            <returns>The subarray.</returns>
+        </member>
+        <member name="T:FM.HttpTransfer">
+            <summary>
+            Base class that defines methods for transferring content over HTTP.
+            </summary>
+        </member>
+        <member name="M:FM.HttpTransfer.SendBinary(FM.HttpRequestArgs)">
+            <summary>
+            Sends binary content synchronously using the specified arguments.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+            <returns>The response arguments from the server.</returns>
+        </member>
+        <member name="M:FM.HttpTransfer.SendText(FM.HttpRequestArgs)">
+            <summary>
+            Sends text content synchronously using the specified arguments.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+            <returns>The response arguments from the server.</returns>
+        </member>
+        <member name="M:FM.HttpTransfer.SendBinaryAsync(FM.HttpRequestArgs,FM.SingleAction{FM.HttpResponseArgs})">
+            <summary>
+            Sends binary content asynchronously using the specified arguments.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+            <param name="callback">The callback to execute on success or failure.</param>
+        </member>
+        <member name="M:FM.HttpTransfer.SendTextAsync(FM.HttpRequestArgs,FM.SingleAction{FM.HttpResponseArgs})">
+            <summary>
+            Sends text content asynchronously using the specified arguments.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+            <param name="callback">The callback to execute on success or failure.</param>
+        </member>
+        <member name="M:FM.HttpTransfer.Shutdown">
+            <summary>
+            Releases any resources and shuts down.
+            </summary>
+        </member>
+        <member name="M:FM.HttpTransfer.Send(FM.HttpRequestArgs)">
+            <summary>
+            Sends a request synchronously.
+            </summary>
+            <param name="requestArgs">The request parameters.</param>
+            <returns>The resulting response.</returns>
+        </member>
+        <member name="M:FM.HttpTransfer.SendAsync(FM.HttpRequestArgs,FM.SingleAction{FM.HttpResponseArgs})">
+            <summary>
+            Sends a request asynchronously.
+            </summary>
+            <param name="requestArgs">The request parameters.</param>
+            <param name="callback">The callback to execute with the resulting response.</param>
+        </member>
+        <member name="M:FM.HttpTransfer.AddQueryToUrl(System.String,System.String)">
+            <summary>
+            Escapes and adds a query parameter as a key/empty-value pair to a URL.
+            </summary>
+            <param name="url">The URL with the query to which the key/value should be added.</param>
+            <param name="key">The key of the query parameter to add.</param>
+            <returns>The original URL with the query parameter added.</returns>
+        </member>
+        <member name="M:FM.HttpTransfer.AddQueryToUrl(System.String,System.String,System.String)">
+            <summary>
+            Escapes and adds a query parameter as a key/value pair to a URL.
+            </summary>
+            <param name="url">The URL with the query to which the key/value should be added.</param>
+            <param name="key">The key of the query parameter to add.</param>
+            <param name="value">The value of the query parameter to add.</param>
+            <returns>The original URL with the query parameter added.</returns>
+        </member>
+        <member name="E:FM.HttpTransfer.OnSendStart">
+            <summary>
+            Raised before an HTTP request is sent.
+            </summary>
+            <parameter name="args">The <see cref="T:FM.HttpSendStartArgs"/> associated with the event.</parameter>
+        </member>
+        <member name="E:FM.HttpTransfer.OnSendFinish">
+            <summary>
+            Raised before an HTTP request is sent.
+            </summary>
+            <parameter name="args">The <see cref="T:FM.HttpSendFinishArgs"/> associated with the event.</parameter>
+        </member>
+        <member name="T:FM.HttpTransferFactory">
+            <summary>
+            Creates implementations of <see cref="T:FM.HttpTransfer"/>.
+            </summary>
+        </member>
+        <member name="M:FM.HttpTransferFactory.GetHttpTransfer">
+            <summary>
+            Gets an instance of the HTTP-based transfer class.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:FM.HttpTransferFactory.CreateHttpTransfer">
+            <summary>
+            Gets or sets the callback that creates an HTTP-based transfer class.
+            </summary>
+        </member>
+        <member name="T:FM.HttpWebRequestTransfer">
+            <summary>
+            Defines methods for transferring content over HTTP using the HttpWebRequest.
+            </summary>
+        </member>
+        <member name="M:FM.HttpWebRequestTransfer.GetPlatformCode">
+            <summary>
+            Gets the short code indicating the current platform.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FM.HttpWebRequestTransfer.SendBinary(FM.HttpRequestArgs)">
+            <summary>
+            Sends binary content synchronously using the specified arguments.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+            <returns>The response arguments from the server.</returns>
+        </member>
+        <member name="M:FM.HttpWebRequestTransfer.SendText(FM.HttpRequestArgs)">
+            <summary>
+            Sends text content synchronously using the specified arguments.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+            <returns>The response arguments from the server.</returns>
+        </member>
+        <member name="M:FM.HttpWebRequestTransfer.SendBinaryAsync(FM.HttpRequestArgs,FM.SingleAction{FM.HttpResponseArgs})">
+            <summary>
+            Sends binary content asynchronously using the specified arguments.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+            <param name="callback">The callback to execute on success or failure.</param>
+        </member>
+        <member name="M:FM.HttpWebRequestTransfer.SendTextAsync(FM.HttpRequestArgs,FM.SingleAction{FM.HttpResponseArgs})">
+            <summary>
+            Sends text content asynchronously using the specified arguments.
+            </summary>
+            <param name="requestArgs">The request arguments.</param>
+            <param name="callback">The callback to execute on success or failure.</param>
+        </member>
+        <member name="M:FM.HttpWebRequestTransfer.Shutdown">
+            <summary>
+            Releases any resources and shuts down.
+            </summary>
+        </member>
+        <member name="T:FM.Json">
+            <summary>
+            Contains methods for serializing/deserializing DataContract-decorated classes.
+            </summary>
+        </member>
+        <member name="M:FM.Json.Serialize(System.Object)">
+            <summary>
+            Serializes an object marked with appropriate DataContract/DataMember attributes to a JSON string.
+            </summary>
+            <param name="o">The object to serialize.</param>
+            <returns>The JSON representation of the object.</returns>
+        </member>
+        <member name="M:FM.Json.Serialize``1(``0)">
+            <summary>
+            Serializes an object marked with appropriate DataContract/DataMember attributes to a JSON string.
+            </summary>
+            <param name="item">The object to serialize.</param>
+            <returns>The JSON representation of the object.</returns>
+        </member>
+        <member name="M:FM.Json.Deserialize(System.String,System.Type)">
+            <summary>
+            Deserializes a JSON string to an object marked with appropriate DataContract/DataMember attributes.
+            </summary>
+            <param name="json">The JSON string.</param>
+            <param name="type">The type of the object to deserialize.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:FM.Json.Deserialize``1(System.String)">
+            <summary>
+            Deserializes a JSON string to an object marked with appropriate DataContract/DataMember attributes.
+            </summary>
+            <param name="json">The JSON string.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="T:FM.JsonChecker">
+            <summary>
+            JsonChecker is a Pushdown Automaton that very quickly determines if a 
+            JSON text is syntactically correct. It could be used to filter inputs 
+            to a system, or to verify that the outputs of a system are 
+            syntactically correct.
+            </summary>
+            <remarks>
+            This implementation is a C# port of the original 
+            <a href="http://www.json.org/JSON_checker/">JSON_checker</a> program 
+            written in C.
+            </remarks>
+        </member>
+        <member name="M:FM.JsonChecker.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.JsonChecker"/> class.
+            </summary>
+        </member>
+        <member name="M:FM.JsonChecker.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.JsonChecker"/> class.
+            </summary>
+            <param name="depth">The maximum depth to recurse.</param>
+        </member>
+        <member name="M:FM.JsonChecker.CheckString(System.String)">
+            <summary>
+            Checks if the specified string is valid JSON.
+            </summary>
+            <param name="str">The string to check.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FM.LogLevel">
+            <summary>
+            The level at which to log.
+            </summary>
+        </member>
+        <member name="F:FM.LogLevel.Debug">
+            <summary>
+            Logs messages relevant to development and troubleshooting.
+            </summary>
+        </member>
+        <member name="F:FM.LogLevel.Info">
+            <summary>
+            Logs messages relevant to expected use.
+            </summary>
+        </member>
+        <member name="F:FM.LogLevel.Warn">
+            <summary>
+            Logs messages relevant to potential pit-falls.
+            </summary>
+        </member>
+        <member name="F:FM.LogLevel.Error">
+            <summary>
+            Logs messages relevant to errors that allow program execution to continue.
+            </summary>
+        </member>
+        <member name="F:FM.LogLevel.Fatal">
+            <summary>
+            Logs messages relevant to errors that require the program to terminate.
+            </summary>
+        </member>
+        <member name="T:FM.NullLogProvider">
+            <summary>
+            An implementation of a logging provider that does nothing.
+            </summary>
+        </member>
+        <member name="M:FM.NullLogProvider.IsEnabled(FM.LogLevel)">
+            <summary>
+            Returns <c>false</c>.
+            </summary>
+            <param name="level">The log level.</param>
+            <returns>
+              <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:FM.NullLogProvider.Log(FM.LogLevel,System.String)">
+            <summary>
+            Ignores a message at the specified log level.
+            </summary>
+            <param name="level">The log level.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:FM.NullLogProvider.Log(FM.LogLevel,System.String,System.Exception)">
+            <summary>
+            Ignores a message at the specified log level.
+            </summary>
+            <param name="level">The log level.</param>
+            <param name="message">The message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="T:FM.ParseAssistant">
+            <summary>
+            Contains methods for cross-platform primitive parsing from strings.
+            </summary>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseByte(System.String)">
+            <summary>
+            Parses a byte value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed byte value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseShort(System.String)">
+            <summary>
+            Parses a short value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed short value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseInteger(System.String)">
+            <summary>
+            Parses an integer value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed integer value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseLong(System.String)">
+            <summary>
+            Parses a long value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed long value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseFloat(System.String)">
+            <summary>
+            Parses a float value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed float value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseDouble(System.String)">
+            <summary>
+            Parses a double value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed double value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseDecimal(System.String)">
+            <summary>
+            Parses a decimal value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed decimal value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseBoolean(System.String)">
+            <summary>
+            Parses a boolean value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed boolean value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.ParseGuid(System.String)">
+            <summary>
+            Parses a GUID value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>The parsed GUID value.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseByte(System.String,System.Byte@)">
+            <summary>
+            Attempts to parse a byte value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="byteResult">The parsed byte value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseShort(System.String,System.Int16@)">
+            <summary>
+            Attempts to parse a short value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="shortResult">The parsed short value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseInteger(System.String,System.Int32@)">
+            <summary>
+            Attempts to parse an integer value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="intResult">The parsed integer value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseLong(System.String,System.Int64@)">
+            <summary>
+            Attempts to parse a long value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="longResult">The parsed long value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseFloat(System.String,System.Single@)">
+            <summary>
+            Attempts to parse a float value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="floatResult">The parsed float value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseDouble(System.String,System.Double@)">
+            <summary>
+            Attempts to parse a double value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="doubleResult">The parsed double value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseDecimal(System.String,System.Decimal@)">
+            <summary>
+            Attempts to parse a decimal value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="decimalResult">The parsed decimal value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseBoolean(System.String,System.Boolean@)">
+            <summary>
+            Attempts to parse a boolean value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="boolResult">The parsed boolean value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:FM.ParseAssistant.TryParseGuid(System.String,System.Guid@)">
+            <summary>
+            Attempts to parse a GUID value from a string.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="guidResult">The parsed GUID value.</param>
+            <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:FM.DeserializeCallback`1">
+            <summary>
+            Method signature for taking a property name and JSON value and assigning it to an object.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize.</typeparam>
+            <param name="target">The object being deserialized.</param>
+            <param name="name">The name of the property to assign.</param>
+            <param name="valueJson">The value of the property to assign in JSON format.</param>
+        </member>
+        <member name="T:FM.SerializeCallback`1">
+            <summary>
+            Method signature for storing property values in JSON format in a hashtable.
+            </summary>
+            <typeparam name="T">The type of the object to serialize.</typeparam>
+            <param name="source">The object being serialized.</param>
+            <param name="jsonObject">The hashtable of property names to JSON values.</param>
+        </member>
+        <member name="T:FM.Serializer">
+            <summary>
+            Provides methods for serializing/deserializing .NET value types
+            as well as facilities for converting objects and arrays if
+            appropriate callbacks are supplied to assist with the conversion.
+            </summary>
+        </member>
+        <member name="M:FM.Serializer.SerializeObjectFast``1(``0,FM.SerializeCallback{``0})">
+            <summary>
+            Serializes a <see cref="T:FM.Serializable"/> object into a JSON string.
+            </summary>
+            <typeparam name="T">The type of the object to serialize.</typeparam>
+            <param name="source">The object being serialized.</param>
+            <param name="callback">The method used for serializing properties.</param>
+            <returns>The object as a JSON string.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeObject``1(``0,FM.SerializeCallback{``0})">
+            <summary>
+            Serializes an object into a JSON string.
+            </summary>
+            <typeparam name="T">The type of the object to serialize.</typeparam>
+            <param name="source">The object being serialized.</param>
+            <param name="callback">The method used for serializing properties.</param>
+            <returns>The object as a JSON string.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeObjectFast``1(System.String,FM.EmptyFunction{``0},FM.DeserializeCallback{``0})">
+            <summary>
+            Deserializes a JSON string into a <see cref="T:FM.Serializable"/> target object type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize.</typeparam>
+            <param name="json">The JSON-encoded string.</param>
+            <param name="creator">The method used for creating a new object.</param>
+            <param name="callback">The method used for deserializing a property.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeObject``1(System.String,FM.EmptyFunction{``0},FM.DeserializeCallback{``0})">
+            <summary>
+            Deserializes a JSON string into a target object type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize.</typeparam>
+            <param name="json">The JSON-encoded string.</param>
+            <param name="creator">The method used for creating a new object.</param>
+            <param name="callback">The method used for deserializing a property.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeObjectArrayFast``1(``0[],FM.SerializeCallback{``0})">
+            <summary>
+            Serializes a <see cref="T:FM.Serializable"/> object array into a JSON string.
+            </summary>
+            <typeparam name="T">The type of the object to serialize.</typeparam>
+            <param name="objects">The object array being serialized.</param>
+            <param name="callback">The method used for serializing objects.</param>
+            <returns>The object array as a JSON string.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeObjectArray``1(``0[],FM.SerializeCallback{``0})">
+            <summary>
+            Serializes an object array into a JSON string.
+            </summary>
+            <typeparam name="T">The type of the object to serialize.</typeparam>
+            <param name="objects">The object array being serialized.</param>
+            <param name="callback">The method used for serializing objects.</param>
+            <returns>The object array as a JSON string.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeObjectArrayFast``1(System.String,FM.EmptyFunction{``0},FM.DeserializeCallback{``0})">
+            <summary>
+            Deserializes a JSON string into an array of <see cref="T:FM.Serializable"/> target object types.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize.</typeparam>
+            <param name="json">The JSON-encoded string.</param>
+            <param name="creator">The method used for creating an object.</param>
+            <param name="callback">The method used for deserializing an object.</param>
+            <returns>An array of deserialized objects.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeObjectArray``1(System.String,FM.EmptyFunction{``0},FM.DeserializeCallback{``0})">
+            <summary>
+            Deserializes a JSON string into an array of target object types.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize.</typeparam>
+            <param name="json">The JSON-encoded string.</param>
+            <param name="creator">The method used for creating an object.</param>
+            <param name="callback">The method used for deserializing an object.</param>
+            <returns>An array of deserialized objects.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeRawArray(System.String[])">
+            <summary>
+            Serializes a raw array to JSON.
+            </summary>
+            <param name="jsons">An array of raw values.</param>
+            <returns>A JSON-serialized raw array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeRawArray(System.String)">
+            <summary>
+            Deserializes a raw array from JSON.
+            </summary>
+            <param name="json">A JSON-serialized raw array.</param>
+            <returns>An array of raw values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeStringArray(System.String[])">
+            <summary>
+            Serializes a string array to JSON.
+            </summary>
+            <param name="array">An array of string values.</param>
+            <returns>A JSON-serialized string array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeStringArray(System.String)">
+            <summary>
+            Deserializes a simple string array from JSON (no commas in strings).
+            </summary>
+            <param name="arrayJson">A JSON-serialized string array.</param>
+            <returns>An array of string values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeRaw(System.String)">
+            <summary>
+            Serializes a piece of raw JSON.
+            </summary>
+            <param name="dataJson">The raw data.</param>
+            <returns>The serialized data.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeRaw(System.String)">
+            <summary>
+            Deserializes a piece of raw JSON.
+            </summary>
+            <param name="dataJson">The raw data.</param>
+            <returns>The deserialized data.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeString(System.String)">
+            <summary>
+            Serializes a string.
+            </summary>
+            <param name="value">The string to serialize.</param>
+            <returns>The serialized string value.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeString(System.String)">
+            <summary>
+            Deserializes a string.
+            </summary>
+            <param name="valueJson">The string to deserialize.</param>
+            <returns>The deserialized string value.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeBooleanArray(System.Boolean[])">
+            <summary>
+            Serializes a boolean array to JSON.
+            </summary>
+            <param name="array">An array of boolean values.</param>
+            <returns>A JSON-serialized boolean array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeBooleanArray(System.String)">
+            <summary>
+            Deserializes a boolean array from JSON.
+            </summary>
+            <param name="arrayJson">A JSON-serialized boolean array.</param>
+            <returns>An array of boolean values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeBoolean(System.Nullable{System.Boolean})">
+            <summary>
+            Serializes a boolean value.
+            </summary>
+            <param name="value">The boolean to serialize.</param>
+            <returns>The serialized boolean value.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeBoolean(System.String)">
+            <summary>
+            Deserializes a boolean value.
+            </summary>
+            <param name="valueJson">The boolean JSON to deserialize.</param>
+            <returns>The deserialized boolean value.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeIntegerArray(System.Int32[])">
+            <summary>
+            Serializes a integer array to JSON.
+            </summary>
+            <param name="array">An array of integer values.</param>
+            <returns>A JSON-serialized integer array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeIntegerArray(System.String)">
+            <summary>
+            Deserializes a integer array from JSON.
+            </summary>
+            <param name="arrayJson">A JSON-serialized integer array.</param>
+            <returns>An array of integer values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeInteger(System.Nullable{System.Int32})">
+            <summary>
+            Serializes an integer value.
+            </summary>
+            <param name="value">The integer to serialize.</param>
+            <returns>The serialized integer value.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeInteger(System.String)">
+            <summary>
+            Deserializes an integer value.
+            </summary>
+            <param name="valueJson">The integer JSON to deserialize.</param>
+            <returns>The deserialized integer value.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeLongArray(System.Int64[])">
+            <summary>
+            Serializes a long array to JSON.
+            </summary>
+            <param name="array">An array of long values.</param>
+            <returns>A JSON-serialized long array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeLongArray(System.String)">
+            <summary>
+            Deserializes a long array from JSON.
+            </summary>
+            <param name="arrayJson">A JSON-serialized long array.</param>
+            <returns>An array of long values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeLong(System.Nullable{System.Int64})">
+            <summary>
+            Serializes a long value.
+            </summary>
+            <param name="value">The long to serialize.</param>
+            <returns>The serialized long value.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeLong(System.String)">
+            <summary>
+            Deserializes a long value.
+            </summary>
+            <param name="valueJson">The long JSON to deserialize.</param>
+            <returns>The deserialized long value.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeDecimalArray(System.Decimal[])">
+            <summary>
+            Serializes a decimal array to JSON.
+            </summary>
+            <param name="array">An array of decimal values.</param>
+            <returns>A JSON-serialized decimal array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeDecimalArray(System.String)">
+            <summary>
+            Deserializes a decimal array from JSON.
+            </summary>
+            <param name="arrayJson">A JSON-serialized decimal array.</param>
+            <returns>An array of decimal values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeDecimal(System.Nullable{System.Decimal})">
+            <summary>
+            Serializes a decimal value.
+            </summary>
+            <param name="value">The decimal to serialize.</param>
+            <returns>The serialized decimal value.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeDecimal(System.String)">
+            <summary>
+            Deserializes a decimal value.
+            </summary>
+            <param name="valueJson">The decimal JSON to deserialize.</param>
+            <returns>The deserialized decimal value.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeDoubleArray(System.Double[])">
+            <summary>
+            Serializes a double array to JSON.
+            </summary>
+            <param name="array">An array of double values.</param>
+            <returns>A JSON-serialized double array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeDoubleArray(System.String)">
+            <summary>
+            Deserializes a double array from JSON.
+            </summary>
+            <param name="arrayJson">A JSON-serialized double array.</param>
+            <returns>An array of double values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeDouble(System.Nullable{System.Double})">
+            <summary>
+            Serializes a double value.
+            </summary>
+            <param name="value">The double to serialize.</param>
+            <returns>The serialized double value.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeDouble(System.String)">
+            <summary>
+            Deserializes a double value.
+            </summary>
+            <param name="valueJson">The double JSON to deserialize.</param>
+            <returns>The deserialized double value.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeFloatArray(System.Single[])">
+            <summary>
+            Serializes a float array to JSON.
+            </summary>
+            <param name="array">An array of float values.</param>
+            <returns>A JSON-serialized float array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeFloatArray(System.String)">
+            <summary>
+            Deserializes a float array from JSON.
+            </summary>
+            <param name="arrayJson">A JSON-serialized float array.</param>
+            <returns>An array of float values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeFloat(System.Nullable{System.Single})">
+            <summary>
+            Serializes a float value.
+            </summary>
+            <param name="value">The float to serialize.</param>
+            <returns>The serialized float value.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeFloat(System.String)">
+            <summary>
+            Deserializes a float value.
+            </summary>
+            <param name="valueJson">The float JSON to deserialize.</param>
+            <returns>The deserialized float value.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeGuidArray(System.Guid[])">
+            <summary>
+            Serializes a GUID array to JSON.
+            </summary>
+            <param name="array">An array of GUID values.</param>
+            <returns>A JSON-serialized GUID array.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeGuidArray(System.String)">
+            <summary>
+            Deserializes a GUID array from JSON.
+            </summary>
+            <param name="arrayJson">A JSON-serialized GUID array.</param>
+            <returns>An array of GUID values.</returns>
+        </member>
+        <member name="M:FM.Serializer.SerializeGuid(System.Nullable{System.Guid})">
+            <summary>
+            Serializes a globally unique identifier.
+            </summary>
+            <param name="value">The GUID to serialize.</param>
+            <returns>The serialized GUID.</returns>
+        </member>
+        <member name="M:FM.Serializer.DeserializeGuid(System.String)">
+            <summary>
+            Deserializes a globally unique identifier.
+            </summary>
+            <param name="valueJson">The GUID JSON to deserialize.</param>
+            <returns>The deserialized GUID.</returns>
+        </member>
+        <member name="M:FM.Serializer.TrimQuotes(System.String)">
+            <summary>
+            Trims the quotes from a JavaScript string value.
+            </summary>
+            <param name="value">The JavaScript string value.</param>
+            <returns>The string without quotes.</returns>
+        </member>
+        <member name="M:FM.Serializer.EscapeString(System.String)">
+            <summary>
+            Escapes any special characters in a string.
+            </summary>
+            <param name="text">The string without escaped characters.</param>
+            <returns>The escaped string.</returns>
+        </member>
+        <member name="M:FM.Serializer.UnescapeString(System.String)">
+            <summary>
+            Unescapes any special characters from a string.
+            </summary>
+            <param name="text">The string with escaped characters.</param>
+            <returns>The unescaped string.</returns>
+        </member>
+        <member name="M:FM.Serializer.IsValidJson(System.String)">
+            <summary>
+            Determines whether the specified JSON string is valid.
+            </summary>
+            <param name="json">The JSON string to validate.</param>
+            <returns>True if the JSON string is valid; false otherwise.</returns>
+        </member>
+        <member name="T:FM.TcpSocket">
+            <summary>
+            Cross-platform TCP socket implementation with options for SSL.
+            </summary>
+        </member>
+        <member name="M:FM.TcpSocket.#ctor(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.TcpSocket"/> class.
+            </summary>
+            <param name="host">The host to which the socket should connect.</param>
+            <param name="port">The port to which the socket should connect.</param>
+            <param name="secure">Whether to send data securely using SSL.</param>
+        </member>
+        <member name="M:FM.TcpSocket.#ctor(System.Net.Sockets.Socket,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FM.TcpSocket"/> class.
+            </summary>
+            <param name="socket">The connected socket.</param>
+            <param name="secure">Whether to send data securely using SSL.</param>
+        </member>
+        <member name="M:FM.TcpSocket.ConnectAsync(FM.TcpConnectArgs)">
+            <summary>
+            Connects the socket asynchronously.
+            </summary>
+            <param name="connectArgs">The connect arguments.</param>
+        </member>
+        <member name="M:FM.TcpSocket.SendAsync(FM.TcpSendArgs)">
+            <summary>
+            Sends data asynchronously.
+            </summary>
+            <param name="sendArgs">The send arguments.</param>
+        </member>
+        <member name="M:FM.TcpSocket.ReceiveAsync(FM.TcpReceiveArgs)">
+            <summary>
+            Receives data asynchronously.
+            </summary>
+            <param name="receiveArgs">The receive arguments.</param>
+        </member>
+        <member name="M:FM.TcpSocket.Close">
+            <summary>
+            Closes the socket.
+            </summary>
+        </member>
+        <member name="T:FM.Deferrer">
+            <summary>
+            Timeout class to assist with deferred operations.
+            </summary>
+        </member>
+        <member name="M:FM.Deferrer.Defer(FM.SingleAction{System.Object},System.Int32,System.Object)">
+            <summary>
+            Defers an action by a specifed number of milliseconds.
+            </summary>
+            <param name="callback">The callback to defer.</param>
+            <param name="timeout">The timeout in milliseconds.</param>
+            <param name="state">The callback state.</param>
+        </member>
+        <member name="T:FM.TimeoutTimer">
+            <summary>
+            A thread-safe class for running timeouts on asynchronous methods.
+            </summary>
+        </member>
+        <member name="M:FM.TimeoutTimer.Start(System.Int32,FM.SingleAction{System.Object},System.Object)">
+            <summary>
+            Starts the timer.
+            </summary>
+            <param name="timeout">The timeout length, in milliseconds.</param>
+            <param name="callback">The callback to invoke if the timeout occurs.</param>
+            <param name="state">The state to pass into the callback if the timeout occurs.</param>
+        </member>
+        <member name="M:FM.TimeoutTimer.Stop">
+            <summary>
+            Stops the timer, notifying the calling code if the timeout has already elapsed.
+            </summary>
+            <returns><c>true</c> if the timer was successfully stopped in time; <c>false</c>
+            if the timeout elapsed and the timeout callback has been invoked.</returns>
+        </member>
+    </members>
+</doc>

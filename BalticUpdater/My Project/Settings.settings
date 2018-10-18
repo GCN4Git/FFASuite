@@ -1,0 +1,108 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServicePathLive" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/ArtBwcfData/ArtBwcfDataService.svc</Value>
+    </Setting>
+    <Setting Name="ServicePathDebug" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/ArtBwcfData/ArtBwcfDataService.svc</Value>
+    </Setting>
+    <Setting Name="PRODUCT_ID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2908</Value>
+    </Setting>
+    <Setting Name="ValidCertificates" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;787F9C7CA71AD09949025059BB47C369&lt;/string&gt;
+  &lt;string&gt;E24DD330841A0CBA48EBF47829A64377&lt;/string&gt;
+  &lt;string&gt;2B1F2C9E2426FC3D&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="DogHouse" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">retxed</Value>
+    </Setting>
+    <Setting Name="ClickATell_API_ID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3228427</Value>
+    </Setting>
+    <Setting Name="ClickATell_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pearlharbor1</Value>
+    </Setting>
+    <Setting Name="ClickATell_UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BRSFFA</Value>
+    </Setting>
+    <Setting Name="ClickATell_SMSFrom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BRS</Value>
+    </Setting>
+    <Setting Name="ConnectionString_BRS2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s</Value>
+    </Setting>
+    <Setting Name="ConnectionString_BRS2UserOverride" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ConnectionString_EXTERNAL" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s;Network Library=dbmssocn&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s;Network Library=dbmssocn</Value>
+    </Setting>
+    <Setting Name="RememberMe" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ConnectionString_BRS" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=hipathsystems.cloudapp.net,5223;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf;Password=@egean@ndr0s</Value>
+    </Setting>
+    <Setting Name="CheckBoxConnection" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TxtLocal_UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ffa@brsbrokers.com</Value>
+    </Setting>
+    <Setting Name="TxtLocal_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pearlharbor1</Value>
+    </Setting>
+    <Setting Name="SMS_SafetyBalance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="TxtLocalSender" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BRS</Value>
+    </Setting>
+    <Setting Name="ws_ServerLive" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/WSFFASuiteServer/websync.ashx</Value>
+    </Setting>
+    <Setting Name="ws_ServerDemo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.artbtrading.com/WSFFASuiteServer/websync.ashx</Value>
+    </Setting>
+    <Setting Name="ws_TradesChannel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/my/trades</Value>
+    </Setting>
+    <Setting Name="BalticUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">barry-user@transfer.balticarray.com</Value>
+    </Setting>
+    <Setting Name="BalticPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sWhXZvQJ0I</Value>
+    </Setting>
+    <Setting Name="ConnectionString_BRS2_Old" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=BRS2;Initial Catalog=ARTB;User ID=george;Password=Pass1234&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=BRS2;Initial Catalog=ARTB;User ID=george;Password=Pass1234</Value>
+    </Setting>
+    <Setting Name="ConnectionString_BRS_old" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=BRS2;Initial Catalog=ARTB;User ID=george;Password=Pass1234</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

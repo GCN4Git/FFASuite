@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_ConvertModelWizard_Files\UpgradeReferences.xslt"?>
+<UpgradeLog>
+  <Events>
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASuite.vbproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASuite.vbproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASuite.vbproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\AddTradeForm.resx" Message="AddTradeForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\App.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\App.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\App.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\App.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\App.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\App.config" Message="App.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBConfigureForm.resx" Message="ArtBConfigureForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptCalcControlForm.resx" Message="ArtBOptCalcControlForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BACKUP.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BACKUP.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BACKUP.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BACKUP.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BACKUP.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BACKUP.config" Message="BACKUP.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\DayTrades.resx" Message="DayTrades.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalc.resx" Message="FFAOptCalc.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFATimeCharterOptionForm.resx" Message="FFATimeCharterOptionForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FirstTimeUserForm.resx" Message="FirstTimeUserForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\GraphContract.resx" Message="GraphContract.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\LiveAppCopy.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\LiveAppCopy.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\LiveAppCopy.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\LiveAppCopy.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\LiveAppCopy.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\LiveAppCopy.config" Message="LiveAppCopy.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\MarketRename.resx" Message="MarketRename.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\MarketWatch.resx" Message="MarketWatch.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\My Project\Resources.resx" Message="Resources.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\packages.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\packages.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\packages.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\packages.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\packages.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\packages.config" Message="packages.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WebHelpForm.resx" Message="WebHelpForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASuite.vbproj" Message="FFASuite" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\ArtB_Class_Library.vbproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\ArtB_Class_Library.vbproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\ArtB_Class_Library.vbproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\app.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\app.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\app.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\app.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\app.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\app.config" Message="app.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\My Project\Resources.resx" Message="Resources.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtB_Class_Library\ArtB_Class_Library.vbproj" Message="ArtB_Class_Library" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\FFASuiteUpdater.vbproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\FFASuiteUpdater.vbproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\FFASuiteUpdater.vbproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\App.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\App.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\App.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\App.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\App.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\App.config" Message="App.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\AppBackUp.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\AppBackUp.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\AppBackUp.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\AppBackUp.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\AppBackUp.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\AppBackUp.config" Message="AppBackUp.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\ArtBNSGXServiceUpdate.resx" Message="ArtBNSGXServiceUpdate.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\BalticFTP.resx" Message="BalticFTP.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\BALTICFTPNEWRECORD.resx" Message="BALTICFTPNEWRECORD.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\BRSClientsSMS.resx" Message="BRSClientsSMS.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\LiveAppCopy.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\LiveAppCopy.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\LiveAppCopy.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\LiveAppCopy.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\LiveAppCopy.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\LiveAppCopy.config" Message="LiveAppCopy.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\LoginForm.resx" Message="LoginForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\My Project\Resources.resx" Message="Resources.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\packages.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\packages.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\packages.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\packages.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\packages.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\packages.config" Message="packages.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\SGXUpdateForm.resx" Message="SGXUpdateForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\SMSMainForm.resx" Message="SMSMainForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\UpdaterSettings.resx" Message="UpdaterSettings.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\UpdatesForm.resx" Message="UpdatesForm.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\BalticUpdater\FFASuiteUpdater.vbproj" Message="FFASuiteUpdater" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFAOptCalcLicenseKeyServer.vbproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFAOptCalcLicenseKeyServer.vbproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFAOptCalcLicenseKeyServer.vbproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFAOptCalcKeyLicense.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFAOptCalcKeyLicense.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFAOptCalcKeyLicense.aspx" Message="FFAOptCalcKeyLicense.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFASuitePayPal.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFASuitePayPal.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFASuitePayPal.aspx" Message="FFASuitePayPal.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\LiveWebCopy.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\LiveWebCopy.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\LiveWebCopy.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\LiveWebCopy.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\LiveWebCopy.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\LiveWebCopy.config" Message="LiveWebCopy.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\My Project\Resources.resx" Message="Resources.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.config" Message="Web.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Debug.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Debug.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Debug.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Debug.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Debug.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Debug.config" Message="Web.Debug.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Release.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Release.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Release.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Release.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Release.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\Web.Release.config" Message="Web.Release.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFAOptCalcLicenseKeyServer\FFAOptCalcLicenseKeyServer.vbproj" Message="FFAOptCalcLicenseKeyServer" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\ArtBwcfDataService.vbproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\ArtBwcfDataService.vbproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\ArtBwcfDataService.vbproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\About.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\About.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\About.aspx" Message="About.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Login.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Login.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Login.aspx" Message="Login.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Manage.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Manage.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Manage.aspx" Message="Manage.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\OpenAuthProviders.ascx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\OpenAuthProviders.ascx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\OpenAuthProviders.ascx" Message="OpenAuthProviders.ascx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Register.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Register.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Register.aspx" Message="Register.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\RegisterExternalLogin.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\RegisterExternalLogin.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\RegisterExternalLogin.aspx" Message="RegisterExternalLogin.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Web.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Web.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Web.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Web.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Web.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Account\Web.config" Message="Web.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Bundle.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Bundle.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Bundle.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Bundle.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Bundle.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Bundle.config" Message="Bundle.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Contact.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Contact.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Contact.aspx" Message="Contact.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Default.aspx" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Default.aspx" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Default.aspx" Message="Default.aspx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\LiveWebCopy.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\LiveWebCopy.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\LiveWebCopy.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\LiveWebCopy.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\LiveWebCopy.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\LiveWebCopy.config" Message="LiveWebCopy.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\My Project\Resources.resx" Message="Resources.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\packages.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\packages.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\packages.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\packages.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\packages.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\packages.config" Message="packages.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Site.Master" Message="Register Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Site.Master" Message="Assembly Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Site.Master" Message="Site.Master" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.config" Message="Web.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Debug.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Debug.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Debug.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Debug.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Debug.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Debug.config" Message="Web.Debug.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Release.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Release.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Release.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Release.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Release.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\Web.Release.config" Message="Web.Release.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBwcfDataService\ArtBwcfDataService.vbproj" Message="ArtBwcfDataService" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\WSFFASuiteServer.vbproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\WSFFASuiteServer.vbproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\WSFFASuiteServer.vbproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\My Project\Resources.resx" Message="Resources.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.config" Message="Web.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Debug.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Debug.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Debug.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Debug.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Debug.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Debug.config" Message="Web.Debug.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Release.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Release.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Release.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Release.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Release.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\Web.Release.config" Message="Web.Release.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\WSFFASuiteServer\WSFFASuiteServer.vbproj" Message="WSFFASuiteServer" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\ArtBOptWCFService.vbproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\ArtBOptWCFService.vbproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\ArtBOptWCFService.vbproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\LiveWebCopy.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\LiveWebCopy.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\LiveWebCopy.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\LiveWebCopy.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\LiveWebCopy.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\LiveWebCopy.config" Message="LiveWebCopy.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\My Project\Resources.resx" Message="Resources.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.config" Message="Web.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Debug.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Debug.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Debug.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Debug.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Debug.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Debug.config" Message="Web.Debug.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Release.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Release.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Release.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Release.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Release.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\Web.Release.config" Message="Web.Release.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\ArtBOptWCFService\ArtBOptWCFService.vbproj" Message="ArtBOptWCFService" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\FFASuiteRepeater.vbproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\FFASuiteRepeater.vbproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\FFASuiteRepeater.vbproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\App.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\App.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\App.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\App.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\App.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\App.config" Message="App.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\My Project\Resources.resx" Message="Resources.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\ProjectInstaller.resx" Message="ProjectInstaller.resx" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASUiteRepeater\FFASuiteRepeater.vbproj" Message="FFASuiteRepeater" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\Users\George\Documents\FFASuite\FFASuite.sln" Message="FFASuite" />
+  </Events>
+</UpgradeLog>

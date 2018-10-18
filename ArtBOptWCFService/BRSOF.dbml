@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BRSOF" Class="BRSOFDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=artbtrading.com;Initial Catalog=BRSOF;Persist Security Info=True;User ID=gmf" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BRSOFConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ofBookmark" Member="ofBookmark">
+    <Type Name="ofBookmark">
+      <Column Name="bookmarkID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="bookmarkType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="bookmarkName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="bookmarkValue" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="isGlobal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofVersion" Member="ofVersion">
+    <Type Name="ofVersion">
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofBookmarkPerm" Member="ofBookmarkPerm">
+    <Type Name="ofBookmarkPerm">
+      <Column Name="bookmarkID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="bookmarkType" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofBookmarkProp" Member="ofBookmarkProp">
+    <Type Name="ofBookmarkProp">
+      <Column Name="bookmarkID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="propValue" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofConParticipant" Member="ofConParticipant">
+    <Type Name="ofConParticipant">
+      <Column Name="conversationID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="joinedDate" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="leftDate" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="bareJID" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="jidResource" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="nickname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofConversation" Member="ofConversation">
+    <Type Name="ofConversation">
+      <Column Name="conversationID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="room" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="isExternal" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="startDate" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="lastActivity" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="messageCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofExtComponentConf" Member="ofExtComponentConf">
+    <Type Name="ofExtComponentConf">
+      <Column Name="subdomain" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="wildcard" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="secret" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="permission" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofGatewayAvatars" Member="ofGatewayAvatars">
+    <Type Name="ofGatewayAvatars">
+      <Column Name="jid" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="imageData" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="xmppHash" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="legacyIdentifier" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="createDate" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="lastUpdate" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="imageType" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofGatewayPseudoRoster" Member="ofGatewayPseudoRoster">
+    <Type Name="ofGatewayPseudoRoster">
+      <Column Name="registrationID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="nickname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="groups" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofGatewayRegistration" Member="ofGatewayRegistration">
+    <Type Name="ofGatewayRegistration">
+      <Column Name="registrationID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="jid" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="transportType" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="nickname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="registrationDate" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="lastLogin" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofGatewayRestrictions" Member="ofGatewayRestrictions">
+    <Type Name="ofGatewayRestrictions">
+      <Column Name="transportType" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="groupname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofGatewayVCards" Member="ofGatewayVCards">
+    <Type Name="ofGatewayVCards">
+      <Column Name="jid" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="value" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofGroup" Member="ofGroup">
+    <Type Name="ofGroup">
+      <Column Name="groupName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofGroupProp" Member="ofGroupProp">
+    <Type Name="ofGroupProp">
+      <Column Name="groupName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="propValue" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofGroupUser" Member="ofGroupUser">
+    <Type Name="ofGroupUser">
+      <Column Name="groupName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="administrator" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofID" Member="ofID">
+    <Type Name="ofID">
+      <Column Name="idType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofMessageArchive" Member="ofMessageArchive">
+    <Type Name="ofMessageArchive">
+      <Column Name="conversationID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="fromJID" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="toJID" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="sentDate" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofMucAffiliation" Member="ofMucAffiliation">
+    <Type Name="ofMucAffiliation">
+      <Column Name="roomID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="jid" Type="System.String" DbType="NVarChar(424) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="affiliation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofMucConversationLog" Member="ofMucConversationLog">
+    <Type Name="ofMucConversationLog">
+      <Column Name="roomID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sender" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="nickname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="logTime" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofMucMember" Member="ofMucMember">
+    <Type Name="ofMucMember">
+      <Column Name="roomID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="jid" Type="System.String" DbType="NVarChar(424) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nickname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="faqentry" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofMucRoom" Member="ofMucRoom">
+    <Type Name="ofMucRoom">
+      <Column Name="serviceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="roomID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="creationDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="modificationDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="naturalName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="lockedDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="emptyDate" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="canChangeSubject" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxUsers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="publicRoom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="moderated" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="membersOnly" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="canInvite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="roomPassword" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="canDiscoverJID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="logEnabled" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="rolesToBroadcast" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="useReservedNick" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="canChangeNick" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="canRegister" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofMucRoomProp" Member="ofMucRoomProp">
+    <Type Name="ofMucRoomProp">
+      <Column Name="roomID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="propValue" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofMucService" Member="ofMucService">
+    <Type Name="ofMucService">
+      <Column Name="serviceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="subdomain" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="isHidden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofMucServiceProp" Member="ofMucServiceProp">
+    <Type Name="ofMucServiceProp">
+      <Column Name="serviceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="propValue" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofOffline" Member="ofOffline">
+    <Type Name="ofOffline">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="messageID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="creationDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="messageSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="stanza" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPresence" Member="ofPresence">
+    <Type Name="ofPresence">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="offlinePresence" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="offlineDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPrivacyList" Member="ofPrivacyList">
+    <Type Name="ofPrivacyList">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="isDefault" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="list" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPrivate" Member="ofPrivate">
+    <Type Name="ofPrivate">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="namespace" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="privateData" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofProperty" Member="ofProperty">
+    <Type Name="ofProperty">
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="propValue" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPubsubAffiliation" Member="ofPubsubAffiliation">
+    <Type Name="ofPubsubAffiliation">
+      <Column Name="serviceID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nodeID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="jid" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="affiliation" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPubsubDefaultConf" Member="ofPubsubDefaultConf">
+    <Type Name="ofPubsubDefaultConf">
+      <Column Name="serviceID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="leaf" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="deliverPayloads" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxPayloadSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="persistItems" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxItems" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="notifyConfigChanges" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="notifyDelete" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="notifyRetract" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="presenceBased" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sendItemSubscribe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="publisherModel" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="subscriptionEnabled" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accessModel" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="language" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="replyPolicy" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="associationPolicy" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="maxLeafNodes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPubsubItem" Member="ofPubsubItem">
+    <Type Name="ofPubsubItem">
+      <Column Name="serviceID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nodeID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="jid" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="creationDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="payload" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPubsubNode" Member="ofPubsubNode">
+    <Type Name="ofPubsubNode">
+      <Column Name="serviceID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nodeID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="leaf" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="creationDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="modificationDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="parent" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="deliverPayloads" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxPayloadSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="persistItems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maxItems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="notifyConfigChanges" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="notifyDelete" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="notifyRetract" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="presenceBased" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sendItemSubscribe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="publisherModel" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="subscriptionEnabled" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="configSubscription" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accessModel" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="payloadType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="bodyXSLT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dataformXSLT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="creator" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="language" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="replyPolicy" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="associationPolicy" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="maxLeafNodes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPubsubNodeGroups" Member="ofPubsubNodeGroups">
+    <Type Name="ofPubsubNodeGroups">
+      <Column Name="serviceID" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nodeID" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="rosterGroup" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPubsubNodeJIDs" Member="ofPubsubNodeJIDs">
+    <Type Name="ofPubsubNodeJIDs">
+      <Column Name="serviceID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nodeID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="jid" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="associationType" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofPubsubSubscription" Member="ofPubsubSubscription">
+    <Type Name="ofPubsubSubscription">
+      <Column Name="serviceID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nodeID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="jid" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="owner" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="deliver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="digest" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="digest_frequency" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="expire" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="includeBody" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="showValues" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="subscriptionType" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="subscriptionDepth" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="keyword" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofRemoteServerConf" Member="ofRemoteServerConf">
+    <Type Name="ofRemoteServerConf">
+      <Column Name="xmppDomain" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="remotePort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="permission" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofRoster" Member="ofRoster">
+    <Type Name="ofRoster">
+      <Column Name="rosterID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="jid" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="sub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ask" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="recv" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nick" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="ofRoster_ofRosterGroups" Member="ofRosterGroups" ThisKey="rosterID" OtherKey="rosterID" Type="ofRosterGroups" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofRosterGroups" Member="ofRosterGroups">
+    <Type Name="ofRosterGroups">
+      <Column Name="rosterID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rank" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="groupName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="ofRoster_ofRosterGroups" Member="ofRoster" ThisKey="rosterID" OtherKey="rosterID" Type="ofRoster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofRRDs" Member="ofRRDs">
+    <Type Name="ofRRDs">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="updatedDate" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="bytes" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofSASLAuthorized" Member="ofSASLAuthorized">
+    <Type Name="ofSASLAuthorized">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="principal" Type="System.String" DbType="NVarChar(2000) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofSecurityAuditLog" Member="ofSecurityAuditLog">
+    <Type Name="ofSecurityAuditLog">
+      <Column Name="msgID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="entryStamp" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="summary" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="node" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofUser" Member="ofUser">
+    <Type Name="ofUser">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="plainPassword" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="encryptedPassword" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="creationDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="modificationDate" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofUserFlag" Member="ofUserFlag">
+    <Type Name="ofUserFlag">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="startTime" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="endTime" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofUserProp" Member="ofUserProp">
+    <Type Name="ofUserProp">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="propValue" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ofVCard" Member="ofVCard">
+    <Type Name="ofVCard">
+      <Column Name="username" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="vcard" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

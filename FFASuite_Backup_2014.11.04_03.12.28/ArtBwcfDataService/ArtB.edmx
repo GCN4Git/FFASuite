@@ -1,0 +1,1138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ARTBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ARTBModelStoreContainer">
+          <EntitySet Name="ARTBOPTCALC_FINGERPRINTS" EntityType="ARTBModel.Store.ARTBOPTCALC_FINGERPRINTS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ARTBOPTCALC_LICENSES" EntityType="ARTBModel.Store.ARTBOPTCALC_LICENSES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ARTBOPTCALC_PRODUCTS" EntityType="ARTBModel.Store.ARTBOPTCALC_PRODUCTS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BALTIC_FORWARD_RATES" EntityType="ARTBModel.Store.BALTIC_FORWARD_RATES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BALTIC_FTP" EntityType="ARTBModel.Store.BALTIC_FTP" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BALTIC_FTP_SETTLEMENT" EntityType="ARTBModel.Store.BALTIC_FTP_SETTLEMENT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BALTIC_MONTHLY_SETTLEMENTS" EntityType="ARTBModel.Store.BALTIC_MONTHLY_SETTLEMENTS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BALTIC_OPTION_VOLATILITIES" EntityType="ARTBModel.Store.BALTIC_OPTION_VOLATILITIES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BALTIC_SPOT_RATES" EntityType="ARTBModel.Store.BALTIC_SPOT_RATES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ROUTES" EntityType="ARTBModel.Store.ROUTES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TRADE_CLASSES" EntityType="ARTBModel.Store.TRADE_CLASSES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VESSEL_CLASS" EntityType="ARTBModel.Store.VESSEL_CLASS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VESSEL_CLASS_SPREAD_MARGINS" EntityType="ARTBModel.Store.VESSEL_CLASS_SPREAD_MARGINS" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES" Association="ARTBModel.Store.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES">
+            <End Role="ARTBOPTCALC_LICENSES" EntitySet="ARTBOPTCALC_LICENSES" />
+            <End Role="ARTBOPTCALC_FINGERPRINTS" EntitySet="ARTBOPTCALC_FINGERPRINTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS" Association="ARTBModel.Store.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS">
+            <End Role="ARTBOPTCALC_PRODUCTS" EntitySet="ARTBOPTCALC_PRODUCTS" />
+            <End Role="ARTBOPTCALC_FINGERPRINTS" EntitySet="ARTBOPTCALC_FINGERPRINTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS" Association="ARTBModel.Store.FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS">
+            <End Role="ARTBOPTCALC_PRODUCTS" EntitySet="ARTBOPTCALC_PRODUCTS" />
+            <End Role="ARTBOPTCALC_LICENSES" EntitySet="ARTBOPTCALC_LICENSES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_FORWARD_RATES_BALTIC_FTP" Association="ARTBModel.Store.FK_BALTIC_FORWARD_RATES_BALTIC_FTP">
+            <End Role="BALTIC_FTP" EntitySet="BALTIC_FTP" />
+            <End Role="BALTIC_FORWARD_RATES" EntitySet="BALTIC_FORWARD_RATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_FORWARD_RATES_ROUTES" Association="ARTBModel.Store.FK_BALTIC_FORWARD_RATES_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_FORWARD_RATES" EntitySet="BALTIC_FORWARD_RATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_FTP_ROUTES" Association="ARTBModel.Store.FK_BALTIC_FTP_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_FTP" EntitySet="BALTIC_FTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_FTP_SETTLEMENT_ROUTES" Association="ARTBModel.Store.FK_BALTIC_FTP_SETTLEMENT_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_FTP_SETTLEMENT" EntitySet="BALTIC_FTP_SETTLEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES" Association="ARTBModel.Store.FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_MONTHLY_SETTLEMENTS" EntitySet="BALTIC_MONTHLY_SETTLEMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP" Association="ARTBModel.Store.FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP">
+            <End Role="BALTIC_FTP" EntitySet="BALTIC_FTP" />
+            <End Role="BALTIC_OPTION_VOLATILITIES" EntitySet="BALTIC_OPTION_VOLATILITIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_OPTION_VOLATILITIES_ROUTES" Association="ARTBModel.Store.FK_BALTIC_OPTION_VOLATILITIES_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_OPTION_VOLATILITIES" EntitySet="BALTIC_OPTION_VOLATILITIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_SPOT_RATES_ROUTES" Association="ARTBModel.Store.FK_BALTIC_SPOT_RATES_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_SPOT_RATES" EntitySet="BALTIC_SPOT_RATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VESSEL_CLASS_ROUTES" Association="ARTBModel.Store.FK_VESSEL_CLASS_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="VESSEL_CLASS" EntitySet="VESSEL_CLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES" Association="ARTBModel.Store.FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="VESSEL_CLASS_SPREAD_MARGINS" EntitySet="VESSEL_CLASS_SPREAD_MARGINS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VESSEL_CLASS_TRADE_CLASSES" Association="ARTBModel.Store.FK_VESSEL_CLASS_TRADE_CLASSES">
+            <End Role="TRADE_CLASSES" EntitySet="TRADE_CLASSES" />
+            <End Role="VESSEL_CLASS" EntitySet="VESSEL_CLASS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ARTBOPTCALC_FINGERPRINTS">
+          <Key>
+            <PropertyRef Name="PRODUCT_ID" />
+            <PropertyRef Name="FINGER_PRINT" />
+          </Key>
+          <Property Name="PRODUCT_ID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="FINGER_PRINT" Type="nchar" Nullable="false" MaxLength="39" />
+          <Property Name="COMPUTER_NAME" Type="text" Nullable="false" />
+          <Property Name="ACTIVE" Type="bit" Nullable="false" />
+          <Property Name="DEMO_EXPIRATION_DATE" Type="date" Nullable="false" />
+          <Property Name="HIDE" Type="bit" Nullable="false" />
+          <Property Name="LICENSE_KEY" Type="nchar" Nullable="false" MaxLength="15" />
+          <Property Name="OFID" Type="text" />
+          <Property Name="UPDATER" Type="bit" Nullable="false" />
+          <Property Name="PRICER" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ARTBOPTCALC_LICENSES">
+          <Key>
+            <PropertyRef Name="LICENSE_KEY" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LICENSE_KEY" Type="nchar" Nullable="false" MaxLength="15" />
+          <Property Name="PRODUCT_ID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="DEMO" Type="bit" Nullable="false" />
+          <Property Name="MAX_LICENSES" Type="int" Nullable="false" />
+          <Property Name="USED_LICENSES" Type="int" Nullable="false" />
+          <Property Name="LICENSE_PURCH_DATE" Type="date" />
+          <Property Name="LICENSE_EXP_DATE" Type="date" />
+          <Property Name="REG_NAME" Type="text" />
+          <Property Name="EMAIL" Type="text" />
+          <Property Name="FIRSTNAME" Type="text" />
+          <Property Name="LASTNAME" Type="text" />
+          <Property Name="COMPANY" Type="text" />
+          <Property Name="COUNTRY" Type="text" />
+          <Property Name="PURCHASE_ID" Type="text" />
+          <Property Name="BROKER" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ARTBOPTCALC_PRODUCTS">
+          <Key>
+            <PropertyRef Name="PRODUCT_ID" />
+          </Key>
+          <Property Name="PRODUCT_ID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="ACTIVE" Type="bit" Nullable="false" />
+          <Property Name="CCY_ID" Type="int" Nullable="false" />
+          <Property Name="BASE_PRICE" Type="float" Nullable="false" />
+          <Property Name="DISCOUNTS" Type="bit" Nullable="false" />
+          <Property Name="DISC_TIER1" Type="int" Nullable="false" />
+          <Property Name="DISC_PRC1" Type="float" Nullable="false" />
+          <Property Name="DISC_TIER2" Type="int" Nullable="false" />
+          <Property Name="DISC_PRC2" Type="float" Nullable="false" />
+          <Property Name="DISC_TIER3" Type="int" Nullable="false" />
+          <Property Name="DISC_PRC3" Type="float" Nullable="false" />
+          <Property Name="DISC_TIER4" Type="int" Nullable="false" />
+          <Property Name="DISC_PRC4" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BALTIC_FORWARD_RATES">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+            <PropertyRef Name="FIXING_DATE" />
+          </Key>
+          <Property Name="ROUTE_ID" Type="int" Nullable="false" />
+          <Property Name="CMSROUTE_ID" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="FIXING_DATE" Type="date" Nullable="false" />
+          <Property Name="NEXT_ROLLOVER_DATE" Type="date" />
+          <Property Name="FIXING" Type="float" Nullable="false" />
+          <Property Name="REPORTDESC" Type="varchar" MaxLength="15" />
+          <Property Name="MM1" Type="smallint" />
+          <Property Name="YY1" Type="smallint" />
+          <Property Name="MM2" Type="smallint" />
+          <Property Name="YY2" Type="smallint" />
+          <Property Name="PERIOD" Type="varchar" MaxLength="15" />
+          <Property Name="YY" Type="int" />
+        </EntityType>
+        <EntityType Name="BALTIC_FTP">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ROUTE_ID" Type="int" Nullable="false" />
+          <Property Name="CMSROUTE_ID" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="PERIOD" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="QUALIFIER" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="BALTIC_FTP_SETTLEMENT">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+          </Key>
+          <Property Name="ROUTE_ID" Type="int" Nullable="false" />
+          <Property Name="CMSROUTE_ID" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="BALTIC_MONTHLY_SETTLEMENTS">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="FIXING_DATE" />
+          </Key>
+          <Property Name="ROUTE_ID" Type="int" Nullable="false" />
+          <Property Name="FIXING_DATE" Type="date" Nullable="false" />
+          <Property Name="FIXINGEM" Type="float" Nullable="false" />
+          <Property Name="FIXING7" Type="float" Nullable="false" />
+          <Property Name="FIXING10" Type="float" Nullable="false" />
+          <Property Name="FIXING_MONTH" Type="smallint" Nullable="false" />
+          <Property Name="FIXING_YEAR" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BALTIC_OPTION_VOLATILITIES">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+            <PropertyRef Name="FIXING_DATE" />
+          </Key>
+          <Property Name="ROUTE_ID" Type="int" Nullable="false" />
+          <Property Name="CMSROUTE_ID" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="FIXING_DATE" Type="date" Nullable="false" />
+          <Property Name="NEXT_ROLLOVER_DATE" Type="date" Nullable="false" />
+          <Property Name="FIXING" Type="float" Nullable="false" />
+          <Property Name="REPORTDESC" Type="varchar" MaxLength="15" />
+          <Property Name="MM1" Type="smallint" />
+          <Property Name="YY1" Type="smallint" />
+          <Property Name="MM2" Type="smallint" />
+          <Property Name="YY2" Type="smallint" />
+          <Property Name="PERIOD" Type="varchar" MaxLength="15" />
+          <Property Name="YY" Type="int" />
+        </EntityType>
+        <EntityType Name="BALTIC_SPOT_RATES">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="FIXING_DATE" />
+          </Key>
+          <Property Name="ROUTE_ID" Type="int" Nullable="false" />
+          <Property Name="FIXING_DATE" Type="date" Nullable="false" />
+          <Property Name="FIXING" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROUTES">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+          </Key>
+          <Property Name="ROUTE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VESSEL_CLASS_ID" Type="int" Nullable="false" />
+          <Property Name="QUOTE_TYPE" Type="smallint" Nullable="false" />
+          <Property Name="QUANTITY_TYPE" Type="smallint" Nullable="false" />
+          <Property Name="CCY_ID" Type="int" />
+          <Property Name="ROUTE_SHORT" Type="nvarchar" MaxLength="20" />
+          <Property Name="ROUTE_DESCR" Type="nvarchar" MaxLength="255" />
+          <Property Name="BALTIC_ABRV" Type="nvarchar" MaxLength="20" />
+          <Property Name="BALTIC_ABRV_FFA" Type="nvarchar" MaxLength="20" />
+          <Property Name="SETTLEMENT_TYPE" Type="smallint" Nullable="false" />
+          <Property Name="LOT_SIZE" Type="int" Nullable="false" />
+          <Property Name="SETTLEMENT_TICK" Type="float" Nullable="false" />
+          <Property Name="PRICING_TICK" Type="float" Nullable="false" />
+          <Property Name="FULL_LOT_SIZE" Type="int" Nullable="false" />
+          <Property Name="FFA_TRADED" Type="bit" Nullable="false" />
+          <Property Name="LAST_DAY_RULE_ID" Type="int" Nullable="false" />
+          <Property Name="DEFAULT_QUANTITY" Type="float" Nullable="false" />
+          <Property Name="SETTL_ROUTE_ID" Type="int" Nullable="false" />
+          <Property Name="OPTIONS_TRADED" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRADE_CLASSES">
+          <Key>
+            <PropertyRef Name="TRADE_CLASS_SHORT" />
+          </Key>
+          <Property Name="TRADE_CLASS_SHORT" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="TRADE_CLASS" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="TRADE_CLASS_DES" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VESSEL_CLASS">
+          <Key>
+            <PropertyRef Name="VESSEL_CLASS_ID" />
+          </Key>
+          <Property Name="VESSEL_CLASS_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VESSEL_CLASS" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DRYWET" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="WETSECTOR" Type="char" MaxLength="1" />
+          <Property Name="DESCRIPTION" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DEFAULT_ROUTE_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="VESSEL_CLASS_SPREAD_MARGINS">
+          <Key>
+            <PropertyRef Name="VESSEL_CLASS_ID" />
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+          </Key>
+          <Property Name="VESSEL_CLASS_ID" Type="int" Nullable="false" />
+          <Property Name="ROUTE_ID" Type="int" Nullable="false" />
+          <Property Name="CMSROUTE_ID" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="MM1" Type="smallint" Nullable="false" />
+          <Property Name="YY1" Type="smallint" Nullable="false" />
+          <Property Name="MM2" Type="smallint" Nullable="false" />
+          <Property Name="YY2" Type="smallint" Nullable="false" />
+          <Property Name="PERIOD" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="YY" Type="int" Nullable="false" />
+          <Property Name="MARGIN" Type="float" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES">
+          <End Role="ARTBOPTCALC_LICENSES" Type="ARTBModel.Store.ARTBOPTCALC_LICENSES" Multiplicity="1" />
+          <End Role="ARTBOPTCALC_FINGERPRINTS" Type="ARTBModel.Store.ARTBOPTCALC_FINGERPRINTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTBOPTCALC_LICENSES">
+              <PropertyRef Name="LICENSE_KEY" />
+            </Principal>
+            <Dependent Role="ARTBOPTCALC_FINGERPRINTS">
+              <PropertyRef Name="LICENSE_KEY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS">
+          <End Role="ARTBOPTCALC_PRODUCTS" Type="ARTBModel.Store.ARTBOPTCALC_PRODUCTS" Multiplicity="1" />
+          <End Role="ARTBOPTCALC_FINGERPRINTS" Type="ARTBModel.Store.ARTBOPTCALC_FINGERPRINTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTBOPTCALC_PRODUCTS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Principal>
+            <Dependent Role="ARTBOPTCALC_FINGERPRINTS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS">
+          <End Role="ARTBOPTCALC_PRODUCTS" Type="ARTBModel.Store.ARTBOPTCALC_PRODUCTS" Multiplicity="1" />
+          <End Role="ARTBOPTCALC_LICENSES" Type="ARTBModel.Store.ARTBOPTCALC_LICENSES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTBOPTCALC_PRODUCTS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Principal>
+            <Dependent Role="ARTBOPTCALC_LICENSES">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_FORWARD_RATES_BALTIC_FTP">
+          <End Role="BALTIC_FTP" Type="ARTBModel.Store.BALTIC_FTP" Multiplicity="1" />
+          <End Role="BALTIC_FORWARD_RATES" Type="ARTBModel.Store.BALTIC_FORWARD_RATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BALTIC_FTP">
+              <PropertyRef Name="ROUTE_ID" />
+              <PropertyRef Name="CMSROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_FORWARD_RATES">
+              <PropertyRef Name="ROUTE_ID" />
+              <PropertyRef Name="CMSROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_FORWARD_RATES_ROUTES">
+          <End Role="ROUTES" Type="ARTBModel.Store.ROUTES" Multiplicity="1" />
+          <End Role="BALTIC_FORWARD_RATES" Type="ARTBModel.Store.BALTIC_FORWARD_RATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_FORWARD_RATES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_FTP_ROUTES">
+          <End Role="ROUTES" Type="ARTBModel.Store.ROUTES" Multiplicity="1" />
+          <End Role="BALTIC_FTP" Type="ARTBModel.Store.BALTIC_FTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_FTP">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_FTP_SETTLEMENT_ROUTES">
+          <End Role="ROUTES" Type="ARTBModel.Store.ROUTES" Multiplicity="1" />
+          <End Role="BALTIC_FTP_SETTLEMENT" Type="ARTBModel.Store.BALTIC_FTP_SETTLEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_FTP_SETTLEMENT">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES">
+          <End Role="ROUTES" Type="ARTBModel.Store.ROUTES" Multiplicity="1" />
+          <End Role="BALTIC_MONTHLY_SETTLEMENTS" Type="ARTBModel.Store.BALTIC_MONTHLY_SETTLEMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_MONTHLY_SETTLEMENTS">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP">
+          <End Role="BALTIC_FTP" Type="ARTBModel.Store.BALTIC_FTP" Multiplicity="1" />
+          <End Role="BALTIC_OPTION_VOLATILITIES" Type="ARTBModel.Store.BALTIC_OPTION_VOLATILITIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BALTIC_FTP">
+              <PropertyRef Name="ROUTE_ID" />
+              <PropertyRef Name="CMSROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_OPTION_VOLATILITIES">
+              <PropertyRef Name="ROUTE_ID" />
+              <PropertyRef Name="CMSROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_OPTION_VOLATILITIES_ROUTES">
+          <End Role="ROUTES" Type="ARTBModel.Store.ROUTES" Multiplicity="1" />
+          <End Role="BALTIC_OPTION_VOLATILITIES" Type="ARTBModel.Store.BALTIC_OPTION_VOLATILITIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_OPTION_VOLATILITIES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_SPOT_RATES_ROUTES">
+          <End Role="ROUTES" Type="ARTBModel.Store.ROUTES" Multiplicity="1" />
+          <End Role="BALTIC_SPOT_RATES" Type="ARTBModel.Store.BALTIC_SPOT_RATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_SPOT_RATES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VESSEL_CLASS_ROUTES">
+          <End Role="ROUTES" Type="ARTBModel.Store.ROUTES" Multiplicity="0..1" />
+          <End Role="VESSEL_CLASS" Type="ARTBModel.Store.VESSEL_CLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="VESSEL_CLASS">
+              <PropertyRef Name="DEFAULT_ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES">
+          <End Role="ROUTES" Type="ARTBModel.Store.ROUTES" Multiplicity="1" />
+          <End Role="VESSEL_CLASS_SPREAD_MARGINS" Type="ARTBModel.Store.VESSEL_CLASS_SPREAD_MARGINS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="VESSEL_CLASS_SPREAD_MARGINS">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VESSEL_CLASS_TRADE_CLASSES">
+          <End Role="TRADE_CLASSES" Type="ARTBModel.Store.TRADE_CLASSES" Multiplicity="1" />
+          <End Role="VESSEL_CLASS" Type="ARTBModel.Store.VESSEL_CLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRADE_CLASSES">
+              <PropertyRef Name="TRADE_CLASS_SHORT" />
+            </Principal>
+            <Dependent Role="VESSEL_CLASS">
+              <PropertyRef Name="DRYWET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ARTBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ARTBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ARTBOPTCALC_FINGERPRINTS" EntityType="ARTBModel.ARTBOPTCALC_FINGERPRINTS" />
+          <EntitySet Name="ARTBOPTCALC_LICENSES" EntityType="ARTBModel.ARTBOPTCALC_LICENSES" />
+          <EntitySet Name="ARTBOPTCALC_PRODUCTS" EntityType="ARTBModel.ARTBOPTCALC_PRODUCTS" />
+          <EntitySet Name="BALTIC_FORWARD_RATES" EntityType="ARTBModel.BALTIC_FORWARD_RATES" />
+          <EntitySet Name="BALTIC_FTP" EntityType="ARTBModel.BALTIC_FTP" />
+          <EntitySet Name="BALTIC_FTP_SETTLEMENT" EntityType="ARTBModel.BALTIC_FTP_SETTLEMENT" />
+          <EntitySet Name="BALTIC_MONTHLY_SETTLEMENTS" EntityType="ARTBModel.BALTIC_MONTHLY_SETTLEMENTS" />
+          <EntitySet Name="BALTIC_OPTION_VOLATILITIES" EntityType="ARTBModel.BALTIC_OPTION_VOLATILITIES" />
+          <EntitySet Name="BALTIC_SPOT_RATES" EntityType="ARTBModel.BALTIC_SPOT_RATES" />
+          <EntitySet Name="ROUTES" EntityType="ARTBModel.ROUTES" />
+          <EntitySet Name="TRADE_CLASSES" EntityType="ARTBModel.TRADE_CLASSES" />
+          <EntitySet Name="VESSEL_CLASS" EntityType="ARTBModel.VESSEL_CLASS" />
+          <EntitySet Name="VESSEL_CLASS_SPREAD_MARGINS" EntityType="ARTBModel.VESSEL_CLASS_SPREAD_MARGINS" />
+          <AssociationSet Name="FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES" Association="ARTBModel.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES">
+            <End Role="ARTBOPTCALC_LICENSES" EntitySet="ARTBOPTCALC_LICENSES" />
+            <End Role="ARTBOPTCALC_FINGERPRINTS" EntitySet="ARTBOPTCALC_FINGERPRINTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS" Association="ARTBModel.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS">
+            <End Role="ARTBOPTCALC_PRODUCTS" EntitySet="ARTBOPTCALC_PRODUCTS" />
+            <End Role="ARTBOPTCALC_FINGERPRINTS" EntitySet="ARTBOPTCALC_FINGERPRINTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS" Association="ARTBModel.FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS">
+            <End Role="ARTBOPTCALC_PRODUCTS" EntitySet="ARTBOPTCALC_PRODUCTS" />
+            <End Role="ARTBOPTCALC_LICENSES" EntitySet="ARTBOPTCALC_LICENSES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_FORWARD_RATES_BALTIC_FTP" Association="ARTBModel.FK_BALTIC_FORWARD_RATES_BALTIC_FTP">
+            <End Role="BALTIC_FTP" EntitySet="BALTIC_FTP" />
+            <End Role="BALTIC_FORWARD_RATES" EntitySet="BALTIC_FORWARD_RATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_FORWARD_RATES_ROUTES" Association="ARTBModel.FK_BALTIC_FORWARD_RATES_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_FORWARD_RATES" EntitySet="BALTIC_FORWARD_RATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_FTP_ROUTES" Association="ARTBModel.FK_BALTIC_FTP_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_FTP" EntitySet="BALTIC_FTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP" Association="ARTBModel.FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP">
+            <End Role="BALTIC_FTP" EntitySet="BALTIC_FTP" />
+            <End Role="BALTIC_OPTION_VOLATILITIES" EntitySet="BALTIC_OPTION_VOLATILITIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_FTP_SETTLEMENT_ROUTES" Association="ARTBModel.FK_BALTIC_FTP_SETTLEMENT_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_FTP_SETTLEMENT" EntitySet="BALTIC_FTP_SETTLEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES" Association="ARTBModel.FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_MONTHLY_SETTLEMENTS" EntitySet="BALTIC_MONTHLY_SETTLEMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_OPTION_VOLATILITIES_ROUTES" Association="ARTBModel.FK_BALTIC_OPTION_VOLATILITIES_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_OPTION_VOLATILITIES" EntitySet="BALTIC_OPTION_VOLATILITIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALTIC_SPOT_RATES_ROUTES" Association="ARTBModel.FK_BALTIC_SPOT_RATES_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="BALTIC_SPOT_RATES" EntitySet="BALTIC_SPOT_RATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VESSEL_CLASS_ROUTES" Association="ARTBModel.FK_VESSEL_CLASS_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="VESSEL_CLASS" EntitySet="VESSEL_CLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES" Association="ARTBModel.FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES">
+            <End Role="ROUTES" EntitySet="ROUTES" />
+            <End Role="VESSEL_CLASS_SPREAD_MARGINS" EntitySet="VESSEL_CLASS_SPREAD_MARGINS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VESSEL_CLASS_TRADE_CLASSES" Association="ARTBModel.FK_VESSEL_CLASS_TRADE_CLASSES">
+            <End Role="TRADE_CLASSES" EntitySet="TRADE_CLASSES" />
+            <End Role="VESSEL_CLASS" EntitySet="VESSEL_CLASS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ARTBOPTCALC_FINGERPRINTS">
+          <Key>
+            <PropertyRef Name="PRODUCT_ID" />
+            <PropertyRef Name="FINGER_PRINT" />
+          </Key>
+          <Property Type="String" Name="PRODUCT_ID" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="FINGER_PRINT" Nullable="false" MaxLength="39" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="COMPUTER_NAME" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ACTIVE" Nullable="false" />
+          <Property Type="DateTime" Name="DEMO_EXPIRATION_DATE" Nullable="false" Precision="0" />
+          <Property Type="Boolean" Name="HIDE" Nullable="false" />
+          <Property Type="String" Name="LICENSE_KEY" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="OFID" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="UPDATER" Nullable="false" />
+          <Property Type="Boolean" Name="PRICER" Nullable="false" />
+          <NavigationProperty Name="ARTBOPTCALC_LICENSES" Relationship="ARTBModel.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES" FromRole="ARTBOPTCALC_FINGERPRINTS" ToRole="ARTBOPTCALC_LICENSES" />
+          <NavigationProperty Name="ARTBOPTCALC_PRODUCTS" Relationship="ARTBModel.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS" FromRole="ARTBOPTCALC_FINGERPRINTS" ToRole="ARTBOPTCALC_PRODUCTS" />
+        </EntityType>
+        <EntityType Name="ARTBOPTCALC_LICENSES">
+          <Key>
+            <PropertyRef Name="LICENSE_KEY" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LICENSE_KEY" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="PRODUCT_ID" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Boolean" Name="DEMO" Nullable="false" />
+          <Property Type="Int32" Name="MAX_LICENSES" Nullable="false" />
+          <Property Type="Int32" Name="USED_LICENSES" Nullable="false" />
+          <Property Type="DateTime" Name="LICENSE_PURCH_DATE" Precision="0" />
+          <Property Type="DateTime" Name="LICENSE_EXP_DATE" Precision="0" />
+          <Property Type="String" Name="REG_NAME" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FIRSTNAME" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LASTNAME" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COMPANY" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COUNTRY" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PURCHASE_ID" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="BROKER" Nullable="false" />
+          <NavigationProperty Name="ARTBOPTCALC_FINGERPRINTS" Relationship="ARTBModel.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES" FromRole="ARTBOPTCALC_LICENSES" ToRole="ARTBOPTCALC_FINGERPRINTS" />
+          <NavigationProperty Name="ARTBOPTCALC_PRODUCTS" Relationship="ARTBModel.FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS" FromRole="ARTBOPTCALC_LICENSES" ToRole="ARTBOPTCALC_PRODUCTS" />
+        </EntityType>
+        <EntityType Name="ARTBOPTCALC_PRODUCTS">
+          <Key>
+            <PropertyRef Name="PRODUCT_ID" />
+          </Key>
+          <Property Type="String" Name="PRODUCT_ID" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Boolean" Name="ACTIVE" Nullable="false" />
+          <Property Type="Int32" Name="CCY_ID" Nullable="false" />
+          <Property Type="Double" Name="BASE_PRICE" Nullable="false" />
+          <Property Type="Boolean" Name="DISCOUNTS" Nullable="false" />
+          <Property Type="Int32" Name="DISC_TIER1" Nullable="false" />
+          <Property Type="Double" Name="DISC_PRC1" Nullable="false" />
+          <Property Type="Int32" Name="DISC_TIER2" Nullable="false" />
+          <Property Type="Double" Name="DISC_PRC2" Nullable="false" />
+          <Property Type="Int32" Name="DISC_TIER3" Nullable="false" />
+          <Property Type="Double" Name="DISC_PRC3" Nullable="false" />
+          <Property Type="Int32" Name="DISC_TIER4" Nullable="false" />
+          <Property Type="Double" Name="DISC_PRC4" Nullable="false" />
+          <NavigationProperty Name="ARTBOPTCALC_FINGERPRINTS" Relationship="ARTBModel.FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS" FromRole="ARTBOPTCALC_PRODUCTS" ToRole="ARTBOPTCALC_FINGERPRINTS" />
+          <NavigationProperty Name="ARTBOPTCALC_LICENSES" Relationship="ARTBModel.FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS" FromRole="ARTBOPTCALC_PRODUCTS" ToRole="ARTBOPTCALC_LICENSES" />
+        </EntityType>
+        <EntityType Name="BALTIC_FORWARD_RATES">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+            <PropertyRef Name="FIXING_DATE" />
+          </Key>
+          <Property Type="Int32" Name="ROUTE_ID" Nullable="false" />
+          <Property Type="String" Name="CMSROUTE_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FIXING_DATE" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="NEXT_ROLLOVER_DATE" Precision="0" />
+          <Property Type="Double" Name="FIXING" Nullable="false" />
+          <Property Type="String" Name="REPORTDESC" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="MM1" />
+          <Property Type="Int16" Name="YY1" />
+          <Property Type="Int16" Name="MM2" />
+          <Property Type="Int16" Name="YY2" />
+          <Property Type="String" Name="PERIOD" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="YY" />
+          <NavigationProperty Name="BALTIC_FTP" Relationship="ARTBModel.FK_BALTIC_FORWARD_RATES_BALTIC_FTP" FromRole="BALTIC_FORWARD_RATES" ToRole="BALTIC_FTP" />
+          <NavigationProperty Name="ROUTES" Relationship="ARTBModel.FK_BALTIC_FORWARD_RATES_ROUTES" FromRole="BALTIC_FORWARD_RATES" ToRole="ROUTES" />
+        </EntityType>
+        <EntityType Name="BALTIC_FTP">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ROUTE_ID" Nullable="false" />
+          <Property Type="String" Name="CMSROUTE_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PERIOD" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="QUALIFIER" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="BALTIC_FORWARD_RATES" Relationship="ARTBModel.FK_BALTIC_FORWARD_RATES_BALTIC_FTP" FromRole="BALTIC_FTP" ToRole="BALTIC_FORWARD_RATES" />
+          <NavigationProperty Name="ROUTES" Relationship="ARTBModel.FK_BALTIC_FTP_ROUTES" FromRole="BALTIC_FTP" ToRole="ROUTES" />
+          <NavigationProperty Name="BALTIC_OPTION_VOLATILITIES" Relationship="ARTBModel.FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP" FromRole="BALTIC_FTP" ToRole="BALTIC_OPTION_VOLATILITIES" />
+        </EntityType>
+        <EntityType Name="BALTIC_FTP_SETTLEMENT">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+          </Key>
+          <Property Type="Int32" Name="ROUTE_ID" Nullable="false" />
+          <Property Type="String" Name="CMSROUTE_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ROUTES" Relationship="ARTBModel.FK_BALTIC_FTP_SETTLEMENT_ROUTES" FromRole="BALTIC_FTP_SETTLEMENT" ToRole="ROUTES" />
+        </EntityType>
+        <EntityType Name="BALTIC_MONTHLY_SETTLEMENTS">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="FIXING_DATE" />
+          </Key>
+          <Property Type="Int32" Name="ROUTE_ID" Nullable="false" />
+          <Property Type="DateTime" Name="FIXING_DATE" Nullable="false" Precision="0" />
+          <Property Type="Double" Name="FIXINGEM" Nullable="false" />
+          <Property Type="Double" Name="FIXING7" Nullable="false" />
+          <Property Type="Double" Name="FIXING10" Nullable="false" />
+          <Property Type="Int16" Name="FIXING_MONTH" Nullable="false" />
+          <Property Type="Int32" Name="FIXING_YEAR" Nullable="false" />
+          <NavigationProperty Name="ROUTES" Relationship="ARTBModel.FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES" FromRole="BALTIC_MONTHLY_SETTLEMENTS" ToRole="ROUTES" />
+        </EntityType>
+        <EntityType Name="BALTIC_OPTION_VOLATILITIES">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+            <PropertyRef Name="FIXING_DATE" />
+          </Key>
+          <Property Type="Int32" Name="ROUTE_ID" Nullable="false" />
+          <Property Type="String" Name="CMSROUTE_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FIXING_DATE" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="NEXT_ROLLOVER_DATE" Nullable="false" Precision="0" />
+          <Property Type="Double" Name="FIXING" Nullable="false" />
+          <Property Type="String" Name="REPORTDESC" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="MM1" />
+          <Property Type="Int16" Name="YY1" />
+          <Property Type="Int16" Name="MM2" />
+          <Property Type="Int16" Name="YY2" />
+          <Property Type="String" Name="PERIOD" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="YY" />
+          <NavigationProperty Name="BALTIC_FTP" Relationship="ARTBModel.FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP" FromRole="BALTIC_OPTION_VOLATILITIES" ToRole="BALTIC_FTP" />
+          <NavigationProperty Name="ROUTES" Relationship="ARTBModel.FK_BALTIC_OPTION_VOLATILITIES_ROUTES" FromRole="BALTIC_OPTION_VOLATILITIES" ToRole="ROUTES" />
+        </EntityType>
+        <EntityType Name="BALTIC_SPOT_RATES">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="FIXING_DATE" />
+          </Key>
+          <Property Type="Int32" Name="ROUTE_ID" Nullable="false" />
+          <Property Type="DateTime" Name="FIXING_DATE" Nullable="false" Precision="0" />
+          <Property Type="Double" Name="FIXING" Nullable="false" />
+          <NavigationProperty Name="ROUTES" Relationship="ARTBModel.FK_BALTIC_SPOT_RATES_ROUTES" FromRole="BALTIC_SPOT_RATES" ToRole="ROUTES" />
+        </EntityType>
+        <EntityType Name="ROUTES">
+          <Key>
+            <PropertyRef Name="ROUTE_ID" />
+          </Key>
+          <Property Type="Int32" Name="ROUTE_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="VESSEL_CLASS_ID" Nullable="false" />
+          <Property Type="Int16" Name="QUOTE_TYPE" Nullable="false" />
+          <Property Type="Int16" Name="QUANTITY_TYPE" Nullable="false" />
+          <Property Type="Int32" Name="CCY_ID" />
+          <Property Type="String" Name="ROUTE_SHORT" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ROUTE_DESCR" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BALTIC_ABRV" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BALTIC_ABRV_FFA" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="SETTLEMENT_TYPE" Nullable="false" />
+          <Property Type="Int32" Name="LOT_SIZE" Nullable="false" />
+          <Property Type="Double" Name="SETTLEMENT_TICK" Nullable="false" />
+          <Property Type="Double" Name="PRICING_TICK" Nullable="false" />
+          <Property Type="Int32" Name="FULL_LOT_SIZE" Nullable="false" />
+          <Property Type="Boolean" Name="FFA_TRADED" Nullable="false" />
+          <Property Type="Int32" Name="LAST_DAY_RULE_ID" Nullable="false" />
+          <Property Type="Double" Name="DEFAULT_QUANTITY" Nullable="false" />
+          <Property Type="Int32" Name="SETTL_ROUTE_ID" Nullable="false" />
+          <Property Type="Boolean" Name="OPTIONS_TRADED" Nullable="false" />
+          <NavigationProperty Name="BALTIC_FORWARD_RATES" Relationship="ARTBModel.FK_BALTIC_FORWARD_RATES_ROUTES" FromRole="ROUTES" ToRole="BALTIC_FORWARD_RATES" />
+          <NavigationProperty Name="BALTIC_FTP" Relationship="ARTBModel.FK_BALTIC_FTP_ROUTES" FromRole="ROUTES" ToRole="BALTIC_FTP" />
+          <NavigationProperty Name="BALTIC_FTP_SETTLEMENT" Relationship="ARTBModel.FK_BALTIC_FTP_SETTLEMENT_ROUTES" FromRole="ROUTES" ToRole="BALTIC_FTP_SETTLEMENT" />
+          <NavigationProperty Name="BALTIC_MONTHLY_SETTLEMENTS" Relationship="ARTBModel.FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES" FromRole="ROUTES" ToRole="BALTIC_MONTHLY_SETTLEMENTS" />
+          <NavigationProperty Name="BALTIC_OPTION_VOLATILITIES" Relationship="ARTBModel.FK_BALTIC_OPTION_VOLATILITIES_ROUTES" FromRole="ROUTES" ToRole="BALTIC_OPTION_VOLATILITIES" />
+          <NavigationProperty Name="BALTIC_SPOT_RATES" Relationship="ARTBModel.FK_BALTIC_SPOT_RATES_ROUTES" FromRole="ROUTES" ToRole="BALTIC_SPOT_RATES" />
+          <NavigationProperty Name="VESSEL_CLASS" Relationship="ARTBModel.FK_VESSEL_CLASS_ROUTES" FromRole="ROUTES" ToRole="VESSEL_CLASS" />
+          <NavigationProperty Name="VESSEL_CLASS_SPREAD_MARGINS" Relationship="ARTBModel.FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES" FromRole="ROUTES" ToRole="VESSEL_CLASS_SPREAD_MARGINS" />
+        </EntityType>
+        <EntityType Name="TRADE_CLASSES">
+          <Key>
+            <PropertyRef Name="TRADE_CLASS_SHORT" />
+          </Key>
+          <Property Type="String" Name="TRADE_CLASS_SHORT" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="TRADE_CLASS" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TRADE_CLASS_DES" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VESSEL_CLASS" Relationship="ARTBModel.FK_VESSEL_CLASS_TRADE_CLASSES" FromRole="TRADE_CLASSES" ToRole="VESSEL_CLASS" />
+        </EntityType>
+        <EntityType Name="VESSEL_CLASS">
+          <Key>
+            <PropertyRef Name="VESSEL_CLASS_ID" />
+          </Key>
+          <Property Type="Int32" Name="VESSEL_CLASS_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VESSEL_CLASS1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DRYWET" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="WETSECTOR" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="DESCRIPTION" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DEFAULT_ROUTE_ID" />
+          <NavigationProperty Name="ROUTES" Relationship="ARTBModel.FK_VESSEL_CLASS_ROUTES" FromRole="VESSEL_CLASS" ToRole="ROUTES" />
+          <NavigationProperty Name="TRADE_CLASSES" Relationship="ARTBModel.FK_VESSEL_CLASS_TRADE_CLASSES" FromRole="VESSEL_CLASS" ToRole="TRADE_CLASSES" />
+        </EntityType>
+        <EntityType Name="VESSEL_CLASS_SPREAD_MARGINS">
+          <Key>
+            <PropertyRef Name="VESSEL_CLASS_ID" />
+            <PropertyRef Name="ROUTE_ID" />
+            <PropertyRef Name="CMSROUTE_ID" />
+          </Key>
+          <Property Type="Int32" Name="VESSEL_CLASS_ID" Nullable="false" />
+          <Property Type="Int32" Name="ROUTE_ID" Nullable="false" />
+          <Property Type="String" Name="CMSROUTE_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="MM1" Nullable="false" />
+          <Property Type="Int16" Name="YY1" Nullable="false" />
+          <Property Type="Int16" Name="MM2" Nullable="false" />
+          <Property Type="Int16" Name="YY2" Nullable="false" />
+          <Property Type="String" Name="PERIOD" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="YY" Nullable="false" />
+          <Property Type="Double" Name="MARGIN" Nullable="false" />
+          <NavigationProperty Name="ROUTES" Relationship="ARTBModel.FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES" FromRole="VESSEL_CLASS_SPREAD_MARGINS" ToRole="ROUTES" />
+        </EntityType>
+        <Association Name="FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_LICENSES">
+          <End Type="ARTBModel.ARTBOPTCALC_LICENSES" Role="ARTBOPTCALC_LICENSES" Multiplicity="1" />
+          <End Type="ARTBModel.ARTBOPTCALC_FINGERPRINTS" Role="ARTBOPTCALC_FINGERPRINTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTBOPTCALC_LICENSES">
+              <PropertyRef Name="LICENSE_KEY" />
+            </Principal>
+            <Dependent Role="ARTBOPTCALC_FINGERPRINTS">
+              <PropertyRef Name="LICENSE_KEY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTBOPTCALC_FINGERPRINTS_ARTBOPTCALC_PRODUCTS">
+          <End Type="ARTBModel.ARTBOPTCALC_PRODUCTS" Role="ARTBOPTCALC_PRODUCTS" Multiplicity="1" />
+          <End Type="ARTBModel.ARTBOPTCALC_FINGERPRINTS" Role="ARTBOPTCALC_FINGERPRINTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTBOPTCALC_PRODUCTS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Principal>
+            <Dependent Role="ARTBOPTCALC_FINGERPRINTS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ARTBOPTCALC_LICENSES_ARTBOPTCALC_PRODUCTS">
+          <End Type="ARTBModel.ARTBOPTCALC_PRODUCTS" Role="ARTBOPTCALC_PRODUCTS" Multiplicity="1" />
+          <End Type="ARTBModel.ARTBOPTCALC_LICENSES" Role="ARTBOPTCALC_LICENSES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTBOPTCALC_PRODUCTS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Principal>
+            <Dependent Role="ARTBOPTCALC_LICENSES">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_FORWARD_RATES_BALTIC_FTP">
+          <End Type="ARTBModel.BALTIC_FTP" Role="BALTIC_FTP" Multiplicity="1" />
+          <End Type="ARTBModel.BALTIC_FORWARD_RATES" Role="BALTIC_FORWARD_RATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BALTIC_FTP">
+              <PropertyRef Name="ROUTE_ID" />
+              <PropertyRef Name="CMSROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_FORWARD_RATES">
+              <PropertyRef Name="ROUTE_ID" />
+              <PropertyRef Name="CMSROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_FORWARD_RATES_ROUTES">
+          <End Type="ARTBModel.ROUTES" Role="ROUTES" Multiplicity="1" />
+          <End Type="ARTBModel.BALTIC_FORWARD_RATES" Role="BALTIC_FORWARD_RATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_FORWARD_RATES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_FTP_ROUTES">
+          <End Type="ARTBModel.ROUTES" Role="ROUTES" Multiplicity="1" />
+          <End Type="ARTBModel.BALTIC_FTP" Role="BALTIC_FTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_FTP">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_OPTION_VOLATILITIES_BALTIC_FTP">
+          <End Type="ARTBModel.BALTIC_FTP" Role="BALTIC_FTP" Multiplicity="1" />
+          <End Type="ARTBModel.BALTIC_OPTION_VOLATILITIES" Role="BALTIC_OPTION_VOLATILITIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BALTIC_FTP">
+              <PropertyRef Name="ROUTE_ID" />
+              <PropertyRef Name="CMSROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_OPTION_VOLATILITIES">
+              <PropertyRef Name="ROUTE_ID" />
+              <PropertyRef Name="CMSROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_FTP_SETTLEMENT_ROUTES">
+          <End Type="ARTBModel.ROUTES" Role="ROUTES" Multiplicity="1" />
+          <End Type="ARTBModel.BALTIC_FTP_SETTLEMENT" Role="BALTIC_FTP_SETTLEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_FTP_SETTLEMENT">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_MONTHLY_SETTLEMENTS_ROUTES">
+          <End Type="ARTBModel.ROUTES" Role="ROUTES" Multiplicity="1" />
+          <End Type="ARTBModel.BALTIC_MONTHLY_SETTLEMENTS" Role="BALTIC_MONTHLY_SETTLEMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_MONTHLY_SETTLEMENTS">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_OPTION_VOLATILITIES_ROUTES">
+          <End Type="ARTBModel.ROUTES" Role="ROUTES" Multiplicity="1" />
+          <End Type="ARTBModel.BALTIC_OPTION_VOLATILITIES" Role="BALTIC_OPTION_VOLATILITIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_OPTION_VOLATILITIES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BALTIC_SPOT_RATES_ROUTES">
+          <End Type="ARTBModel.ROUTES" Role="ROUTES" Multiplicity="1" />
+          <End Type="ARTBModel.BALTIC_SPOT_RATES" Role="BALTIC_SPOT_RATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="BALTIC_SPOT_RATES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VESSEL_CLASS_ROUTES">
+          <End Type="ARTBModel.ROUTES" Role="ROUTES" Multiplicity="0..1" />
+          <End Type="ARTBModel.VESSEL_CLASS" Role="VESSEL_CLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="VESSEL_CLASS">
+              <PropertyRef Name="DEFAULT_ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VESSEL_CLASS_SPREAD_MARGINS_ROUTES">
+          <End Type="ARTBModel.ROUTES" Role="ROUTES" Multiplicity="1" />
+          <End Type="ARTBModel.VESSEL_CLASS_SPREAD_MARGINS" Role="VESSEL_CLASS_SPREAD_MARGINS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROUTES">
+              <PropertyRef Name="ROUTE_ID" />
+            </Principal>
+            <Dependent Role="VESSEL_CLASS_SPREAD_MARGINS">
+              <PropertyRef Name="ROUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VESSEL_CLASS_TRADE_CLASSES">
+          <End Type="ARTBModel.TRADE_CLASSES" Role="TRADE_CLASSES" Multiplicity="1" />
+          <End Type="ARTBModel.VESSEL_CLASS" Role="VESSEL_CLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRADE_CLASSES">
+              <PropertyRef Name="TRADE_CLASS_SHORT" />
+            </Principal>
+            <Dependent Role="VESSEL_CLASS">
+              <PropertyRef Name="DRYWET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ARTBModelStoreContainer" CdmEntityContainer="ARTBEntities">
+          <EntitySetMapping Name="ARTBOPTCALC_FINGERPRINTS">
+            <EntityTypeMapping TypeName="ARTBModel.ARTBOPTCALC_FINGERPRINTS">
+              <MappingFragment StoreEntitySet="ARTBOPTCALC_FINGERPRINTS">
+                <ScalarProperty Name="PRICER" ColumnName="PRICER" />
+                <ScalarProperty Name="UPDATER" ColumnName="UPDATER" />
+                <ScalarProperty Name="OFID" ColumnName="OFID" />
+                <ScalarProperty Name="LICENSE_KEY" ColumnName="LICENSE_KEY" />
+                <ScalarProperty Name="HIDE" ColumnName="HIDE" />
+                <ScalarProperty Name="DEMO_EXPIRATION_DATE" ColumnName="DEMO_EXPIRATION_DATE" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+                <ScalarProperty Name="FINGER_PRINT" ColumnName="FINGER_PRINT" />
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ARTBOPTCALC_LICENSES">
+            <EntityTypeMapping TypeName="ARTBModel.ARTBOPTCALC_LICENSES">
+              <MappingFragment StoreEntitySet="ARTBOPTCALC_LICENSES">
+                <ScalarProperty Name="BROKER" ColumnName="BROKER" />
+                <ScalarProperty Name="PURCHASE_ID" ColumnName="PURCHASE_ID" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="REG_NAME" ColumnName="REG_NAME" />
+                <ScalarProperty Name="LICENSE_EXP_DATE" ColumnName="LICENSE_EXP_DATE" />
+                <ScalarProperty Name="LICENSE_PURCH_DATE" ColumnName="LICENSE_PURCH_DATE" />
+                <ScalarProperty Name="USED_LICENSES" ColumnName="USED_LICENSES" />
+                <ScalarProperty Name="MAX_LICENSES" ColumnName="MAX_LICENSES" />
+                <ScalarProperty Name="DEMO" ColumnName="DEMO" />
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+                <ScalarProperty Name="LICENSE_KEY" ColumnName="LICENSE_KEY" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ARTBOPTCALC_PRODUCTS">
+            <EntityTypeMapping TypeName="ARTBModel.ARTBOPTCALC_PRODUCTS">
+              <MappingFragment StoreEntitySet="ARTBOPTCALC_PRODUCTS">
+                <ScalarProperty Name="DISC_PRC4" ColumnName="DISC_PRC4" />
+                <ScalarProperty Name="DISC_TIER4" ColumnName="DISC_TIER4" />
+                <ScalarProperty Name="DISC_PRC3" ColumnName="DISC_PRC3" />
+                <ScalarProperty Name="DISC_TIER3" ColumnName="DISC_TIER3" />
+                <ScalarProperty Name="DISC_PRC2" ColumnName="DISC_PRC2" />
+                <ScalarProperty Name="DISC_TIER2" ColumnName="DISC_TIER2" />
+                <ScalarProperty Name="DISC_PRC1" ColumnName="DISC_PRC1" />
+                <ScalarProperty Name="DISC_TIER1" ColumnName="DISC_TIER1" />
+                <ScalarProperty Name="DISCOUNTS" ColumnName="DISCOUNTS" />
+                <ScalarProperty Name="BASE_PRICE" ColumnName="BASE_PRICE" />
+                <ScalarProperty Name="CCY_ID" ColumnName="CCY_ID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BALTIC_FORWARD_RATES">
+            <EntityTypeMapping TypeName="ARTBModel.BALTIC_FORWARD_RATES">
+              <MappingFragment StoreEntitySet="BALTIC_FORWARD_RATES">
+                <ScalarProperty Name="YY" ColumnName="YY" />
+                <ScalarProperty Name="PERIOD" ColumnName="PERIOD" />
+                <ScalarProperty Name="YY2" ColumnName="YY2" />
+                <ScalarProperty Name="MM2" ColumnName="MM2" />
+                <ScalarProperty Name="YY1" ColumnName="YY1" />
+                <ScalarProperty Name="MM1" ColumnName="MM1" />
+                <ScalarProperty Name="REPORTDESC" ColumnName="REPORTDESC" />
+                <ScalarProperty Name="FIXING" ColumnName="FIXING" />
+                <ScalarProperty Name="NEXT_ROLLOVER_DATE" ColumnName="NEXT_ROLLOVER_DATE" />
+                <ScalarProperty Name="FIXING_DATE" ColumnName="FIXING_DATE" />
+                <ScalarProperty Name="CMSROUTE_ID" ColumnName="CMSROUTE_ID" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BALTIC_FTP">
+            <EntityTypeMapping TypeName="ARTBModel.BALTIC_FTP">
+              <MappingFragment StoreEntitySet="BALTIC_FTP">
+                <ScalarProperty Name="QUALIFIER" ColumnName="QUALIFIER" />
+                <ScalarProperty Name="PERIOD" ColumnName="PERIOD" />
+                <ScalarProperty Name="CMSROUTE_ID" ColumnName="CMSROUTE_ID" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BALTIC_FTP_SETTLEMENT">
+            <EntityTypeMapping TypeName="ARTBModel.BALTIC_FTP_SETTLEMENT">
+              <MappingFragment StoreEntitySet="BALTIC_FTP_SETTLEMENT">
+                <ScalarProperty Name="CMSROUTE_ID" ColumnName="CMSROUTE_ID" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BALTIC_MONTHLY_SETTLEMENTS">
+            <EntityTypeMapping TypeName="ARTBModel.BALTIC_MONTHLY_SETTLEMENTS">
+              <MappingFragment StoreEntitySet="BALTIC_MONTHLY_SETTLEMENTS">
+                <ScalarProperty Name="FIXING_YEAR" ColumnName="FIXING_YEAR" />
+                <ScalarProperty Name="FIXING_MONTH" ColumnName="FIXING_MONTH" />
+                <ScalarProperty Name="FIXING10" ColumnName="FIXING10" />
+                <ScalarProperty Name="FIXING7" ColumnName="FIXING7" />
+                <ScalarProperty Name="FIXINGEM" ColumnName="FIXINGEM" />
+                <ScalarProperty Name="FIXING_DATE" ColumnName="FIXING_DATE" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BALTIC_OPTION_VOLATILITIES">
+            <EntityTypeMapping TypeName="ARTBModel.BALTIC_OPTION_VOLATILITIES">
+              <MappingFragment StoreEntitySet="BALTIC_OPTION_VOLATILITIES">
+                <ScalarProperty Name="YY" ColumnName="YY" />
+                <ScalarProperty Name="PERIOD" ColumnName="PERIOD" />
+                <ScalarProperty Name="YY2" ColumnName="YY2" />
+                <ScalarProperty Name="MM2" ColumnName="MM2" />
+                <ScalarProperty Name="YY1" ColumnName="YY1" />
+                <ScalarProperty Name="MM1" ColumnName="MM1" />
+                <ScalarProperty Name="REPORTDESC" ColumnName="REPORTDESC" />
+                <ScalarProperty Name="FIXING" ColumnName="FIXING" />
+                <ScalarProperty Name="NEXT_ROLLOVER_DATE" ColumnName="NEXT_ROLLOVER_DATE" />
+                <ScalarProperty Name="FIXING_DATE" ColumnName="FIXING_DATE" />
+                <ScalarProperty Name="CMSROUTE_ID" ColumnName="CMSROUTE_ID" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BALTIC_SPOT_RATES">
+            <EntityTypeMapping TypeName="ARTBModel.BALTIC_SPOT_RATES">
+              <MappingFragment StoreEntitySet="BALTIC_SPOT_RATES">
+                <ScalarProperty Name="FIXING" ColumnName="FIXING" />
+                <ScalarProperty Name="FIXING_DATE" ColumnName="FIXING_DATE" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROUTES">
+            <EntityTypeMapping TypeName="ARTBModel.ROUTES">
+              <MappingFragment StoreEntitySet="ROUTES">
+                <ScalarProperty Name="OPTIONS_TRADED" ColumnName="OPTIONS_TRADED" />
+                <ScalarProperty Name="SETTL_ROUTE_ID" ColumnName="SETTL_ROUTE_ID" />
+                <ScalarProperty Name="DEFAULT_QUANTITY" ColumnName="DEFAULT_QUANTITY" />
+                <ScalarProperty Name="LAST_DAY_RULE_ID" ColumnName="LAST_DAY_RULE_ID" />
+                <ScalarProperty Name="FFA_TRADED" ColumnName="FFA_TRADED" />
+                <ScalarProperty Name="FULL_LOT_SIZE" ColumnName="FULL_LOT_SIZE" />
+                <ScalarProperty Name="PRICING_TICK" ColumnName="PRICING_TICK" />
+                <ScalarProperty Name="SETTLEMENT_TICK" ColumnName="SETTLEMENT_TICK" />
+                <ScalarProperty Name="LOT_SIZE" ColumnName="LOT_SIZE" />
+                <ScalarProperty Name="SETTLEMENT_TYPE" ColumnName="SETTLEMENT_TYPE" />
+                <ScalarProperty Name="BALTIC_ABRV_FFA" ColumnName="BALTIC_ABRV_FFA" />
+                <ScalarProperty Name="BALTIC_ABRV" ColumnName="BALTIC_ABRV" />
+                <ScalarProperty Name="ROUTE_DESCR" ColumnName="ROUTE_DESCR" />
+                <ScalarProperty Name="ROUTE_SHORT" ColumnName="ROUTE_SHORT" />
+                <ScalarProperty Name="CCY_ID" ColumnName="CCY_ID" />
+                <ScalarProperty Name="QUANTITY_TYPE" ColumnName="QUANTITY_TYPE" />
+                <ScalarProperty Name="QUOTE_TYPE" ColumnName="QUOTE_TYPE" />
+                <ScalarProperty Name="VESSEL_CLASS_ID" ColumnName="VESSEL_CLASS_ID" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRADE_CLASSES">
+            <EntityTypeMapping TypeName="ARTBModel.TRADE_CLASSES">
+              <MappingFragment StoreEntitySet="TRADE_CLASSES">
+                <ScalarProperty Name="TRADE_CLASS_DES" ColumnName="TRADE_CLASS_DES" />
+                <ScalarProperty Name="TRADE_CLASS" ColumnName="TRADE_CLASS" />
+                <ScalarProperty Name="TRADE_CLASS_SHORT" ColumnName="TRADE_CLASS_SHORT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VESSEL_CLASS">
+            <EntityTypeMapping TypeName="ARTBModel.VESSEL_CLASS">
+              <MappingFragment StoreEntitySet="VESSEL_CLASS">
+                <ScalarProperty Name="DEFAULT_ROUTE_ID" ColumnName="DEFAULT_ROUTE_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="WETSECTOR" ColumnName="WETSECTOR" />
+                <ScalarProperty Name="DRYWET" ColumnName="DRYWET" />
+                <ScalarProperty Name="VESSEL_CLASS1" ColumnName="VESSEL_CLASS" />
+                <ScalarProperty Name="VESSEL_CLASS_ID" ColumnName="VESSEL_CLASS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VESSEL_CLASS_SPREAD_MARGINS">
+            <EntityTypeMapping TypeName="ARTBModel.VESSEL_CLASS_SPREAD_MARGINS">
+              <MappingFragment StoreEntitySet="VESSEL_CLASS_SPREAD_MARGINS">
+                <ScalarProperty Name="MARGIN" ColumnName="MARGIN" />
+                <ScalarProperty Name="YY" ColumnName="YY" />
+                <ScalarProperty Name="PERIOD" ColumnName="PERIOD" />
+                <ScalarProperty Name="YY2" ColumnName="YY2" />
+                <ScalarProperty Name="MM2" ColumnName="MM2" />
+                <ScalarProperty Name="YY1" ColumnName="YY1" />
+                <ScalarProperty Name="MM1" ColumnName="MM1" />
+                <ScalarProperty Name="CMSROUTE_ID" ColumnName="CMSROUTE_ID" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+                <ScalarProperty Name="VESSEL_CLASS_ID" ColumnName="VESSEL_CLASS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

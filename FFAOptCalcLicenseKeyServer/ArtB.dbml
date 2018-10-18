@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ARTB" Class="ArtBDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=artbtrading.com;Initial Catalog=ARTB;Persist Security Info=True;User ID=gmf" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ARTBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ARTBOPTCALC_FINGERPRINTS" Member="ARTBOPTCALC_FINGERPRINTS">
+    <Type Name="ARTBOPTCALC_FINGERPRINTS">
+      <Column Name="PRODUCT_ID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FINGER_PRINT" Type="System.String" DbType="NChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COMPUTER_NAME" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DEMO_EXPIRATION_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="HIDE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LICENSE_KEY" Type="System.String" DbType="NChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="OFID" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UPDATER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PRICER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ARTBOPTCALC_LICENSES_ARTBOPTCALC_FINGERPRINTS" Member="ARTBOPTCALC_LICENSES" ThisKey="LICENSE_KEY" OtherKey="LICENSE_KEY" Type="ARTBOPTCALC_LICENSES" IsForeignKey="true" />
+      <Association Name="ARTBOPTCALC_PRODUCTS_ARTBOPTCALC_FINGERPRINTS" Member="ARTBOPTCALC_PRODUCTS" ThisKey="PRODUCT_ID" OtherKey="PRODUCT_ID" Type="ARTBOPTCALC_PRODUCTS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ARTBOPTCALC_LICENSES" Member="ARTBOPTCALC_LICENSES">
+    <Type Name="ARTBOPTCALC_LICENSES">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LICENSE_KEY" Type="System.String" DbType="NChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRODUCT_ID" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DEMO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MAX_LICENSES" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USED_LICENSES" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LICENSE_PURCH_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LICENSE_EXP_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REG_NAME" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EMAIL" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FIRSTNAME" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LASTNAME" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="COMPANY" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="COUNTRY" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PURCHASE_ID" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BROKER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ARTBOPTCALC_LICENSES_ARTBOPTCALC_FINGERPRINTS" Member="ARTBOPTCALC_FINGERPRINTS" ThisKey="LICENSE_KEY" OtherKey="LICENSE_KEY" Type="ARTBOPTCALC_FINGERPRINTS" />
+      <Association Name="ARTBOPTCALC_PRODUCTS_ARTBOPTCALC_LICENSES" Member="ARTBOPTCALC_PRODUCTS" ThisKey="PRODUCT_ID" OtherKey="PRODUCT_ID" Type="ARTBOPTCALC_PRODUCTS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ARTBOPTCALC_PRODUCTS" Member="ARTBOPTCALC_PRODUCTS">
+    <Type Name="ARTBOPTCALC_PRODUCTS">
+      <Column Name="PRODUCT_ID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CCY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BASE_PRICE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DISCOUNTS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DISC_TIER1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DISC_PRC1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DISC_TIER2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DISC_PRC2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DISC_TIER3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DISC_PRC3" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DISC_TIER4" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DISC_PRC4" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="ARTBOPTCALC_PRODUCTS_ARTBOPTCALC_FINGERPRINTS" Member="ARTBOPTCALC_FINGERPRINTS" ThisKey="PRODUCT_ID" OtherKey="PRODUCT_ID" Type="ARTBOPTCALC_FINGERPRINTS" />
+      <Association Name="ARTBOPTCALC_PRODUCTS_ARTBOPTCALC_LICENSES" Member="ARTBOPTCALC_LICENSES" ThisKey="PRODUCT_ID" OtherKey="PRODUCT_ID" Type="ARTBOPTCALC_LICENSES" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ARTTBOPTCALC_PAYPAL_IPN" Member="ARTTBOPTCALC_PAYPAL_IPN">
+    <Type Name="ARTTBOPTCALC_PAYPAL_IPN">
+      <Column Name="LICENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ipn_track_id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strRequest" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>
